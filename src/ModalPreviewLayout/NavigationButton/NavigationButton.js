@@ -5,7 +5,7 @@ import Text from '../../Text';
 import ChevronLeft from 'wix-ui-icons-common/ChevronLeft';
 import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 import { arrowsDirection, dataHooks } from '../constants';
-import styles from '../ModalPreviewLayout.st.css';
+import { classes } from '../ModalPreviewLayout.st.css';
 import classNames from 'classnames';
 
 const tooltipProps = {
@@ -31,10 +31,10 @@ const iconButtonProps = {
 };
 
 const NavigationButton = ({ direction, tooltipText, onClick }) => (
-  <div className={classNames(styles.navigationButton, styles[direction])}>
+  <div className={classNames(classes.navigationButton, classes[direction])}>
     <Tooltip
       disabled={!tooltipText}
-      className={styles.modalTooltip}
+      className={classes.modalTooltip}
       appendTo="scrollParent"
       content={<Text children={tooltipText} />}
       {...tooltipProps[direction]}

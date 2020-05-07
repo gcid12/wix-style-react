@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Ellipsis, { extractEllipsisProps } from '../common/Ellipsis';
-import style from './Heading.st.css';
+import { st, classes } from './Heading.st.css';
 
 export const APPEARANCES = {
   H1: 'H1',
@@ -25,8 +25,7 @@ const Heading = props => {
   return (
     <Ellipsis
       {...ellipsisProps}
-      // TODO - with Stylable3 change to wrapperClassName
-      wrapperClasses={style('root', { appearance })}
+      wrapperClassName={st('root', { appearance })}
       render={({ ref, ellipsisClasses }) =>
         React.createElement(
           appearance.toLowerCase(),
@@ -34,8 +33,8 @@ const Heading = props => {
             ...headingProps,
             ref,
             'data-hook': dataHook,
-            ...style(
-              'root',
+            className: st(
+              classes.root,
               { light, appearance },
               {
                 className: ellipsisClasses(props.className),

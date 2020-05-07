@@ -8,7 +8,7 @@ import ColorPickerHistory from './ColorPickerHistory';
 import ColorPickerConverter from './ColorPickerConverter';
 import ColorPickerActions from './ColorPickerActions';
 
-import styles from './ColorPicker.st.css';
+import { classes } from './ColorPicker.st.css';
 import { safeColor, isTransparent } from './utils';
 import { DataHooks } from './constants';
 
@@ -45,7 +45,7 @@ class ColorPicker extends React.PureComponent {
     const { current, previous } = this.state;
 
     return (
-      <div {...styles('root')} data-hook={dataHook}>
+      <div className={classes.root} data-hook={dataHook}>
         <ColorPickerHsb
           dataHook={DataHooks.hsb}
           current={current}
@@ -75,7 +75,7 @@ class ColorPicker extends React.PureComponent {
           hexPlaceholder={emptyPlaceholder}
         />
         {children && (
-          <div className={styles.children} data-hook={DataHooks.children}>
+          <div className={classes.children} data-hook={DataHooks.children}>
             {this._renderChildren()}
           </div>
         )}

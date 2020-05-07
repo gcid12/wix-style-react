@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './CustomModalLayout.st.css';
+import { st, classes } from './CustomModalLayout.st.css';
 
 import BaseModalLayout from '../BaseModalLayout';
 import Button from '../Button';
@@ -13,6 +13,7 @@ const CustomModalLayout = ({
   showHeaderDivider,
   hideContentDividers,
   width,
+  className,
   ...restProps
 }) => {
   const style = width ? { width } : {};
@@ -20,8 +21,8 @@ const CustomModalLayout = ({
     <BaseModalLayout
       style={style}
       data-contentpadding={!removeContentPadding}
-      {...styles('root', { removeContentPadding }, restProps)}
       {...restProps}
+      className={st(classes.root, { removeContentPadding }, className)}
     >
       <BaseModalLayout.Header showHeaderDivider={showHeaderDivider} />
       <BaseModalLayout.Content contentHideDividers={hideContentDividers}>

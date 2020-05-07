@@ -2,7 +2,7 @@ import React from 'react';
 import color from 'color';
 import clamp from 'lodash/clamp';
 import PropTypes from 'prop-types';
-import styles from './ColorPickerHue.st.css';
+import { classes } from './ColorPickerHue.st.css';
 
 export default class ColorPickerHue extends React.PureComponent {
   static propTypes = {
@@ -63,13 +63,13 @@ export default class ColorPickerHue extends React.PureComponent {
     const percentage = (current.hue() / 360) * 100;
     return (
       <div
-        {...styles('root')}
+        className={classes.root}
         data-hook={dataHook}
         ref={e => (this.slider = e)}
         onMouseDown={this.onMarkerDragStart}
         onTouchStart={this.onMarkerDragStart}
       >
-        <div className={styles.handle} style={{ left: `${percentage}%` }} />
+        <div className={classes.handle} style={{ left: `${percentage}%` }} />
       </div>
     );
   }

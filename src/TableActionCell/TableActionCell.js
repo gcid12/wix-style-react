@@ -8,7 +8,7 @@ import IconButton from '../IconButton';
 import Tooltip from '../Tooltip';
 import { dataHooks } from './constants';
 import HoverSlot from './HoverSlot';
-import style from './TableActionCell.st.css';
+import { classes } from './TableActionCell.st.css';
 
 /* eslint-disable react/prop-types */
 function renderPrimaryAction({ text, skin, onClick, disabled }) {
@@ -115,7 +115,7 @@ const TableActionCell = props => {
   const hiddenActions = secondaryActions.slice(numOfVisibleSecondaryActions);
 
   return (
-    <span data-hook={dataHook} {...style('root', {}, props)}>
+    <span data-hook={dataHook} className={classes.root}>
       {primaryAction && (
         <HoverSlot
           display="onHover"
@@ -135,7 +135,7 @@ const TableActionCell = props => {
       )}
 
       {hiddenActions.length > 0 && (
-        <div onClick={e => e.stopPropagation()} className={style.popoverMenu}>
+        <div onClick={e => e.stopPropagation()} className={classes.popoverMenu}>
           <HoverSlot display="always">
             {renderHiddenActions(hiddenActions, popoverMenuProps)}
           </HoverSlot>
@@ -145,7 +145,7 @@ const TableActionCell = props => {
       {primaryAction && !(secondaryActions || []).length && (
         <HoverSlot
           display="notOnHover"
-          className={style.placeholderIcon}
+          className={classes.placeholderIcon}
           data-hook={dataHooks.tableActionCellPlaceholder}
         >
           {renderPlaceholder()}

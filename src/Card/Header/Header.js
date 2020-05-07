@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Header.st.css';
+import { classes } from './Header.st.css';
 import Heading from '../../Heading';
 import Text from '../../Text';
 import { DataHooks } from './hooks';
@@ -33,8 +33,8 @@ class Header extends React.PureComponent {
 
     return (
       <div data-hook={dataHook}>
-        <div className={styles.wrapper}>
-          <div className={styles.titleWrapper}>
+        <div className={classes.wrapper}>
+          <div className={classes.titleWrapper}>
             {isString(title) ? (
               <Heading
                 dataHook={DataHooks.title}
@@ -59,7 +59,7 @@ class Header extends React.PureComponent {
           {suffix && (
             <div
               data-hook={DataHooks.suffix}
-              className={styles.suffix}
+              className={classes.suffix}
               children={suffix}
             />
           )}

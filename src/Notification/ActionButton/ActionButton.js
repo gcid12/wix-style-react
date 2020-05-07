@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../../Button';
 import TextButton from '../../TextButton';
 import { dataHooks } from '../constants';
-import styles from '../Notification.st.css';
+import { classes } from '../Notification.st.css';
 
 const ActionButton = ({ children, onClick, type, link, target }) => {
   const commonProps = {
@@ -14,7 +14,7 @@ const ActionButton = ({ children, onClick, type, link, target }) => {
   if (type === 'textLink') {
     return (
       <TextButton
-        className={styles.textLink}
+        className={classes.textLink}
         underline="always"
         skin="light"
         as="a"
@@ -28,7 +28,7 @@ const ActionButton = ({ children, onClick, type, link, target }) => {
   } else {
     return (
       <Button
-        className={styles.button}
+        className={classes.button}
         type="button"
         size="small"
         skin="transparent"

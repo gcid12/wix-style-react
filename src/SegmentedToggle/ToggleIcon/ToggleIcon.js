@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
 
 import Tooltip from '../../Tooltip';
-import styles from './ToggleIcon.st.css';
+import { st, classes } from './ToggleIcon.st.css';
 
 const Icon = ({
   'data-click': dataClick,
@@ -12,11 +12,12 @@ const Icon = ({
   focusableOnFocus,
   focusableOnBlur,
   children,
+  className,
   ...rest
 }) => (
   <button
     {...rest}
-    {...styles('button', { selected }, rest)}
+    className={st(classes.button, { selected }, className)}
     data-click={dataClick}
     data-hook="toggle-icon"
     data-selected={selected}
@@ -56,7 +57,7 @@ class ToggleIcon extends React.Component {
     } = this.props;
     return (
       <Tooltip
-        {...styles('tooltip', {}, rest)}
+        className={st(classes.tooltip)}
         dataHook={dataHook}
         appendTo="window"
         placement="top"

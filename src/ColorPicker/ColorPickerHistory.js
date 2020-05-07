@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { DataHooks } from './constants';
-import styles from './ColorPickerHistory.st.css';
+import { classes } from './ColorPickerHistory.st.css';
 
 const ColorPickerHistory = ({ show, current, previous, onClick }) => {
   if (show) {
     return (
-      <div {...styles('root')} data-hook={DataHooks.history}>
+      <div className={classes.root} data-hook={DataHooks.history}>
         <div
           data-hook={DataHooks.historyPrevious}
           style={{ background: previous.hex() }}

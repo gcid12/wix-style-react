@@ -2,7 +2,7 @@ import React from 'react';
 import color from 'color';
 import clamp from 'lodash/clamp';
 import PropTypes from 'prop-types';
-import styles from './ColorPickerHsb.st.css';
+import { classes } from './ColorPickerHsb.st.css';
 
 class ColorPickerHsb extends React.PureComponent {
   static propTypes = {
@@ -76,16 +76,16 @@ class ColorPickerHsb extends React.PureComponent {
     };
     return (
       <div
-        {...styles('root')}
+        className={classes.root}
         data-hook={dataHook}
         ref={e => (this.gradient = e)}
         onMouseDown={this.onMarkerDragStart}
         onTouchStart={this.onMarkerDragStart}
       >
-        <div className={styles.hue} style={{ background: hue.hex() }} />
-        <div className={styles.saturation} />
-        <div className={styles.brightness} />
-        <div className={styles.handle} style={style} />
+        <div className={classes.hue} style={{ background: hue.hex() }} />
+        <div className={classes.saturation} />
+        <div className={classes.brightness} />
+        <div className={classes.handle} style={style} />
       </div>
     );
   }

@@ -4,7 +4,7 @@ import { Animator } from 'wix-animations';
 import CloseButton from '../CloseButton';
 import TextLabel from './TextLabel';
 import ActionButton from './ActionButton';
-import styles from './Notification.st.css';
+import { st, classes } from './Notification.st.css';
 import StatusComplete from 'wix-ui-icons-common/StatusComplete';
 import StatusWarning from 'wix-ui-icons-common/StatusWarning';
 import StatusAlert from 'wix-ui-icons-common/StatusAlert';
@@ -22,9 +22,9 @@ const animationsTimeouts = {
 };
 
 const themeIcon = {
-  error: <StatusAlert className={styles.iconStyling} />,
-  success: <StatusComplete className={styles.iconStyling} />,
-  warning: <StatusWarning className={styles.iconStyling} />,
+  error: <StatusAlert className={classes.iconStyling} />,
+  success: <StatusComplete className={classes.iconStyling} />,
+  warning: <StatusWarning className={classes.iconStyling} />,
 };
 
 function mapChildren(children) {
@@ -131,7 +131,7 @@ class Notification extends React.PureComponent {
 
     return (
       <div
-        {...styles('root', { theme, type })}
+        className={st(classes.root, { theme, type })}
         style={{ zIndex }}
         data-hook={dataHook}
         data-theme={theme}
@@ -139,22 +139,22 @@ class Notification extends React.PureComponent {
       >
         <Animator
           show={show}
-          className={styles.animator}
-          childClassName={styles.animatorContent}
+          className={classes.animator}
+          childClassName={classes.animatorContent}
           timing="medium"
           height={heightCalculation}
         >
-          <div className={styles.wrapper}>
+          <div className={classes.wrapper}>
             <div
               data-hook={dataHooks.notificationContent}
-              className={styles.notification}
+              className={classes.notification}
               role="alert"
               aria-labelledby="notification-label"
               aria-live="polite"
             >
               {themeIcon[theme] && <div>{themeIcon[theme]}</div>}
 
-              <div className={styles.labelWrapper}>
+              <div className={classes.labelWrapper}>
                 {childrenComponents.label}
                 {childrenComponents.ctaButton}
               </div>
@@ -162,7 +162,7 @@ class Notification extends React.PureComponent {
               {childrenComponents.closeButton && (
                 <div
                   data-hook={dataHooks.notificationCloseButton}
-                  className={styles.closeButton}
+                  className={classes.closeButton}
                   onClick={this._hideNotificationOnCloseClick}
                   children={childrenComponents.closeButton}
                 />

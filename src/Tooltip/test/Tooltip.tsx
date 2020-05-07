@@ -51,6 +51,7 @@ function TooltipContentWithAllProps() {
       moveArrowTo={1}
       close={() => {}}
       open={() => {}}
+      className="test"
     />
   );
 }

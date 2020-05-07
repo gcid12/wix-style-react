@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import pick from '../../../utils/operators/pick';
 import Text from '../../../Text';
 import * as TabPropTypes from '../constants/tab-prop-types';
-import styles from '../../Tabs.st.css';
+import { classes } from '../../Tabs.st.css';
 
 class TabItem extends React.Component {
   getItemStyle() {
@@ -24,7 +24,7 @@ class TabItem extends React.Component {
     const containerProps = {
       key: item.id,
       onClick: () => onItemClick(item),
-      className: classNames(styles.tab, { [styles.active]: isActive }),
+      className: classNames(classes.tab, { [classes.active]: isActive }),
       style: this.getItemStyle(),
       ...pick(this.props, dynamicProperties),
     };
@@ -36,7 +36,7 @@ class TabItem extends React.Component {
         {...containerProps}
         ref={this.createRef}
       >
-        <Text className={styles.tabText} weight="normal" ellipsis>
+        <Text className={classes.tabText} weight="normal" ellipsis>
           {item.title}
         </Text>
       </li>

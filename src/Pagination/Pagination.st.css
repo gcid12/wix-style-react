@@ -1,11 +1,11 @@
 :import {
-  -st-from: 'wix-ui-core/index.st.css';
-  -st-named: Pagination;
+  -st-from: 'wix-ui-core/dist/src/components/pagination/Pagination.st.css';
+  -st-default: Pagination;
 }
 
 :import {
-  -st-from: 'wix-ui-core/hocs.st.css';
-  -st-named: Focusable;
+  -st-from: 'wix-ui-core/dist/src/hocs/Focusable/Focusable.st.css';
+  -st-default: Focusable;
 }
 
 :import {

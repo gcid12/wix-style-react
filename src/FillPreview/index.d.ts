@@ -9,6 +9,7 @@ export type FillPreviewProps = ButtonWithAsProp<{
   tabIndex?: number;
   aspectRatio?: string | number;
   dataHook?: string;
+  className?: string;
 }>;
 
 export default class FillPreview extends React.Component<FillPreviewProps> {}

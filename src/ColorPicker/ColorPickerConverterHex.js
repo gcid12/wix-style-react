@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from '../Input';
-import css from './ColorPickerConverter.st.css';
+
+import { st, classes } from './ColorPickerConverter.st.css';
 import ColorPickerConverterViewer from './ColorPickerConverterViewer';
 import { safeColor, getHexOrEmpty } from './utils';
 
@@ -20,7 +21,7 @@ export default class ColorPickerConverterHex extends React.PureComponent {
   render() {
     const { dataHook } = this.props;
     return (
-      <div {...css('root', {}, this.props)} data-hook={dataHook}>
+      <div className={st(classes.root)} data-hook={dataHook}>
         <Input
           size="small"
           value={this.state.hex}
@@ -29,7 +30,7 @@ export default class ColorPickerConverterHex extends React.PureComponent {
           onFocus={this.handleOnFocus}
           onBlur={this.handleOnBlur}
           onKeyDown={this.handleKeyDown}
-          {...css('colorInput', {}, this.props)}
+          className={classes.colorInput}
         />
         <ColorPickerConverterViewer
           {...this.props}

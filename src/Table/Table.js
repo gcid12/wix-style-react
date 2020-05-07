@@ -4,7 +4,7 @@ import defaultTo from 'lodash/defaultTo';
 import classNames from 'classnames';
 import { ScrollSync } from 'react-scroll-sync';
 
-import style from './Table.st.css';
+import { st, classes } from './Table.st.css';
 import DataTable from './DataTable';
 import Checkbox from '../Checkbox';
 import { TableContext } from './TableContext';
@@ -79,7 +79,7 @@ export function getDataTableProps(tableProps) {
   } = tableProps;
   return {
     ...props,
-    rowClass: classNames(tableProps.rowClass, style.tableRow),
+    rowClass: classNames(tableProps.rowClass, classes.tableRow),
   };
 }
 
@@ -123,7 +123,7 @@ export class Table extends React.Component {
     return withWrapper ? (
       <div
         data-hook={dataHook}
-        {...style('root', { isRowClickable: !!onRowClick }, this.props)}
+        className={st(classes.root, { isRowClickable: !!onRowClick })}
       >
         {children}
       </div>

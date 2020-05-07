@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../../Text';
 import { dataHooks } from '../constants';
-import styles from '../Notification.st.css';
+import { classes } from '../Notification.st.css';
 
 const TextLabel = ({ children, ellipsis }) => (
-  <div className={styles.label}>
+  <div className={classes.label}>
     <Text ellipsis={ellipsis} light dataHook={dataHooks.notificationLabel}>
       {children}
     </Text>

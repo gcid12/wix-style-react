@@ -4,7 +4,7 @@ import Content from './Content';
 import Header from './Header';
 import Subheader from './Subheader';
 import Divider from './Divider';
-import styles from './Card.st.css';
+import { st, classes } from './Card.st.css';
 
 const Card = ({
   stretchVertically,
@@ -15,11 +15,11 @@ const Card = ({
   dataHook,
 }) => (
   <div
-    {...styles('card', { stretchVertically, hideOverflow }, { className })}
+    className={st(classes.card, { stretchVertically, hideOverflow }, className)}
     children={children}
     data-hook={dataHook}
   >
-    {controls && <div className={styles.controls}>{controls}</div>}
+    {controls && <div className={classes.controls}>{controls}</div>}
     {children}
   </div>
 );

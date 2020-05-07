@@ -5,7 +5,7 @@ import { dataHooks } from './constants';
 import { generateID } from '../utils/generateId';
 import SliderHandle from './SliderHandle';
 import Text from '../Text';
-import styles from './Slider.st.css';
+import { classes } from './Slider.st.css';
 
 const range = ({ min, max, step }) => {
   const arr = [];
@@ -54,8 +54,8 @@ export default class Slider extends Component {
   _createMarkNode(value, shouldRenderMarkLabel) {
     return (
       <div>
-        <div className={styles.markLine} />
-        <div className={styles.markValue}>
+        <div className={classes.markLine} />
+        <div className={classes.markValue}>
           {shouldRenderMarkLabel && (
             <Text
               dataHook={dataHooks.sliderMarkLabel}

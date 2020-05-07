@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ClosablePopover from './ClosablePopover/ClosablePopover';
 import FloatingHelperContent from './FloatingHelperContent/FloatingHelperContent';
-import styles from './FloatingHelper.st.css';
+import { classes } from './FloatingHelper.st.css';
 import { dataHooks, floatingHelperAppearance } from './constants';
 import CloseButton from '../CloseButton';
 import {
@@ -32,9 +32,9 @@ class FloatingHelper extends React.Component {
   _renderContent(closableActions, { width, content, appearance }) {
     return (
       <div data-hook={dataHooks.contentWrapper} style={{ width }}>
-        <div data-hook={dataHooks.innerContent} className={styles.innerContent}>
+        <div data-hook={dataHooks.innerContent} className={classes.innerContent}>
           <CloseButton
-            className={styles.closeButton}
+            className={classes.closeButton}
             dataHook={dataHooks.closeButton}
             onClick={() => this._getCloseButtonHandler(closableActions)()}
             skin={
@@ -72,7 +72,7 @@ class FloatingHelper extends React.Component {
       <ClosablePopover
         {...closablePopoverProps}
         ref={ref => (this.closablePopoverRef = ref)}
-        {...styles('root', {}, this.props)}
+        className={classes.root}
       />
     );
   }

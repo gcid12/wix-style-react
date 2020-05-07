@@ -1,11 +1,11 @@
 :import {
-  -st-from: 'wix-ui-core/index.st.css';
-  -st-named: ButtonNext;
+  -st-from: 'wix-ui-core/dist/src/components/button-next/button-next.st.css';
+  -st-default: ButtonNext;
 }
 
 :import {
-  -st-from: 'wix-ui-core/hocs.st.css';
-  -st-named: Focusable;
+  -st-from: 'wix-ui-core/dist/src/hocs/Focusable/Focusable.st.css';
+  -st-default: Focusable;
 }
 
 :import {

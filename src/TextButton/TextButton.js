@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import { ButtonNext } from 'wix-ui-core/dist/src/components/button-next';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import { generateDataAttr } from '../utils/generateDataAttr';
 
-import styles from './TextButton.st.css';
+import { st, classes } from './TextButton.st.css';
 
 class TextButton extends PureComponent {
   static displayName = 'TextButton';
@@ -58,21 +57,11 @@ class TextButton extends PureComponent {
       weight,
       size,
       children,
-      className: userClassName,
+      className,
       dataHook,
       fluid,
       ...rest
     } = this.props;
-
-    const { className } = styles('root', {
-      skin,
-      underline,
-      weight,
-      size,
-      fluid,
-    });
-
-    const classNames = cx(className, userClassName);
 
     return (
       <ButtonNext
@@ -83,8 +72,11 @@ class TextButton extends PureComponent {
           'weight',
           'underline',
         ])}
-        {...styles('root', { skin, underline, weight, size, fluid }, rest)}
-        className={classNames}
+        className={st(
+          classes.root,
+          { skin, underline, weight, size, fluid },
+          className,
+        )}
         data-hook={dataHook}
       >
         {children}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Content.st.css';
+import { st, classes } from './Content.st.css';
 
 class Content extends React.Component {
   static propTypes = {
@@ -17,7 +17,10 @@ class Content extends React.Component {
 
     return (
       <div
-        {...styles('root', { size, emptyStateContent: isEmptyStateContent })}
+        className={st(classes.root, {
+          size,
+          emptyStateContent: isEmptyStateContent,
+        })}
       >
         {children}
       </div>

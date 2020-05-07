@@ -5,10 +5,10 @@ import Check from 'wix-ui-icons-common/Check';
 
 import IconButton from '../IconButton';
 import { DataHooks } from './constants';
-import styles from './ColorPickerActions.st.css';
+import { classes } from './ColorPickerActions.st.css';
 
 const ColorPickerActions = ({ onCancel, onConfirm, disabled }) => (
-  <div {...styles('root')}>
+  <div className={classes.root}>
     <IconButton
       dataHook={DataHooks.cancelButton}
       size="small"

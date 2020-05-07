@@ -9,10 +9,9 @@
 }
 
 :import {
-  -st-from: "wix-ui-core/hocs.st.css";
-  -st-named: Focusable;
+  -st-from: "wix-ui-core/dist/src/hocs/Focusable/Focusable.st.css";
+  -st-default: Focusable;
 }
-
 
 .root {
   -st-states: status(enum(error, warning)),
