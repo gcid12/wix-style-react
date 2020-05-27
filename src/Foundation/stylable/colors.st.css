@@ -22,14 +22,14 @@
   D80: #FFFFFF; /* Content box background */
 
   /* Primary */
-  B00: #2B81CB; /* Loader, Progress Bar */
-  B05: #308DDD;
-  B10: #3899EC; /* Button, TextButton */
-  B20: #4EB7F5; /* Hover for elements with B10, buttons, Notifications */
-  B30: #C1E4FE; /* Tag(Hover), Floating Notification Border */
-  B40: #DAEFFE; /* Tag(Default), Badge */
-  B50: #EAF7FF; /* Floating Notification */
-  B60: #F4FAFE;
+  B00: var(--wsr-color-00, #2B81CB); /* Loader, Progress Bar */
+  B05: var(--wsr-color-05, #308DDD);
+  B10: var(--wsr-color-10, #3899EC); /* Button, TextButton */
+  B20: var(--wsr-color-20, #4EB7F5); /* Hover for elements with B10, buttons, Notifications */
+  B30: var(--wsr-color-30, #C1E4FE); /* Tag(Hover), Floating Notification Border */
+  B40: var(--wsr-color-40, #DAEFFE); /* Tag(Default), Badge */
+  B50: var(--wsr-color-50, #EAF7FF); /* Floating Notification */
+  B60: var(--wsr-color-60, #F4FAFE);
 
   /* Destructive */
   R00: #D6453D;

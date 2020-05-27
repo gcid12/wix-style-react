@@ -2,6 +2,7 @@ import * as React from 'react';
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { withI18n } from 'storybook-addon-i18n';
 import MadeforToggle from './addons/MadeforToggle';
+import ThemeWSR from './addons/ThemeWSR';
 import { version } from '../package.json';
 import { create } from '@storybook/theming';
 
@@ -36,5 +37,6 @@ addParameters({
 // Decorators
 addDecorator(withI18n);
 addDecorator(MadeforToggle);
+addDecorator(ThemeWSR);
 
 configure(loadStories, module);
