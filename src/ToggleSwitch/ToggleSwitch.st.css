@@ -6,7 +6,7 @@
 :import {
   -st-from: "../Foundation/stylable/colors.st.css";
   -st-named:
-    B10, B20, B30, B40, B50,
+    THEME-10, THEME-20, THEME-30, THEME-40, THEME-50,
     D50,
     F00,
     G10, G20, G30, G40,
@@ -57,10 +57,10 @@
 
 .root:skin(standard) {
   -st-mixin: ToggleSwitchColor(
-    colorUnchecked      value(B40),
-    colorChecked        value(B10),
-    colorUncheckedHover value(B30),
-    colorCheckedHover   value(B20),
+    colorUnchecked      value(THEME-40),
+    colorChecked        value(THEME-10),
+    colorUncheckedHover value(THEME-30),
+    colorCheckedHover   value(THEME-20),
     colorDisabled       value(D50)
   );
 }
