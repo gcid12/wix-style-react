@@ -9,17 +9,11 @@ class StylePanel extends React.PureComponent {
     color: '#2B81CB', // B00
   };
 
-  getThemeFromState() {
-    const { color } = this.state;
-
-    return calc_color_vars(color);
-  }
-
   onChange(state) {
     const { onChange } = this.props;
 
     this.setState(state, () => {
-      onChange && onChange(this.getThemeFromState());
+      onChange && onChange(state);
     });
   }
 

@@ -2,7 +2,7 @@ import addons, { makeDecorator } from '@storybook/addons';
 import * as React from 'react';
 import { ADDON_ID, ADDON_TITLE } from './shared';
 import { useState } from 'react';
-import { Card, Heading } from '../../../src';
+import { Card, Heading, ThemeProvider } from '../../../src';
 import StylePanel from './StylePanel';
 
 const ThemeWSR = makeDecorator({
@@ -58,7 +58,7 @@ const ThemeWSR = makeDecorator({
 
     return (
       <div style={{ position: 'relative' }} ref={ref => (containerRef = ref)}>
-        <div style={theme}>{getStory(context)}</div>
+        <ThemeProvider theme={theme}>{getStory(context)}</ThemeProvider>
         <div
           data-active={active}
           ref={ref => (handleRef = ref)}

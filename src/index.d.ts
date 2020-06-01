@@ -428,8 +428,10 @@ export * from './StarsRatingBar';
 export * from './SortableGrid';
 
 export { default as dndStyles } from './dnd-styles';
+export * from './dnd-styles';
 
 export { default as HorizontalTimeline } from './HorizontalTimeline';
 export * from './HorizontalTimeline';
 
-export * from './dnd-styles';
+export { default as ThemeProvider } from './ThemeProvider';
+export * from './ThemeProvider';

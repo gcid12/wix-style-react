@@ -136,6 +136,7 @@ require('../src/Tabs/docs/index.story');
 require('../src/Tag/docs/index.story');
 require('../src/Text/docs/index.story');
 require('../src/TextButton/docs/index.story');
+require('../src/ThemeProvider/docs/index.story');
 require('../src/Thumbnail/docs/index.story');
 require('../src/TimeInput/docs/index.story');
 require('../src/Timeline/docs/index.story');
