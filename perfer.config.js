@@ -128,6 +128,7 @@ const javascriptFiles = [
   ['Tag.bundle.min.js', 39],
   ['Text.bundle.min.js', 33],
   ['TextButton.bundle.min.js', 14],
+  ['ThemeProvider.bundle.min.js', 4],
   ['Thumbnail.bundle.min.js', 38],
   ['TimeInput.bundle.min.js', 84],
   ['Timeline.bundle.min.js', 34],
@@ -139,7 +140,6 @@ const javascriptFiles = [
   ['VerticalTabs.bundle.min.js', 38],
   ['VerticalTabsItem.bundle.min.js', 38],
   ['WarningIndicator.bundle.min.js', 40],
-  ['ThemeProvider.bundle.min.js', 10],
 ];
 
 const cssFiles = [
@@ -245,7 +245,6 @@ const cssFiles = [
   ['Tooltip.min.css', 2],
   ['VariableInput.min.css', 2],
   ['WarningIndicator.min.css', 2],
-  ['ThemeProvider.min.css', 1],
 ];
 
 const getJS = () =>
