@@ -1,6 +1,6 @@
 :import {
   -st-from: "../Foundation/stylable/colors.st.css";
-  -st-named: F00, B30, D10-30, D80, D55;
+  -st-named: F00, B30, D10-30, D80, D55, THEME-00, THEME-05, THEME-10, THEME-20, THEME-30, THEME-40, THEME-50, THEME-60;
 }
 
 .root {
@@ -11,9 +11,9 @@
   box-sizing: border-box;
   /* Border & Spacing */
   border-radius: 6px;
-  box-shadow: 0 0 0 1px value(B30);
+  box-shadow: 0 0 0 1px value(THEME-30);
   /* Styles */
-  background: value(D80);
+  background: value(THEME-80);
   /* Disable native focus */
   outline:none;
 }
@@ -29,7 +29,7 @@
   width: 1px;
   min-width: 1px;
 
-  background-color: value(B30);
+  background-color: value(THEME-30);
 }
 
 .divider:disabled {

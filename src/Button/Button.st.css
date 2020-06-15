@@ -6,7 +6,7 @@
 :import {
   -st-from: '../Foundation/stylable/colors.st.css';
   -st-named: B10, F00, B20,  R10, R20, P10, P20, G10, G20, D80, B50, D40,
-  D10, D20, B40, F00, D10-20, D20-48, D20-54, D20-60, D80-30, D80-70, D10-30;
+  D10, D20, B40, F00, D10-20, D20-48, D20-54, D20-60, D80-30, D80-70, D10-30, THEME-00, THEME-05, THEME-10, THEME-20, THEME-30, THEME-40, THEME-50, THEME-60;
 }
 
 :import {
@@ -37,8 +37,8 @@
   border-radius: 18px;
   padding: 0 23px;
 
-  background-color: value(B10);
-  border-color: value(B10);
+  background-color: value(THEME-10);
+  border-color: value(THEME-10);
   color: value(D80);
 
   /* render as anchor overrides */
@@ -52,14 +52,14 @@
 }
 
 .root:hover {
-  background-color: value(B20);
-  border-color: value(B20);
+  background-color: value(THEME-20);
+  border-color: value(THEME-20);
   color: value(D80);
 }
 
 .root:active {
-  background-color: value(B10);
-  border-color: value(B10);
+  background-color: value(THEME-10);
+  border-color: value(THEME-10);
   color: value(D80);
 }
 
@@ -79,19 +79,19 @@
 
 .root:priority(secondary) {
   background-color: transparent;
-  border-color: value(B10);
-  color: value(B10);
+  border-color: value(THEME-10);
+  color: value(THEME-10);
 }
 
 .root:priority(secondary):hover {
   color: value(D80);
   border-color: transparent;
-  background-color: value(B20);
+  background-color: value(THEME-20);
 }
 
 .root:priority(secondary):active {
-  background-color: value(B10);
-  border-color: value(B10);
+  background-color: value(THEME-10);
+  border-color: value(THEME-10);
   color: value(D80);
 }
 

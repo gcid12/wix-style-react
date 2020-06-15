@@ -10,7 +10,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/colors.st.css';
-  -st-named: B10, B20, D55, D80, B20, B50, B40, F00, D10, D20, D30, D60, D10-30, D80-70, B30;
+  -st-named: B10, B20, D55, D80, B20, B50, B40, F00, D10, D20, D30, D60, D10-30, D80-70, B30, THEME-00, THEME-05, THEME-10, THEME-20, THEME-30, THEME-40, THEME-50, THEME-60;
 }
 
 /* root */
@@ -40,25 +40,25 @@
 
 .root:hover:not(:disabled),
 .root:hover:not(:disabled) .label {
-  color: value(B10);
+  color: value(THEME-10);
 }
 
 .root:active:not(:disabled),
 .root:selected:not(:disabled),
 .root:active:not(:disabled) .label,
 .root:selected:not(:disabled) .label {
-  color: value(B20);
+  color: value(THEME-20);
 }
 .root:selected:not(:disabled) .icon {
-  background-color: value(B40);
+  background-color: value(THEME-40);
 }
 
 .root:selected:hover:not(:disabled),
 .root:selected:hover:not(:disabled) .label {
-  color: value(B20);
+  color: value(THEME-20);
 }
 .root:selected:hover:not(:disabled) .icon {
-  background-color: value(B50);
+  background-color: value(THEME-50);
 }
 
 .root:disabled,
@@ -131,10 +131,10 @@
   color: value(D80);
 }
 .root:skin(inverted):selected:not(:disabled) .icon {
-  background-color: value(B10);
+  background-color: value(THEME-10);
 }
 .root:skin(inverted):selected:hover:not(:disabled) .icon {
-  background-color: value(B20);
+  background-color: value(THEME-20);
 }
 
 /* icon */
@@ -246,13 +246,13 @@
 }
 
 .root:hover .icon:border {
-  border: solid 1px value(B40);
+  border: solid 1px value(THEME-40);
 }
 
 .root:active .icon:border,
 .root:selected .icon:border,
 .root:selected:hover .icon:border {
-  border: solid 1px value(B30);
+  border: solid 1px value(THEME-30);
 }
 
 .root:disabled .icon:border {
@@ -260,11 +260,11 @@
 }
 
 .root:selected:skin(inverted) .icon:border {
-  border: solid 1px value(B10);
+  border: solid 1px value(THEME-10);
 }
 
 .root:selected:skin(inverted):hover .icon:border {
-  border: solid 1px value(B20);
+  border: solid 1px value(THEME-20);
 }
 
 .root:disabled:selected .icon:border {

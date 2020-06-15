@@ -1,6 +1,6 @@
 :import {
   -st-from: '../Foundation/stylable/colors.st.css';
-  -st-named: B10, B20, B50, G10, G20, G50, D10-30, D80, F00;
+  -st-named: B10, B20, B50, G10, G20, G50, D10-30, D80, F00, THEME-00, THEME-05, THEME-10, THEME-20, THEME-30, THEME-40, THEME-50, THEME-60;
 }
 
 :import {
@@ -76,8 +76,8 @@
 
 /* Skin */
 .root:skin(standard) .toggle {
-  border-color: value(B10);
-  background-color: value(B10);
+  border-color: value(THEME-10);
+  background-color: value(THEME-10);
 }
 
 .root:skin(success) .toggle {
@@ -98,8 +98,8 @@
 
 /* Hover */
 .root:not(:disabled):skin(standard):checked:hover .toggle {
-  border-color: value(B20);
-  background-color: value(B20);
+  border-color: value(THEME-20);
+  background-color: value(THEME-20);
 }
 
 .root:not(:disabled):skin(success):checked:hover .toggle {
@@ -108,8 +108,8 @@
 }
 
 .root:not(:disabled):skin(standard):hover .toggle {
-  border-color: value(B10);
-  background-color: value(B50);
+  border-color: value(THEME-10);
+  background-color: value(THEME-50);
 }
 
 .root:not(:disabled):skin(success):hover .toggle {

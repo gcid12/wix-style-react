@@ -1,6 +1,6 @@
 :import {
   -st-from: '../Foundation/stylable/colors.st.css';
-  -st-named: B10, B20, B40, B50, B60, D10-05, D10-30, D80, F00, R10, R30;
+  -st-named: B10, B20, B40, B50, B60, D10-05, D10-30, D80, F00, R10, R30, THEME-00, THEME-05, THEME-10, THEME-20, THEME-30, THEME-40, THEME-50, THEME-60;
 }
 
 :import {
@@ -52,13 +52,13 @@
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
-  border: 1px solid value(B20);
-  background-color: value(D80);
+  border: 1px solid value(THEME-20);
+  background-color: value(THEME-80);
 }
 
 .root:focus-visible .checkbox {
   outline: none;
-  border-color: value(B10);
+  border-color: value(THEME-10);
   box-shadow: 0 0 0 3px value(F00);
 }
 
@@ -92,7 +92,7 @@
 
 /* Selection Area */
 .root:selectionarea(always) {
-  background-color: value(B60);
+  background-color: value(THEME-60);
   cursor: pointer;
   border-radius: 8px;
 }
@@ -104,7 +104,7 @@
 
 .root:selectionarea(always):hover,
 .root:selectionarea(hover):hover {
-  background-color: value(B50);
+  background-color: value(THEME-50);
 }
 
 .root:selectionarea(always) .children,
@@ -127,7 +127,7 @@
 .root:selectionarea(hover):selection(indeterminate),
 .root:selectionarea(always):selection(checked),
 .root:selectionarea(always):selection(indeterminate) {
-  background-color: value(B40);
+  background-color: value(THEME-40);
 }
 
 .root:selectionarea(always):valign(top) .outer {
@@ -146,8 +146,8 @@
 
 .root:selection(checked) .checkbox,
 .root:selection(indeterminate) .checkbox {
-  border: 1px solid value(B10);
-  background-color: value(B10);
+  border: 1px solid value(THEME-10);
+  background-color: value(THEME-10);
 }
 
 .root:selection(checked) .checkbox .inner,
@@ -197,9 +197,9 @@
 
 /* Hover */
 .root:selection(unchecked):hover .checkbox {
-  background-color: value(B50);
+  background-color: value(THEME-50);
 }
 
 .root:checkboxhover .checkbox {
-  background-color: value(B50);
+  background-color: value(THEME-50);
 }

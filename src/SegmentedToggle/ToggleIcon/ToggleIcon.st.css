@@ -5,7 +5,7 @@
 
 :import {
   -st-from: "../../Foundation/stylable/colors.st.css";
-  -st-named: F00, B10, B50, D80, D10, D10-30;
+  -st-named: F00, B10, B50, D80, D10, D10-30, THEME-00, THEME-05, THEME-10, THEME-20, THEME-30, THEME-40, THEME-50, THEME-60;
 }
 
 :import {
@@ -54,7 +54,7 @@
 }
 
 .button:not(:disabled):hover {
-  background-color: value(B50);
+  background-color: value(THEME-50);
 }
 
 .button:not(:disabled):focus-visible {
@@ -68,13 +68,13 @@
 /* Selected styles */
 
 .button:selected:not(:disabled) {
-  border: 1px solid value(B10);
-  box-shadow: 0 0 0 1px value(B10);
+  border: 1px solid value(THEME-10);
+  box-shadow: 0 0 0 1px value(THEME-10);
 }
 
 .button:selected:not(:disabled):focus-visible{
-  border: 1px solid value(B10);
-  box-shadow: 0 0 0 1px value(B10) , 0 0 0 4px value(F00);
+  border: 1px solid value(THEME-10);
+  box-shadow: 0 0 0 1px value(THEME-10) , 0 0 0 4px value(F00);
 }
 
 .button:selected:disabled {

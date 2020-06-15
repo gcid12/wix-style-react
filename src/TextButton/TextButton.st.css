@@ -5,7 +5,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/colors.st.css';
-  -st-named: P10, P20, D80, B10, B20, D10, D20, F00, D10-30, D80-70, R10, R20;
+  -st-named: P10, P20, D80, B10, B20, D10, D20, F00, D10-30, D80-70, R10, R20, THEME-00, THEME-05, THEME-10, THEME-20, THEME-30, THEME-40, THEME-50, THEME-60;
 }
 
 :import {
@@ -18,7 +18,7 @@
   -st-extends: ButtonNext;
   -st-states: skin(string), underline(string), weight(string), size(string), fluid;
 
-  color: value(B10);
+  color: value(THEME-10);
   white-space: nowrap;
 
   background-color: transparent;
@@ -40,11 +40,11 @@
 }
 
 .root:hover {
-  color: value(B20);
+  color: value(THEME-20);
 }
 
 .root:active {
-  color: value(B20);
+  color: value(THEME-20);
 }
 
 .root:disabled {
