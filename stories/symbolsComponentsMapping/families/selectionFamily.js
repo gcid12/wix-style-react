@@ -46,4 +46,9 @@ export const selectionSymbolsToComponents = {
   ],
 
   [selectionSymbols.checkToggle]: [],
+
+  [selectionSymbols.facesRatingBar]: [
+    sharedComponentsNames.FormField,
+    componentsNames.FacesRatingBar,
+  ],
 };

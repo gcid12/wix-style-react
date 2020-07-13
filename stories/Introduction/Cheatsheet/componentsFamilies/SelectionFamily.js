@@ -27,6 +27,7 @@ import {
   Dropdown,
   MultiSelectCheckbox,
   Checkbox,
+  FacesRatingBar,
   RadioGroup,
   ToggleSwitch,
   SegmentedToggle,
@@ -369,6 +370,48 @@ const CheckToggleExample = () => {
   );
 };
 
+class FacesRatingBarExample extends PureComponent {
+  state = { value: 2 };
+
+  onRatingChange = value => this.setState({ value });
+
+  render() {
+    const { value } = this.state;
+
+    const symbol = selectionSymbols.facesRatingBar;
+    const components = selectionSymbolsToComponents[symbol];
+
+    const singleComponentProps = {
+      name: createLinkedSymbolName({ groupSymbol: Category.SELECTION, symbol }),
+      componentsNames: createLinkedComponentsNames(components),
+      size: singleComponentSizes.compact,
+    };
+
+    return (
+      <SingleComponentSideBySide {...singleComponentProps}>
+        <FormField
+          id="formFieldFacesRatingBarId"
+          infoContent="Tooltip text"
+          label="Stars Rating Bar Label"
+          required
+        >
+          <FacesRatingBar
+            value={value}
+            descriptionValues={[
+              'Strong Negative',
+              'Negative',
+              'Neutral',
+              'Positive',
+              'Strong Positive',
+            ]}
+            onChange={this.onRatingChange}
+          />
+        </FormField>
+      </SingleComponentSideBySide>
+    );
+  }
+}
+
 const SelectionFamily = () => (
   <FamilyStructure title={groupSymbol} showPreview>
     <DropdownExample />
@@ -380,6 +423,7 @@ const SelectionFamily = () => (
     <ThumbnailSelectExamples />
     <SliderExample />
     <CheckToggleExample />
+    <FacesRatingBarExample />
   </FamilyStructure>
 );
 
