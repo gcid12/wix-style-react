@@ -62,5 +62,15 @@ describe(FacesRatingBar.displayName, () => {
         );
       },
     );
+
+    it.each([1, 2, 3, 4, 5])(
+      'should not display description values',
+      async index => {
+        const { driver } = render(<FacesRatingBar value={index} />);
+
+        const tooltipDriver = await driver.getCurrentTooltipDriver(index);
+        expect(await tooltipDriver.tooltipExists()).toEqual(false);
+      },
+    );
   });
 });
