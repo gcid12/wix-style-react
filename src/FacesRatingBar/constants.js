@@ -1,5 +1,18 @@
 export const dataHooks = {
   face: 'face',
+  disapointedTooltip: 'disapointedTooltip',
+  frowningTooltip: 'frowningTooltip',
+  neutralTooltip: 'neutralTooltip',
+  smilingTooltip: 'smilingTooltip',
+  griningTooltip: 'griningTooltip',
+};
+
+export const tooltipDataHookMap = {
+  1: 'disapointedTooltip',
+  2: 'frowningTooltip',
+  3: 'neutralTooltip',
+  4: 'smilingTooltip',
+  5: 'griningTooltip',
 };
 
 export const facesRatingBarSizes = {

@@ -8,6 +8,7 @@ import {
   facesRatingBarSizesInPx,
   faceIndexes,
   faceIconTypeMap,
+  tooltipDataHookMap,
 } from './constants';
 
 import FaceDisapointed from 'wix-ui-icons-common/dist/src/general/dist/components/FaceDisapointed';
@@ -73,17 +74,10 @@ class FacesRatingBar extends React.PureComponent {
     const { readOnly, descriptionValues } = this.props;
     let shouldShowDescriptionValues = false;
 
-    if (descriptionValues) {
-      const isValidDescriptionValues =
+    // Adding description values is not available in read only mode and it must be an array of strings at size 5.
+    if (!readOnly && descriptionValues) {
+      shouldShowDescriptionValues =
         Array.isArray(descriptionValues) && descriptionValues.length === 5;
-
-      if (readOnly) {
-        // Adding description values is not available in read only mode
-        shouldShowDescriptionValues = false;
-      } else {
-        // Description values must be an array of strings at size 5
-        shouldShowDescriptionValues = isValidDescriptionValues;
-      }
     }
 
     return shouldShowDescriptionValues;
@@ -201,7 +195,7 @@ const InteractiveModeFace = ({
         })}
       >
         <Tooltip
-          data-tooltip-index={faceIndex}
+          dataHook={dataHooks[tooltipDataHookMap[faceIndex]]}
           content={tooltipContent}
           disabled={!showDescriptionValues}
         >
