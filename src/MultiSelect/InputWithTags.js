@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tag from '../Tag/Tag';
 import Input from '../Input';
-import InputSuffix from '../Input/InputSuffix';
 import styles from './InputWithTags.scss';
 import classNames from 'classnames';
 import isUndefined from 'lodash/isUndefined';
 import SortableList from '../SortableList/SortableList';
 import defaultDndStyles from '../dnd-styles';
+import StatusIndicator from '../StatusIndicator';
+import DropDownArrow from 'wix-ui-icons-common/system/DropDownArrow';
 
 class InputWithTags extends React.Component {
   constructor(props) {
@@ -55,14 +56,14 @@ class InputWithTags extends React.Component {
       disabled,
       delimiters,
       mode,
+      size,
       ...inputProps
     } = this.props;
 
     const { inputHasFocus: hasFocus } = this.state;
     const isSelectMode = mode === 'select';
 
-    const className = classNames({
-      [styles.inputWithTagsContainer]: true,
+    const className = classNames(styles.inputWithTagsContainer, {
       [styles.disabled]: disabled,
       [styles[status]]: status,
       [styles.readOnly]: isSelectMode,
@@ -70,6 +71,8 @@ class InputWithTags extends React.Component {
       [styles.hasMaxHeight]:
         !isUndefined(this.props.maxHeight) ||
         !isUndefined(this.props.maxNumRows),
+      [styles.sizeSmall]: size === 'small',
+      [styles.sizeLarge]: size === 'large',
     });
 
     /* eslint-disable no-unused-vars */
@@ -87,14 +90,8 @@ class InputWithTags extends React.Component {
       onBlur,
       menuArrow,
       onInputClicked,
-      size,
       ...desiredProps
     } = inputProps;
-
-    const suffixStyles = classNames(styles.inputSuffix, {
-      [styles.sizeSmall]: size === 'small',
-      [styles.sizeLarge]: size === 'large',
-    });
 
     let rowMultiplier;
     if (tags.length && tags[0].size === 'large') {
@@ -177,16 +174,26 @@ class InputWithTags extends React.Component {
           />
         </span>
 
-        {(isSelectMode || status) && (
-          <div className={suffixStyles}>
-            <InputSuffix
-              disabled={disabled}
-              status={status}
-              statusMessage={statusMessage}
-              menuArrow={isSelectMode}
-            />
-          </div>
-        )}
+        {/* Suffixes */}
+        <div className={styles.inputSuffix}>
+          {/* Status Indicator */}
+          {!disabled && ['error', 'warning', 'loading'].includes(status) && (
+            <div className={styles.statusIndicator}>
+              <StatusIndicator
+                status={status}
+                message={statusMessage}
+                dataHook="input-status"
+              />
+            </div>
+          )}
+
+          {/* Arrow */}
+          {isSelectMode && (
+            <div className={styles.menuArrow}>
+              <DropDownArrow />
+            </div>
+          )}
+        </div>
       </div>
     );
   }

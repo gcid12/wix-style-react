@@ -15,6 +15,8 @@
 
 .root:status(warning) {
   color: value(Y10);
-  height: 16px;
+}
+
+.root:status(warning) svg {
   margin: 1px 0;
 }

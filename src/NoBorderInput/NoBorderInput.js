@@ -1,10 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
 import omit from 'omit';
 import PropTypes from 'prop-types';
 import Input from '../Input/Input';
-import inputStyles from '../Input/Input.scss';
-import styles from './NoBorderInput.scss';
+import styles from './NoBorderInput.st.css';
 import Text from '../Text';
 import dataHooks from './dataHooks';
 
@@ -46,20 +44,13 @@ class NoBorderInput extends React.Component {
     const hasValue =
       (value && value.length) ||
       (this.wsrInput && this.wsrInput.input && !!this.wsrInput.input.value);
-    const conditionalClasses = {
-      [styles.disabled]: disabled,
-      [styles.hasError]: status === NoBorderInput.StatusError,
-      [styles.hasFocus]: this.state.focus,
-      [styles.hasValue]: hasValue,
-      [styles.noLabel]: !label,
-    };
-
     const renderStatusLine = () =>
       !disabled &&
       status &&
       statusMessage && (
         <Text
           dataHook={dataHooks.statusMessage}
+          className={styles.statusMessage}
           size="tiny"
           weight="thin"
           skin="error"
@@ -70,24 +61,39 @@ class NoBorderInput extends React.Component {
 
     return (
       <div
-        className={classNames(
-          conditionalClasses,
-          styles.root,
-          inputStyles[`size-${size}`],
-          className,
+        {...styles(
+          'root',
+          {
+            size,
+            focus: this.state.focus,
+            hasValue,
+            noLabel: !label,
+            status,
+            disabled,
+          },
+          {
+            className,
+          },
         )}
         data-hook={dataHook}
         data-status={status}
       >
-        <label
+        <Text
+          tagName="label"
           data-hook={dataHooks.label}
           className={styles.label}
           htmlFor={id}
+          size="medium"
+          weight="normal"
+          light
+          secondary
+          ellipsis
+          showTooltip={false}
+          skin={disabled ? 'disabled' : 'standard'}
         >
           {label}
-        </label>
+        </Text>
         <Input
-          className={styles.nbinput}
           {...wsrInputProps}
           ref={wsrInput => (this.wsrInput = wsrInput)}
           onFocus={e => {
@@ -103,12 +109,7 @@ class NoBorderInput extends React.Component {
             }
           }}
         />
-        <div
-          className={classNames(
-            styles.activationIndicator,
-            styles.activationIndicatorActive,
-          )}
-        />
+        <div className={styles.border} />
         {renderStatusLine()}
       </div>
     );
@@ -119,7 +120,7 @@ NoBorderInput.displayName = 'NoBorderInput';
 
 NoBorderInput.defaultProps = {
   autoSelect: true,
-  size: 'normal',
+  size: 'medium',
   statusMessage: '',
   textOverflow: 'clip',
   maxLength: 524288,
