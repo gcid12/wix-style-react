@@ -30,6 +30,7 @@ import {
   RadioGroup,
   ToggleSwitch,
   SegmentedToggle,
+  StarsRatingBar,
   Thumbnail,
   Slider,
   FormField,
@@ -380,7 +381,44 @@ const SelectionFamily = () => (
     <ThumbnailSelectExamples />
     <SliderExample />
     <CheckToggleExample />
+    <StarsRatingBarExample />
   </FamilyStructure>
 );
+
+class StarsRatingBarExample extends PureComponent {
+  state = { value: 2 };
+
+  onRatingChange = value => this.setState({ value });
+
+  render() {
+    const { value } = this.state;
+
+    const symbol = selectionSymbols.starsRatingBar;
+    const components = selectionSymbolsToComponents[symbol];
+
+    const singleComponentProps = {
+      name: createLinkedSymbolName({ groupSymbol: Category.SELECTION, symbol }),
+      componentsNames: createLinkedComponentsNames(components),
+      size: singleComponentSizes.compact,
+    };
+
+    return (
+      <SingleComponentSideBySide {...singleComponentProps}>
+        <FormField
+          id="formFieldStarsRatingBarId"
+          infoContent="Tooltip text"
+          label="Stars Rating Bar Label"
+          required
+        >
+          <StarsRatingBar
+            value={value}
+            descriptionValues={['bad', 'not good', 'ok', 'good', 'excellent']}
+            onChange={this.onRatingChange}
+          />
+        </FormField>
+      </SingleComponentSideBySide>
+    );
+  }
+}
 
 export default SelectionFamily;

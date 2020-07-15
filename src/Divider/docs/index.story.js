@@ -6,7 +6,6 @@ import {
   description,
   importExample,
   title,
-  columns,
   divider,
   example as baseExample,
   playground,
@@ -68,9 +67,9 @@ export default {
           }),
 
           example({
-            title: 'Example with Dark Skin',
+            title: 'Example with different skin',
             text:
-              'The divider could be displayed in dark color using the `skin` prop.',
+              'The divider could be displayed in different color using the `skin` prop.',
             source: examples.dark,
           }),
         ],

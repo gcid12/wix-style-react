@@ -105,6 +105,6 @@ Without it you will get the classic "fold" animation from animator.
 
 .closeButton {
   position: absolute;
-  top: 12px;
+  top: 15px;
   right: 12px;
 }

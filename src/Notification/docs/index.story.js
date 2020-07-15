@@ -1,23 +1,32 @@
 import React from 'react';
-
 import {
+  header,
+  tabs,
   tab,
+  description,
   importExample,
   title,
-  description,
-  code,
-  api,
+  divider,
+  example as baseExample,
+  code as baseCode,
   playground,
+  api,
   testkit,
 } from 'wix-storybook-utils/Sections';
 
-import { storySettings } from './storySettings';
+import { THEMES, ACTION_BUTTON_TYPES } from '../constants';
+
+import { storySettings } from '../test/storySettings';
+import allComponents from '../../../stories/utils/allComponents';
 
 import Notification from '..';
-import Text from 'wix-style-react/Text';
+import Text from '../../Text';
 
 import * as examples from './examples.js';
 import CompoundComponentsRaw from '!raw-loader!./README.md';
+
+const example = config => baseExample({ components: allComponents, ...config });
+const code = config => baseCode({ components: allComponents, ...config });
 
 const exampleChildren = [
   {
@@ -80,56 +89,70 @@ export default {
   },
 
   sections: [
-    tab({
-      title: 'Description',
-      sections: [
-        description({
-          title: 'Description',
-          text:
-            'A sticky toast bar that appears on top of the screen notifying about system changes.',
-        }),
-
-        importExample("import { Notification } from 'wix-style-react';"),
-
-        title('Examples'),
-
-        code({
-          title: 'Themes',
-          compact: true,
-          source: examples.themes,
-          components: { Notification },
-        }),
-
-        code({
-          title: 'Actions',
-          compact: true,
-          source: examples.actions,
-          components: { Notification },
-        }),
-
-        code({
-          title: 'Label Text Ellipsis',
-          compact: true,
-          source: examples.ellipsis,
-          components: { Notification },
-        }),
-      ],
+    header({
+      sourceUrl: `https://github.com/wix/wix-style-react/tree/master/src/${Notification.displayName}/`,
     }),
 
-    ...[
-      { title: 'API', sections: [api()] },
-      {
-        title: 'Compound Components API',
-
+    tabs([
+      tab({
+        title: 'Description',
         sections: [
           description({
-            title: 'Compound Components APIs',
-            text: CompoundComponentsRaw,
+            title: 'Description',
+            text:
+              'A sticky toast bar that appears on top of the screen notifying about system changes.',
+          }),
+
+          importExample("import { Notification } from 'wix-style-react';"),
+
+          divider(),
+
+          title('Examples'),
+
+          code({
+            title: 'Themes',
+            compact: true,
+            subtitle: `There are 5 themes: \`${THEMES.standard}\` (default), \`${THEMES.error}\`, \`${THEMES.warning}\` \`${THEMES.success}\` and \`${THEMES.premium}\`.`,
+            source: examples.themes,
+          }),
+
+          code({
+            title: 'Actions',
+            compact: true,
+            subtitle: `There are 2 types of actions: \`${ACTION_BUTTON_TYPES.button}\` (default) and \`${ACTION_BUTTON_TYPES.textLink}\`.`,
+            source: examples.actions,
+          }),
+
+          code({
+            title: 'Label Text Ellipsis',
+            compact: true,
+            subtitle: `Component with long text shows ellipsis and full text appears on mouse hover. It can be toggled to display multiple lines instead.`,
+            source: examples.ellipsis,
+          }),
+
+          code({
+            title: 'Controlled Notification',
+            compact: true,
+            source: examples.controlled,
           }),
         ],
-      },
-      { title: 'Testkit', sections: [testkit()] },
-      { title: 'Playground', sections: [playground()] },
-    ].map(tab),
+      }),
+
+      ...[
+        { title: 'API', sections: [api()] },
+        {
+          title: 'Compound Components API',
+
+          sections: [
+            description({
+              title: 'Compound Components APIs',
+              text: CompoundComponentsRaw,
+            }),
+          ],
+        },
+        { title: 'Testkit', sections: [testkit()] },
+        { title: 'Playground', sections: [playground()] },
+      ].map(tab),
+    ]),
   ],
 };

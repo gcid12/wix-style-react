@@ -188,6 +188,9 @@
   "Highlighter": {
     "path": "src/Highlighter"
   },
+  "HorizontalTimeline": {
+    "path": "src/HorizontalTimeline"
+  },
   "IconButton": {
     "path": "src/IconButton"
   },
@@ -372,10 +375,10 @@
     ]
   },
   "SortableList": {
-    "path": "src/SortableList",
-    "missingFiles": [
-      "docs"
-    ]
+    "path": "src/SortableList"
+  },
+  "StarsRatingBar": {
+    "path": "src/StarsRatingBar"
   },
   "StatisticsWidget": {
     "path": "src/StatisticsWidget"

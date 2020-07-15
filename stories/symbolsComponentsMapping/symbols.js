@@ -67,6 +67,7 @@ export const selectionSymbols = {
   thumbnailSelect: '4.7 Thumbnail Select',
   slider: '4.8 Slider',
   checkToggle: '4.9 Check Toggle',
+  starsRatingBar: '4.10 Stars Rating Bar',
 };
 
 /**

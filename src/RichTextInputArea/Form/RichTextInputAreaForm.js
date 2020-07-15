@@ -15,7 +15,11 @@ class RichTextInputAreaForm extends React.PureComponent {
     return (
       <RichTextInputAreaContext.Consumer>
         {({ texts }) => (
-          <form data-hook={dataHook} onSubmit={onSubmit}>
+          <form
+            data-hook={dataHook}
+            onSubmit={onSubmit}
+            className={styles.container}
+          >
             {children}
             <div className={styles.footer}>
               <Tooltip content={texts.insertionForm.confirmButtonLabel}>

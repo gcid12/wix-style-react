@@ -64,6 +64,7 @@ export const selectionComponentsNames = {
   SegmentedToggle: 'SegmentedToggle',
   Thumbnail: 'Thumbnail',
   Slider: 'Slider',
+  StarsRatingBar: 'StarsRatingBar',
 };
 
 /**

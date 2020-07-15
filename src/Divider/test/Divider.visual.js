@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import Divider from '../Divider';
 import Box from '../../Box';
+import { skins } from '../constants';
 
 const tests = [
   {
@@ -19,17 +20,6 @@ const tests = [
           direction: 'vertical',
         },
         hasFlexboxContainer: true,
-      },
-    ],
-  },
-  {
-    describe: 'Skin',
-    its: [
-      {
-        it: 'Should be displayed with dark color',
-        props: {
-          skin: 'dark',
-        },
       },
     ],
   },
@@ -56,3 +46,13 @@ tests.forEach(({ describe, its }) => {
     );
   });
 });
+
+storiesOf('Divider', module).add('skins', () => (
+  <>
+    {Object.values(skins).map(skin => (
+      <Box verticalAlign="middle" height="50px" key={skin}>
+        <Divider skin={skin} />
+      </Box>
+    ))}
+  </>
+));

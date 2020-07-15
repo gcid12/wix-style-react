@@ -17,6 +17,7 @@
 }
 
 .innerContent {
+  position: relative;
   padding: 30px 36px;
 }
 

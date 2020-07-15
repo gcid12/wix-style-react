@@ -1,12 +1,12 @@
 :import {
   -st-from: "../Foundation/stylable/colors.st.css";
-  -st-named: D60, D20;
+  -st-named: D60, D20, B30, Y30, R30, G30, P30;
 }
 
 .root {
   -st-states:
     direction(enum(horizontal, vertical)),
-    skin(enum(light, dark));
+    skin(enum(light, dark, standard, warning, destructive, success, premium));
 
   margin: 0;
   border: 0;
@@ -23,10 +23,32 @@
   min-width: 1px;
 }
 
+/* Themes */
+
 .root:skin(light) {
   background-color: value(D60);
 }
 
 .root:skin(dark) {
   background-color: value(D20);
+}
+
+.root:skin(standard) {
+  background-color: value(B30);
+}
+
+.root:skin(warning) {
+  background-color: value(Y30);
+}
+
+.root:skin(destructive) {
+  background-color: value(R30);
+}
+
+.root:skin(success) {
+  background-color: value(G30);
+}
+
+.root:skin(premium) {
+  background-color: value(P30);
 }

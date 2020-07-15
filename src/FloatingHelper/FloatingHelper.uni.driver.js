@@ -5,8 +5,8 @@ import { dataHooks } from './constants';
 const floatingHelperUniDriverFactory = (base, body) => {
   const closablePopoverUniDriver = closablePopoverUniDriverFactory(base, body);
 
-  const popoverContent = closablePopoverUniDriver.getContentElement;
-  const closeButton = body.$(`[data-hook="${dataHooks.closeButton}"]`);
+  const popoverContent = () => closablePopoverUniDriver.getContentElement();
+  const closeButton = () => body.$(`[data-hook="${dataHooks.closeButton}"]`);
 
   const contentWrapper = async () =>
     (await popoverContent()).querySelector(
@@ -16,9 +16,9 @@ const floatingHelperUniDriverFactory = (base, body) => {
   return {
     ...closablePopoverUniDriver,
     /** check whether the helper has a close button */
-    hasCloseButton: closeButton.exists,
+    hasCloseButton: async () => (await closeButton()).exists(),
     /** click the close button */
-    clickCloseButton: closeButton.click,
+    clickCloseButton: async () => (await closeButton()).click(),
     /** Get the driver for the helper's content */
     getHelperContentDriver: () =>
       floatingHelperContentUniDriverFactory(base, body),
