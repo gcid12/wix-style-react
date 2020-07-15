@@ -32,18 +32,18 @@ class FloatingHelper extends React.Component {
   _renderContent(closableActions, { width, content, appearance }) {
     return (
       <div data-hook={dataHooks.contentWrapper} style={{ width }}>
-        <CloseButton
-          className={styles.closeButton}
-          dataHook={dataHooks.closeButton}
-          onClick={() => this._getCloseButtonHandler(closableActions)()}
-          skin={
-            appearance === floatingHelperAppearance.dark
-              ? CloseButtonSkins.light
-              : CloseButtonSkins.dark
-          }
-          size={CloseButtonSizes.medium}
-        />
         <div data-hook={dataHooks.innerContent} className={styles.innerContent}>
+          <CloseButton
+            className={styles.closeButton}
+            dataHook={dataHooks.closeButton}
+            onClick={() => this._getCloseButtonHandler(closableActions)()}
+            skin={
+              appearance === floatingHelperAppearance.dark
+                ? CloseButtonSkins.light
+                : CloseButtonSkins.dark
+            }
+            size={CloseButtonSizes.medium}
+          />
           {React.cloneElement(content, { appearance })}
         </div>
       </div>
@@ -54,7 +54,11 @@ class FloatingHelper extends React.Component {
     const { children, width, content, appearance, ...rest } = this.props;
 
     const renderContent = closableActions =>
-      this._renderContent(closableActions, { width, content, appearance });
+      this._renderContent(closableActions, {
+        width,
+        content,
+        appearance,
+      });
 
     const closablePopoverProps = {
       ...rest,

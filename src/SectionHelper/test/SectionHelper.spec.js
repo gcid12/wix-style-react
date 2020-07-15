@@ -86,7 +86,7 @@ describe('SectionHelper', () => {
     });
 
     describe('Appearance', () => {
-      it('should render `standard` by default', async () => {
+      it('should render `warning` by default', async () => {
         const { driver } = render(createSectionHelper());
         expect(await driver.isWarning()).toBe(true);
       });

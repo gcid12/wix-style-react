@@ -1,63 +1,94 @@
-const wrapWithDiv = string =>
-  `<div>
+import { THEMES } from '../constants';
+
+const wrapWithLayout = string => `
+<Layout>
   ${string}
-</div>`;
+</Layout>`;
 
 const sourceForThemes = theme => `
-<Notification theme="${theme}" show>
-  <Notification.TextLabel>${theme} theme</Notification.TextLabel>
-  <Notification.CloseButton/>
-</Notification>
-`;
+<Cell>
+  <Notification theme="${theme}" show>
+    <Notification.TextLabel>${theme} theme</Notification.TextLabel>
+    <Notification.CloseButton/>
+  </Notification>
+</Cell>`;
 
-export const themes = wrapWithDiv(
-  ['standard', 'error', 'success', 'warning', 'premium']
+export const themes = wrapWithLayout(
+  Object.values(THEMES)
     .map(sourceForThemes)
-    .join('\n<br/>\n'),
+    .join(''),
 );
 
 export const actions = `
-<div>
-  <Notification show>
-    <Notification.TextLabel>This notification has</Notification.TextLabel>
-    <Notification.ActionButton type="textLink" onClick={() => console.log('Clicked!')}>
-      text link action
+<Layout>
+  <Cell>
+    <Notification show>
+      <Notification.TextLabel>This notification has</Notification.TextLabel>
+      <Notification.ActionButton type="textLink" onClick={() => console.log('Clicked!')}>
+        text link action
+      </Notification.ActionButton>
+      <Notification.CloseButton />
+    </Notification>
+  </Cell>
+
+  <Cell>
+    <Notification show>
+      <Notification.TextLabel>This notification has</Notification.TextLabel>
+      <Notification.ActionButton onClick={() => console.log('Clicked!')}>
+        button
+      </Notification.ActionButton>
+      <Notification.CloseButton />
+    </Notification>
+  </Cell>
+</Layout>
+`;
+
+export const ellipsis = `
+<Layout>
+  <Cell>
+      <Notification show>
+        <Notification.TextLabel>
+            This notification appears with extremely long text and it doesn't fit in a single line. It requires to enable ellipsis feature or wrap the text in multiple lines.
+        </Notification.TextLabel>
+        <Notification.ActionButton onClick={() => console.log('Clicked!')}>
+        button
+        </Notification.ActionButton>
+        <Notification.CloseButton />
+      </Notification>
+  </Cell>
+  <Cell>
+     <Notification show>
+      <Notification.TextLabel ellipsis={false}>
+        This notification appears with extremely long text and it doesn't fit in a single line. It requires to enable ellipsis feature or wrap the text in multiple lines.
+      </Notification.TextLabel>
+      <Notification.ActionButton onClick={() => console.log('Clicked!')}>
+      button
     </Notification.ActionButton>
-    <Notification.CloseButton />
-  </Notification>
+      <Notification.CloseButton />
+    </Notification>
+  </Cell>
+</Layout>
+`;
 
-  <br/>
+export const controlled = `
+() => {
 
-  <Notification show>
-    <Notification.TextLabel>This notification has</Notification.TextLabel>
+const [show, setShow] = React.useState(false)
+
+return <Layout>
+    <Cell><Button onClick={() => setShow(!show)}>Show / Hide Notification</Button></Cell>
+    <Cell>
+    <Notification onClose={() => setShow(false)}  theme='error' show={show}>
+    <Notification.TextLabel ellipsis={false}>
+        This notification appears with extremely long text and it doesn't fit in a single line. It requires to enable ellipsis feature or wrap the text in multiple lines.
+    </Notification.TextLabel>
     <Notification.ActionButton onClick={() => console.log('Clicked!')}>
       button
     </Notification.ActionButton>
     <Notification.CloseButton />
   </Notification>
-</div>
-`;
-
-export const ellipsis = `
-<div>
-    <Notification show>
-      <Notification.TextLabel>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-      </Notification.TextLabel>
-      <Notification.ActionButton onClick={() => console.log('Clicked!')}>
-      button
-    </Notification.ActionButton>
-      <Notification.CloseButton />
-    </Notification>
-    <br/>
-    <Notification show>
-      <Notification.TextLabel ellipsis={false}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-      </Notification.TextLabel>
-      <Notification.ActionButton onClick={() => console.log('Clicked!')}>
-      button
-    </Notification.ActionButton>
-      <Notification.CloseButton />
-    </Notification>
-</div>
+  </Cell>
+  <Cell><Text>The Life and Strange Surprizing Adventures of Robinson Crusoe, Of York, Mariner: Who lived Eight and Twenty Years, all alone in an un-inhabited Island on the Coast of America, near the Mouth of the Great River of Oroonoque; Having been cast on Shore by Shipwreck, wherein all the Men perished but himself. With An Account how he was at last as strangely deliver'd by Pyrates</Text></Cell>
+</Layout>
+};
 `;

@@ -15,13 +15,33 @@ Types of changes:
 1. **Lab** components and features that are still in a work in progress
 
 ## Next
+### Docs
+- `<SortableList/>` - create up-to-date docs [#5662](https://github.com/wix/wix-style-react/pull/5662)
+
+### Changed
+- `<SectionHelper />` - change scss to stylable [#5697](https://github.com/wix/wix-style-react/pull/5697)
+
+## 8.30.0 - 2020-07-14
+### Added
+- `<HorizontalTimeline/>` - new component [#5653](https://github.com/wix/wix-style-react/pull/5653)
+- `<Divider/>` - Add new skins [#5694](https://github.com/wix/wix-style-react/pull/5694)
+- `<StarsRatingBar />` - New component [#5602](https://github.com/wix/wix-style-react/pull/5602)
+
+### Fixed
+- `<FloatingHelper/>` - fixing closing button css [#5698](https://github.com/wix/wix-style-react/pull/5698)
+
+## 8.29.0 - 2020-07-13
 ### Added
 - `<Table.Subtoolbar/>` - add subcomponent [#5624](https://github.com/wix/wix-style-react/pull/5624)
 - `<DropdownBase/>` - Add isOpen to render function [#5651](https://github.com/wix/wix-style-react/pull/5651)
+- `<FontUpgrade/>` - add 'className' & 'as' props [#5689](https://github.com/wix/wix-style-react/pull/5689)
 
 ### Changed
 - `<FormField/>`- stylable migration [#5648](https://github.com/wix/wix-style-react/pull/5648) and [#5650](https://github.com/wix/wix-style-react/pull/5650)
 - `<Multiselect/>`- remove use of internal part of Input [#5672](https://github.com/wix/wix-style-react/pull/5672)
+
+### Fixed
+- `<Notification/>`- fixing close button css and improving docs [#5675](https://github.com/wix/wix-style-react/pull/5675)
 
 ## 8.28.0 - 2020-07-06
 ### Changed

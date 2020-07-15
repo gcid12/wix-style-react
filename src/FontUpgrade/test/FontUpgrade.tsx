@@ -11,7 +11,14 @@ function fontUpgradeWithMandatoryProps() {
 }
 
 function fontUpgradeWithAllProps() {
-  return <FontUpgrade children="" dataHook="dataHook" active />;
+  return (
+    <FontUpgrade
+      children=""
+      dataHook="dataHook"
+      active
+      className="some-class-name"
+    />
+  );
 }
 
 async function testkits() {

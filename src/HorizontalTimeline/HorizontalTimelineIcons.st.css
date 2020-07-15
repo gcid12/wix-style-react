@@ -1,0 +1,55 @@
+:import {
+  -st-from: '../Foundation/stylable/colors.st.css';
+  -st-named: D20, D40, R10;
+}
+
+.baseIcon {
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.completeIcon {
+  fill: value(D20);
+}
+
+.errorIcon {
+  fill: value(R10);
+}
+
+.upcomingIcon {
+  -st-extends: baseIcon;
+  border: 2px solid value(D40);
+}
+
+.activeIcon {
+  -st-extends: baseIcon;
+  display: flex;
+  position: relative;
+  border: 2px solid value(D20);
+}
+
+.activeIcon::before {
+  content: "";
+  margin: auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: value(D20);
+  animation-name: bounce;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  50% {
+    transform: scale(1.66);
+    animation-timing-function: cubic-bezier(0.81, 0, 1, 1);
+  }
+
+  100% {
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

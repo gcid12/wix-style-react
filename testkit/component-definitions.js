@@ -350,6 +350,12 @@ export default {
     },
   },
 
+  StarsRatingBar: {
+    props: {
+      value: 0,
+    },
+  },
+
   MarketingLayout: {
     props: {
       title: 'Large Size Layout',
@@ -653,6 +659,16 @@ export default {
       light: false,
       appearance: 'H1',
       children: 'Hey there, good looking',
+    },
+  },
+
+  HorizontalTimeline: {
+    props: {
+      items: [
+        { label: 'Instructions completed' },
+        { label: 'Domain check' },
+        { label: 'Site is live worldwide' },
+      ],
     },
   },
 

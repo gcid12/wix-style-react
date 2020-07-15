@@ -14,7 +14,15 @@ class Divider extends React.PureComponent {
     /** Indicates whether to display the divider horizontally or vertically */
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     /** Sets the color of the divider */
-    skin: PropTypes.oneOf(['light', 'dark']),
+    skin: PropTypes.oneOf([
+      'light',
+      'dark',
+      'standard',
+      'warning',
+      'destructive',
+      'success',
+      'premium',
+    ]),
   };
 
   static defaultProps = {

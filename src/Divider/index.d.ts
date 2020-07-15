@@ -7,6 +7,6 @@ export interface DividerProps {
 }
 
 export type DividerDirection = 'horizontal' | 'vertical';
-export type DividerSkin = 'light' | 'dark';
+export type DividerSkin = 'light' | 'dark' | 'standard' | 'warning' | 'destructive' | 'success' | 'premium';
 
 export default class Divider extends React.PureComponent<DividerProps> {}

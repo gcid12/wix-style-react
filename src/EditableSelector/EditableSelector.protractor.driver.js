@@ -1,3 +1,5 @@
+import { browser, Key } from 'protractor';
+
 const getOptions = component =>
   component.$$('[data-hook="editable-selector-item"]');
 const getOption = (component, index) => getOptions(component).get(index);
@@ -8,11 +10,11 @@ const hover = element =>
     .actions()
     .mouseMove(element)
     .perform();
-const enterText = (component, text) =>
-  component
-    .$('[data-hook="edit-row-wrapper"] input')
-    .clear()
-    .sendKeys(text);
+const enterText = async (component, text) => {
+  const inputElement = component.$('[data-hook="edit-row-wrapper"] input');
+  await inputElement.clear();
+  await inputElement.sendKeys(...Array(25).fill(Key.BACK_SPACE), text);
+};
 
 const editableSelectorDriverFactory = component => ({
   title: () => component.$('[data-hook="editable-selector-title"]').getText(),

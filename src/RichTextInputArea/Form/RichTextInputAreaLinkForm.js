@@ -34,7 +34,7 @@ class RichTextInputAreaLinkForm extends React.Component {
             onCancel={onCancel}
             isDisabled={this.state.url.length === 0}
           >
-            <Box marginBottom={2}>
+            <Box marginBottom={2} direction="vertical">
               <Input
                 dataHook="richtextarea-form-link-text"
                 placeholder={texts.insertionForm.link.textInputPlaceholder}

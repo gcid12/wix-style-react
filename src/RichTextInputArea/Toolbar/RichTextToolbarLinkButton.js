@@ -43,7 +43,7 @@ class RichTextToolbarLinkButton extends React.Component {
           </RichTextToolbarButton>
         </Popover.Element>
         <Popover.Content>
-          <Box padding={3}>
+          <Box padding={3} width="216px">
             <RichTextInputAreaLinkForm
               dataHook="richtextarea-form"
               onSubmit={this._onSubmit}

@@ -6,4 +6,9 @@ export const directions = {
 export const skins = {
   light: 'light',
   dark: 'dark',
+  standard: 'standard',
+  warning: 'warning',
+  destructive: 'destructive',
+  success: 'success',
+  premium: 'premium',
 };

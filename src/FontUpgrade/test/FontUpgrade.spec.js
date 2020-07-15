@@ -8,9 +8,7 @@ import { FontUpgradeContext } from '../context';
 describe('FontUpgrade', () => {
   const render = createRendererWithUniDriver(FontUpgradePrivateDriverFactory);
 
-  afterEach(() => {
-    cleanup();
-  });
+  afterEach(cleanup);
 
   it('should be active', async () => {
     const text = 'text';
@@ -51,5 +49,16 @@ describe('FontUpgrade', () => {
     expect(await driver.getElement('[data-active=active]').exists()).toBe(
       false,
     );
+  });
+
+  it('should have className', async () => {
+    const className = 'some-class-name';
+    const { driver } = render(<FontUpgrade className={className} />);
+    expect((await driver.element()).className).toContain(className);
+  });
+
+  it.each(['span', 'div'])('should be a %p element', async element => {
+    const { driver } = render(<FontUpgrade as={element} />);
+    expect((await driver.element()).tagName).toBe(element.toUpperCase());
   });
 });
