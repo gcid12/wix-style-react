@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../Text';
-import styles from './HorizontalTimeline.st.css';
+import { classes, st } from './HorizontalTimeline.st.css';
 import iconsStyles from './HorizontalTimelineIcons.st.css';
 import StatusCompleteFilled from 'wix-ui-icons-common/StatusCompleteFilled';
 import StatusAlertFilled from 'wix-ui-icons-common/StatusAlertFilled';
@@ -19,7 +19,7 @@ class HorizontalTimeline extends React.PureComponent {
     const { items, dataHook, className } = this.props;
 
     return (
-      <div {...styles('root', {}, { className })} data-hook={dataHook}>
+      <div className={st(classes.root, {}, className)} data-hook={dataHook}>
         {items.map(({ label, width, skin, icon }, i) => {
           width = width || 'auto';
           skin = skin || defaultItemSkin;
@@ -28,19 +28,19 @@ class HorizontalTimeline extends React.PureComponent {
           const nextItemSkin = items[i + 1] && items[i + 1].skin;
 
           return (
-            <div className={styles.column} key={i} style={{ width }}>
-              <div className={styles.item}>
-                <div className={styles.topRow}>
-                  <div {...styles('line', { skin })} />
-                  <div className={styles.iconWrapper}>{icon}</div>
+            <div className={classes.column} key={i} style={{ width }}>
+              <div className={classes.item}>
+                <div className={classes.topRow}>
+                  <div className={st(classes.line, { skin })} />
+                  <div className={classes.iconWrapper}>{icon}</div>
                   <div
-                    {...styles('line', {
+                    className={st(classes.line, {
                       skin: nextItemSkin ? nextItemSkin : defaultItemSkin,
                     })}
                   />
                 </div>
 
-                <Box className={styles.label}>
+                <Box className={classes.label}>
                   <Text size="tiny" ellipsis {...textPropsBySkinMap[skin]}>
                     {label}
                   </Text>

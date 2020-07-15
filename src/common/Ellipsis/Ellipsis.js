@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import shallowEqual from 'shallowequal';
-import styles from './Ellipsis.st.css';
+import { st, classes } from './Ellipsis.st.css';
 import Tooltip from '../../Tooltip';
 import { ZIndex } from '../../ZIndex';
 import { TooltipCommonProps } from '../PropTypes/TooltipCommon';
@@ -82,7 +82,7 @@ class Ellipsis extends React.PureComponent {
     return render({
       ref: this.ref,
       ellipsisClasses: (...classNames) =>
-        [ellipsis && styles.text, ...classNames].filter(Boolean).join(' '),
+        [ellipsis && classes.text, ...classNames].filter(Boolean).join(' '),
     });
   };
 
@@ -109,7 +109,7 @@ class Ellipsis extends React.PureComponent {
 
     return showTooltip && isActive ? (
       <Tooltip
-        {...styles('tooltip', {}, wrapperClasses)}
+        className={st(classes.tooltip, {})}
         disabled={!isActive || !textElement}
         content={textElement && textElement.textContent}
         {...{

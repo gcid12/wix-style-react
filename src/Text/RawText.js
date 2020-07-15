@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './Text.st.css';
+import { st, classes } from './Text.st.css';
 
 /*
  * Temporary fix: SIZES, SKINS, WEIGHTS constants are copied here from constants.js
@@ -59,7 +59,7 @@ const RawText = React.forwardRef(
     ref,
   ) => {
     /* eslint-disable no-unused-vars */
-    const { dataHook, ...textProps } = rest;
+    const { dataHook, className, ...textProps } = rest;
 
     const styleAttributes = {
       size,
@@ -76,7 +76,7 @@ const RawText = React.forwardRef(
         ref,
         ...textProps,
         'data-hook': dataHook,
-        ...style('root', styleAttributes, rest),
+        className: st(classes.root, styleAttributes, className),
         ...styleDataAttributes,
       },
       children,

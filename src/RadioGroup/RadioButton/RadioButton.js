@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
-import styles from '../RadioGroup.st.css';
+import { st, classes } from '../RadioGroup.st.css';
 import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
 import Text from '../../Text';
 import { dataHooks } from './constants';
@@ -62,16 +62,16 @@ class RadioButton extends React.PureComponent {
 
     return (
       <div
-        {...styles('focusableRadioButton', {}, this.props)}
+        className={st(classes.focusableRadioButton, {}, this.props)}
         onFocus={focusableOnFocus}
         onBlur={focusableOnBlur}
         style={style}
         data-hook={dataHook}
       >
         <div
-          className={classnames(styles.radioWrapper, {
-            [styles.disabled]: disabled,
-            [styles.checked]: checked,
+          className={classnames(classes.radioWrapper, {
+            [classes.disabled]: disabled,
+            [classes.checked]: checked,
           })}
           data-hook={dataHooks.RadioButtonWrapper}
           tabIndex={disabled ? null : tabIndex}
@@ -92,25 +92,25 @@ class RadioButton extends React.PureComponent {
             style={{ lineHeight }}
             htmlFor={this.id}
             className={classnames({
-              [styles.vcenter]: vAlign === 'center',
-              [styles.vtop]: vAlign === 'top',
+              [classes.vcenter]: vAlign === 'center',
+              [classes.vtop]: vAlign === 'top',
             })}
           >
             <div
               style={{ height: lineHeight }}
-              className={styles.radioButtonWrapper}
+              className={classes.radioButtonWrapper}
               data-hook={dataHooks.RadioButtonRadio}
             >
               <div
-                className={classnames(styles.radio, {
-                  [styles.radioButtonChecked]: checked,
+                className={classnames(classes.radio, {
+                  [classes.radioButtonChecked]: checked,
                 })}
               />
             </div>
 
             {children && (
               <Text
-                className={styles.children}
+                className={classes.children}
                 data-hook={dataHooks.RadioButtonChildren}
                 tagName="div"
                 size="medium"
@@ -124,7 +124,7 @@ class RadioButton extends React.PureComponent {
         </div>
         {content && (
           <div
-            className={styles.content}
+            className={classes.content}
             data-hook={dataHooks.RadioButtonContent}
           >
             {content}

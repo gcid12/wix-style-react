@@ -4,7 +4,7 @@ import uniqueId from 'lodash/uniqueId';
 import classNames from 'classnames';
 
 import RadioButton from './RadioButton/RadioButton';
-import styles from './RadioGroup.st.css';
+import { classes, st } from './RadioGroup.st.css';
 import { dataHooks } from './constants';
 
 /**
@@ -34,16 +34,16 @@ class RadioGroup extends React.PureComponent {
     return (
       <div
         data-hook={dataHook}
-        className={classNames(styles[display], {
-          [styles.selectionAreaAlways]: selectionArea === 'always',
-          [styles.selectionAreaHover]: selectionArea === 'hover',
-          [styles.vertical]: display === 'vertical',
+        className={classNames(classes[display], {
+          [classes.selectionAreaAlways]: selectionArea === 'always',
+          [classes.selectionAreaHover]: selectionArea === 'hover',
+          [classes.vertical]: display === 'vertical',
         })}
         data-display={display}
       >
         {React.Children.map(this.props.children, (radio, index) => (
           <div
-            className={classNames(styles.optionWrapper)}
+            className={classNames(classes.optionWrapper)}
             data-hook={dataHooks.RadioGroupRadioContainer}
             style={
               display === 'vertical' && index > 0 ? { marginTop: spacing } : {}

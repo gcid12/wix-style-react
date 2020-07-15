@@ -234,10 +234,12 @@ class FormField extends React.Component {
         };
 
     return (
-      <div data-hook={dataHook}
-           className={st(classNames.root, rootStyles, classNames)}>
+      <div
+        data-hook={dataHook}
+        className={st(classes.root, rootStyles, classNames)}
+      >
         {label && labelPlacement === PLACEMENT.top && (
-          <div className={classNames.label}>
+          <div className={classes.label}>
             {this._renderLabel({ trimLongText: true })}
             {required && asterisk}
             {this._renderInfoIcon()}

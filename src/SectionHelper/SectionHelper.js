@@ -5,7 +5,7 @@ import Text from '../Text';
 import Button from '../Button';
 import CloseButton from '../CloseButton';
 import { Appearance } from './constants';
-import styles from './SectionHelper.st.css';
+import { classes, st } from './SectionHelper.st.css';
 import { FontUpgradeContext } from '../FontUpgrade/context';
 
 /**
@@ -30,7 +30,7 @@ class SectionHelper extends React.PureComponent {
       <div
         data-hook={dataHook}
         data-appearance={appearance}
-        {...styles('root', {
+        className={st(classes.root, {
           appearance,
           withCloseBtn: showCloseButton,
           withTitle: !!title,
@@ -38,7 +38,7 @@ class SectionHelper extends React.PureComponent {
         })}
       >
         {showCloseButton && onClose && (
-          <div className={styles.close}>
+          <div className={classes.close}>
             <CloseButton
               dataHook="sectionhelper-close-btn"
               size="medium"
@@ -49,7 +49,7 @@ class SectionHelper extends React.PureComponent {
         )}
 
         {title && (
-          <div className={styles.title}>
+          <div className={classes.title}>
             <FontUpgradeContext.Consumer>
               {context => (
                 <Text
@@ -65,14 +65,14 @@ class SectionHelper extends React.PureComponent {
           </div>
         )}
 
-        <div className={styles.content}>
+        <div className={classes.content}>
           <Text size="small" light={isExperimentalDark}>
             {children}
           </Text>
         </div>
 
         {onAction && actionText && (
-          <div className={styles.action}>
+          <div className={classes.action}>
             <Button
               size="small"
               skin={isExperimentalDark ? 'standard' : 'dark'}

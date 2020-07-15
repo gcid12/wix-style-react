@@ -1,6 +1,6 @@
 import React from 'react';
 import RawText from './RawText';
-import {st, classes} from './Text.st.css';
+import { st, classes } from './Text.st.css';
 import Ellipsis, { extractEllipsisProps } from '../common/Ellipsis';
 
 const TextWithEllipsis = ({ className, ...props }) => {
@@ -8,8 +8,10 @@ const TextWithEllipsis = ({ className, ...props }) => {
   return (
     <Ellipsis
       {...ellipsisProps}
-      // TODO - with Stylable3 change to wrapperClassName
-      wrapperClasses={st(classes.root, { size: props.size, weight: props.weight })}
+      wrapperClassName={st(classes.root, {
+        size: props.size,
+        weight: props.weight,
+      })}
       render={({ ref, ellipsisClasses }) => (
         <RawText
           {...componentProps}
