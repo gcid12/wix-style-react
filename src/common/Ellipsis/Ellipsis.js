@@ -109,7 +109,7 @@ class Ellipsis extends React.PureComponent {
 
     return showTooltip && isActive ? (
       <Tooltip
-        className={st(classes.tooltip, {})}
+        className={st(classes.tooltip, {}, wrapperClasses)}
         disabled={!isActive || !textElement}
         content={textElement && textElement.textContent}
         {...{
