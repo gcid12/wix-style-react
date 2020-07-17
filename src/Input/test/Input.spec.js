@@ -531,11 +531,6 @@ describe('Input', () => {
         expect(await driver.prefixComponentExists('.my-button')).toBe(true);
       });
 
-      it('should add `withPrefix` classname to input', async () => {
-        const { driver } = render(<Input prefix="hello" />);
-        expect(await driver.hasPrefixClass()).toBe(true);
-      });
-
       it('should invoke onInputClicked while click on custom affix', async () => {
         const onInputClicked = jest.fn();
         const { driver } = render(
@@ -595,21 +590,6 @@ describe('Input', () => {
         );
         expect(await driver.hasSuffix()).toBe(true);
         expect(await driver.suffixComponentExists('.my-button')).toEqual(true);
-      });
-
-      it('should add `withSuffix` classname to input', async () => {
-        const { driver } = render(<Input suffix="hello" />);
-        expect(await driver.hasSuffixClass()).toBe(true);
-      });
-
-      it('should add `withSuffixes` classname to input when more than 1 suffix applied', async () => {
-        const { driver } = render(<Input suffix="hello" status="error" />);
-        expect(await driver.hasSuffixesClass()).toBe(true);
-      });
-
-      it('should render menu arrow as the last suffix', async () => {
-        const { driver } = render(<Input suffix="hello" menuArrow />);
-        expect(await driver.isMenuArrowLast()).toBe(true);
       });
 
       it('should invoke onInputClicked while click on custom affix', async () => {

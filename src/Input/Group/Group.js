@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import styles from './Group.scss';
 import InputConsumer from '../InputConsumer';
+import Box from '../../Box';
 
 const Group = ({ children }) => (
   <InputConsumer consumerCompName={Group.displayName}>
-    {() => <div className={styles.root}>{children}</div>}
+    {() => <Box alignItems="center">{children}</Box>}
   </InputConsumer>
 );
 

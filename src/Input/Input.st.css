@@ -1,0 +1,254 @@
+:import {
+  -st-from: './Input.mixins.js';
+  -st-named: boxSizingMixin, placeholderMixin, borderRadiusMixin;
+}
+
+:import {
+  -st-from: '../Foundation/stylable/colors.st.css';
+  -st-named: D10-20, D10-30, D40, B10, B30, B40, B50, D10, D60, D70, D80, F00,
+  R10, R30, Y10, Y30;
+}
+
+:import {
+  -st-from: '../Foundation/stylable/typography.st.css';
+  -st-named: text-small-normal, text-medium-normal;
+}
+
+.root {
+  -st-states: size(enum(small, medium, large)), hasFocus,
+              status(enum(error, warning)), forceHover, readOnly,
+              disabled, roundInput,
+              noLeftBorderRadius, noRightBorderRadius;
+  -st-mixin: boxSizingMixin, borderRadiusMixin(6px);
+  position: relative;
+  display: flex;
+  border: solid 1px value(B30);
+  background-color: value(D80);
+  color: value(D10);
+}
+
+.input {
+  -st-mixin: placeholderMixin(value(D40));
+  color: value(D10);
+  display: block;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  width: inherit;
+}
+
+/* Text selection */
+.input::selection {
+  background: value(B40);
+}
+
+/* Size */
+.root:size(small),
+.root:size(small) .input {
+  -st-mixin: text-small-normal;
+}
+
+.root:size(small) .input {
+  padding: 5px 3px 5px 6px;
+}
+
+.root:size(medium),
+.root:size(medium) .input {
+  -st-mixin: text-medium-normal;
+}
+
+.root:size(medium) .input {
+  padding: 5px 3px 5px 6px;
+}
+
+.root:size(large),
+.root:size(large) .input {
+  -st-mixin: text-medium-normal;
+}
+
+.root:size(large) .input {
+  padding: 8px 3px 8px 6px;
+}
+
+.root:size(small) .wrapper,
+.root:size(medium) .wrapper {
+  padding: 0 6px;
+}
+
+.root:size(large) .wrapper {
+  padding: 0 9px;
+}
+
+/* Focus */
+.root:hasFocus {
+  outline: none;
+  border-color: value(B10);
+  box-shadow: 0 0 0 3px value(F00);
+}
+
+/* Hover */
+.root:hover:not(:hasFocus):not(:disabled),
+.root:forceHover:not(.disabled) {
+  background-color: value(B50);
+}
+
+.root:hover.readOnly:not(:disabled) {
+   border: solid 1px value(B30);
+ }
+.root:hover.readOnly.disabled {
+   border: solid 1px value(D60);
+ }
+
+/* Read Only */
+.root:readOnly {
+  border: solid 1px value(D60);
+  background-color: value(D70);
+}
+
+/* Round Input */
+.root:roundInput {
+  -st-mixin: borderRadiusMixin(40px);
+}
+
+.root:noLeftBorderRadius {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.root:noRightBorderRadius {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Disabled */
+.root:disabled {
+  border-color: value(D10-20);
+  background-color: value(D80);
+  color: value(D10-30);
+}
+
+.root:disabled .input {
+  -st-mixin: placeholderMixin(value(D10-30));
+  color: value(D10-30);
+}
+
+/* Suffixes */
+.suffixes {
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Status */
+.root:size(small) .statusWrapper {
+  margin: auto 0 auto 6px;
+}
+
+:global([dir="rtl"]) :size(small) .statusWrapper {
+  margin: auto 6px auto 0;
+}
+
+.root:size(medium) .statusWrapper,
+.root:size(large) .statusWrapper {
+  margin: auto 3px auto 6px;
+}
+
+:global([dir="rtl"]) :size(medium) .statusWrapper,
+:global([dir="rtl"]) :size(large) .statusWrapper {
+  margin: auto 6px auto 3px;
+}
+
+.root:not(:disabled):status(error) {
+  border-color: value(R10);
+  box-shadow: none;
+}
+
+.root:not(:disabled):status(error):hasFocus {
+  border-color: value(R10);
+  box-shadow: 0 0 0 3px value(R30);
+}
+
+.root:not(:disabled):status(warning) {
+  border-color: value(Y10);
+  box-shadow: none;
+}
+
+.root:not(:disabled):status(warning):hasFocus {
+  border-color: value(Y10);
+  box-shadow: 0 0 0 3px value(Y30);
+}
+
+/* Clear Button */
+.root .clearButtonWrapper {
+  margin: auto 0 auto 3px;
+}
+
+:global([dir="rtl"]) .clearButtonWrapper {
+  margin: auto 3px auto 0;
+}
+
+/* Menu Arrow */
+.root:size(small) .menuArrow svg {
+  transform: translateY(-1px);
+}
+
+.root:size(small) .menuArrow,
+.root:size(medium) .menuArrow {
+  margin: auto 6px;
+}
+
+.root:size(medium):roundInput .menuArrow {
+  margin: auto 9px auto 6px;
+}
+
+:global([dir="rtl"]) :size(medium):roundInput .menuArrow {
+  margin: auto 6px auto 9px;
+}
+
+.root:size(medium) .menuArrow svg {
+  transform: translateY(-2px);
+}
+
+.root:size(large) .menuArrow {
+  margin: auto 6px auto 9px;
+}
+
+:global([dir="rtl"]) :size(large) .menuArrow {
+  margin: auto 9px auto 6px;
+}
+
+.root:size(large):roundInput .menuArrow {
+  margin: auto 9px;
+}
+
+.root:size(large) .menuArrow svg {
+  transform: translateY(-2px);
+}
+
+.root:not(:disabled) .menuArrow {
+  color: value(B10);
+}
+
+/* Remove native arrows for a number input */
+.root input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.root input::-webkit-outer-spin-button,
+.root input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* remove safari autofill icon */
+.input::-webkit-contacts-auto-fill-button {
+  display: none !important;
+}
+
+/* Remove IE10+ automatically x button */
+.input::-ms-clear {
+  display: none;
+}

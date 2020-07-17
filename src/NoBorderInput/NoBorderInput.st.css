@@ -40,6 +40,10 @@
   padding: 0;
 }
 
+.label + div {
+  height: 100%;
+}
+
 .root div,
 .root input,
 .label + div {

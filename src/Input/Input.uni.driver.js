@@ -14,7 +14,7 @@ export const testkit = (base, body) => {
   const reactBaseInput = ReactBase(input);
 
   const clearButtonNode = base.$(`[data-hook=input-clear-button]`);
-  const menuArrowNode = base.$(`.menuArrow`);
+  const menuArrowNode = base.$(`[data-hook="${dataHooks.menuArrow}"]`);
 
   const getStatusIndicatorDriver = () =>
     statusIndicatorDriverFactory(
@@ -28,7 +28,7 @@ export const testkit = (base, body) => {
     getInputElementClasses: async () =>
       await reactBaseInput._DEPRECATED_getClassList(),
     suffixComponentExists: async className =>
-      await base.$(`.suffix ${className}`).exists(),
+      await base.$(`[data-hook="${dataHooks.suffixes}"] ${className}`).exists(),
     getRootElementClasses: async () =>
       await reactBase._DEPRECATED_getClassList(),
     getAriaDescribedby: async () => await input.attr('aria-describedby'),
@@ -41,20 +41,11 @@ export const testkit = (base, body) => {
       await base.$(`[data-hook="icon-affix"]`).click(),
     clickCustomAffix: async () =>
       await base.$(`[data-hook="custom-affix"]`).click(),
-    isMenuArrowLast: async () => {
-      const selector = `.suffixes .suffix:last-child > .menuArrow`;
-      return (await base.$$(selector).count()) === 1;
-    },
-    hasSuffixesClass: async () =>
-      (await base.$$(`.input.withSuffixes`).count()) === 1,
-    hasSuffixClass: async () =>
-      (await base.$$(`.input.withSuffix`).count()) === 1,
-    hasSuffix: async () => await base.$(`.suffix`).exists(),
-    hasPrefixClass: async () =>
-      (await base.$$(`.input.withPrefix`).count()) === 1,
+    hasSuffix: async () =>
+      await base.$(`[data-hook="${dataHooks.suffixes}"]`).exists(),
     prefixComponentExists: async style =>
-      (await base.$$(`.prefix ${style}`).count()) === 1,
-    hasPrefix: async () => (await base.$$(`.prefix`).count()) === 1,
+      !!(await base.attr(DATA_ATTR.PREFIX)) && (await base.$(style).exists()),
+    hasPrefix: async () => !!(await base.attr(DATA_ATTR.PREFIX)),
     hasClearButton: async () => await clearButtonNode.exists(),
     clickClear: async () => await clearButtonNode.click(),
     getValue: async () => await input.value(),
@@ -62,10 +53,10 @@ export const testkit = (base, body) => {
     getPattern: async () => await input.attr('pattern'),
     getPlaceholder: async () => await input.attr('placeholder'),
     isOfSize: async size => await base.hasClass(`size-${size}`),
-    getSize: async () => await base.attr(DATA_ATTR.DATA_SIZE),
-    isDisabled: async () => await base.hasClass('disabled'),
-    isHoveredStyle: async () => await base.hasClass('hasHover'),
-    isFocusedStyle: async () => await base.hasClass('hasFocus'),
+    getSize: async () => await base.attr(DATA_ATTR.SIZE),
+    isDisabled: async () => !!(await base.attr(DATA_ATTR.DISABLED)),
+    isHoveredStyle: async () => !!(await base.attr(DATA_ATTR.HOVER)),
+    isFocusedStyle: async () => !!(await base.attr(DATA_ATTR.FOCUS)),
     getRequired: async () => await input._prop('required'),
     enterText: async value => await input.enterValue(value),
     getAutocomplete: async () => await input.attr('autocomplete'),
@@ -104,14 +95,14 @@ export const testkit = (base, body) => {
     isFocus: async () => await reactBaseInput.isFocus(),
     clickMenuArrow: async () => await menuArrowNode.click(),
     hasMenuArrow: async () => await menuArrowNode.exists(),
-    isRTL: async () => await base.hasClass('rtl'),
+    isRTL: async () => (await base.attr('dir')) === 'rtl',
     getCursorLocation: async () => await input._prop('selectionStart'),
     clearText: () => driver.enterText(''),
     clickOutside: () => ReactBase.clickDocument(),
 
     // Status
     /** Return true if there's a status */
-    hasStatus: async status => (await base.attr('data-status')) === status,
+    hasStatus: async status => (await base.attr(DATA_ATTR.STATUS)) === status,
     /** If there's a status message, returns its text value */
     getStatusMessage: async () => {
       const statusIndicatorDriver = getStatusIndicatorDriver();

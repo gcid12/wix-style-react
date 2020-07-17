@@ -1,20 +1,18 @@
 import React from 'react';
 import { Simulate, renderIntoDocument } from 'react-dom/test-utils';
-
 import Ticker from '..';
-
-import styles from '../Ticker.scss';
 import { InputContext } from '../../InputContext';
+import { dataHooks } from '../constants';
 
 export const tickerDriverFactory = component => {
   const handlers = {
-    getUp: () => component.querySelector(`.${styles.up}`),
-    getDown: () => component.querySelector(`.${styles.down}`),
+    getUp: () => component.querySelector(`[data-hook="${dataHooks.tickerUp}"]`),
+    getDown: () =>
+      component.querySelector(`[data-hook="${dataHooks.tickerDown}"]`),
     clickUp: () => Simulate.click(handlers.getUp()),
     clickDown: () => Simulate.click(handlers.getDown()),
-    isUpDisabled: () => handlers.getUp().classList.contains(styles.disabled),
-    isDownDisabled: () =>
-      handlers.getDown().classList.contains(styles.disabled),
+    isUpDisabled: () => handlers.getUp().hasAttribute('data-disabled'),
+    isDownDisabled: () => handlers.getDown().hasAttribute('data-disabled'),
     exists: () => !!component,
   };
   return handlers;

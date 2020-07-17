@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import DropDownArrow from 'wix-ui-icons-common/system/DropDownArrow';
 import CloseButton from '../CloseButton';
 import StatusIndicator from '../StatusIndicator';
-import styles from './Input.scss';
+import classes from './Input.st.css';
 import Box from '../Box';
 import { dataHooks } from './constants';
 
@@ -12,8 +12,7 @@ const isFixVisible = fix => fix.isVisible;
 const suffixRules = {
   inputStatusSuffix: ({ status, disabled }) => status && !disabled,
   clearButton: ({ isClearButtonVisible }) => isClearButtonVisible,
-  menuArrow: ({ menuArrow, isClearButtonVisible }) =>
-    menuArrow && !isClearButtonVisible,
+  menuArrow: ({ menuArrow }) => menuArrow,
   customSuffix: ({ suffix }) => !!suffix,
 };
 
@@ -37,23 +36,12 @@ const InputSuffix = ({
 }) => {
   const suffixes = [
     {
-      component: () => (
-        <Box margin={1} lineHeight="initial">
-          <StatusIndicator
-            dataHook={dataHooks.status}
-            status={status}
-            message={statusMessage}
-            tooltipPlacement={tooltipPlacement}
-          />
-        </Box>
-      ),
-      isVisible: suffixRules.inputStatusSuffix({ status, disabled }),
-    },
-    {
-      component: () => (
-        <div className={styles.clearButton}>
+      // Close Button
+      component: key => (
+        <div key={key} className={classes.clearButtonWrapper}>
           <CloseButton
             dataHook="input-clear-button"
+            skin="standardFilled"
             size={clearButtonSize}
             onClick={onClear}
           />
@@ -62,34 +50,50 @@ const InputSuffix = ({
       isVisible: suffixRules.clearButton({ isClearButtonVisible }),
     },
     {
-      component: () => suffix,
+      // Status Indicator
+      component: key => (
+        <div key={key} className={classes.statusWrapper}>
+          <StatusIndicator
+            dataHook={dataHooks.status}
+            status={status}
+            message={statusMessage}
+            tooltipPlacement={tooltipPlacement}
+          />
+        </div>
+      ),
+      isVisible: suffixRules.inputStatusSuffix({ status, disabled }),
+    },
+    {
+      // Custom Suffix
+      component: key =>
+        React.isValidElement(suffix) ? (
+          React.cloneElement(suffix, { key })
+        ) : (
+          <Box key={key}>{suffix}</Box>
+        ),
       isVisible: suffixRules.customSuffix({ suffix }),
     },
     {
-      component: () => (
+      // Dropdown Arrow
+      component: key => (
         <div
-          className={styles.menuArrow}
+          key={key}
+          data-hook={dataHooks.menuArrow}
+          className={classes.menuArrow}
           disabled={disabled}
           onClick={onIconClicked}
         >
           <DropDownArrow />
         </div>
       ),
-      isVisible: suffixRules.menuArrow({
-        menuArrow,
-        isClearButtonVisible,
-      }),
+      isVisible: suffixRules.menuArrow({ menuArrow }),
     },
   ].filter(isFixVisible);
 
   return (
-    <div className={styles.suffixes}>
-      {suffixes.map((s, i) => (
-        <div key={i} className={styles.suffix}>
-          {s.component()}
-        </div>
-      ))}
-    </div>
+    <Box dataHook={dataHooks.suffixes} className={classes.suffixes}>
+      {suffixes.map((s, key) => s.component(key))}
+    </Box>
   );
 };
 

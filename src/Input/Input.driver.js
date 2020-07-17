@@ -2,6 +2,7 @@ import ReactTestUtils from 'react-dom/test-utils';
 import styles from './Input.scss';
 import { tooltipDriverFactory } from 'wix-ui-core/dist/src/components/tooltip/Tooltip.driver';
 import { dataHooks } from './constants';
+import DATA_ATTR from './DataAttr';
 
 const inputDriverFactory = ({ element, eventTrigger }) => {
   const input = element && element.querySelector('input');
@@ -13,7 +14,7 @@ const inputDriverFactory = ({ element, eventTrigger }) => {
   const iconAffixNode =
     element && element.querySelector(`[data-hook="icon-affix"]`);
   const menuArrowNode =
-    element && element.querySelector(`.${styles.menuArrow}`);
+    element && element.querySelector(`[data-hook="${dataHooks.menuArrow}"]`);
   const getName = () => input.getAttribute('name');
   const getType = () => input.getAttribute('type');
   const getMaxLength = () => input.getAttribute('maxlength');
@@ -61,35 +62,23 @@ const inputDriverFactory = ({ element, eventTrigger }) => {
     getAriaDescribedby: () => input.getAttribute('aria-describedby'),
     getAutocomplete: () => input.getAttribute('autocomplete'),
     getRequired: () => input.required,
-    hasPrefix: () => element.querySelectorAll(`.${styles.prefix}`).length === 1,
-    hasPrefixClass: () =>
-      element.querySelectorAll(`.${styles.input}.${styles.withPrefix}`)
-        .length === 1,
-    hasSuffix: () => !!suffixNode,
-    hasSuffixClass: () =>
-      element.querySelectorAll(`.${styles.input}.${styles.withSuffix}`)
-        .length === 1,
-    hasSuffixesClass: () =>
-      element.querySelectorAll(`.${styles.input}.${styles.withSuffixes}`)
-        .length === 1,
+    hasPrefix: () => element.hasAttribute(DATA_ATTR.PREFIX),
+    hasSuffix: () =>
+      !!element.querySelector(`[data-hook="${dataHooks.suffixes}"]`),
     prefixComponentExists: style =>
-      !!element.querySelector(`.${styles.prefix} ${style}`),
+      element.hasAttribute(DATA_ATTR.PREFIX) && !!element.querySelector(style),
     suffixComponentExists: style =>
-      !!element.querySelector(`.${styles.suffix} ${style}`),
-    isMenuArrowLast: () =>
-      element.querySelectorAll(
-        `.${styles.suffixes} .${styles.suffix}:last-child > .${styles.menuArrow}`,
-      ).length === 1,
+      !!element.querySelector(`[data-hook="${dataHooks.suffixes}"] ${style}`),
     getDataHook: () => element.getAttribute('data-hook'),
     getCustomAffix: () => customAffixNode.textContent,
     hasMenuArrow: () => !!menuArrowNode,
     hasClearButton: () => !!clearButton,
-    isRTL: () => element.className.indexOf(styles.rtl) >= 0,
-    isFocusedStyle: () => element.classList.contains(styles.hasFocus),
-    isHoveredStyle: () => element.classList.contains(styles.hasHover),
-    isDisabled: () => element.classList.contains(styles.disabled),
+    isRTL: () => element.getAttribute('dir') === 'rtl',
+    isFocusedStyle: () => element.hasAttribute(DATA_ATTR.FOCUS),
+    isHoveredStyle: () => element.hasAttribute(DATA_ATTR.HOVER),
+    isDisabled: () => element.hasAttribute(DATA_ATTR.DISABLED),
     isOfSize: size => element.classList.contains(styles[`size-${size}`]),
-    getSize: () => element.getAttribute('data-size'),
+    getSize: () => element.getAttribute(DATA_ATTR.SIZE),
     isFocus: () => document.activeElement === input,
     exists: () => !!(element && element.querySelector('input')),
     startComposing: () => ReactTestUtils.Simulate.compositionStart(input),
@@ -98,16 +87,16 @@ const inputDriverFactory = ({ element, eventTrigger }) => {
     getRootElementClasses: () => element.classList,
     getInputElementClasses: () => input.classList,
     hasRightBorderRadius: () =>
-      !element.classList.contains(styles.noRightBorderRadius),
+      !element.hasAttribute(DATA_ATTR.RIGHTBORDERRADIUS),
     hasLeftBorderRadius: () =>
-      !element.classList.contains(styles.noLeftBorderRadius),
+      !element.hasAttribute(DATA_ATTR.LEFTBORDERRADIUS),
     isCustomInput: () => {
       return input.getAttribute('data-hook') === 'wsr-custom-input';
     },
 
     // Status
     /** Return true if the given status is displayed */
-    hasStatus: status => element.getAttribute('data-status') === status,
+    hasStatus: status => element.getAttribute(DATA_ATTR.STATUS) === status,
     /** If there's a status message, returns its text value */
     getStatusMessage: () => {
       let tooltipText = null;

@@ -37,13 +37,9 @@ export interface InputDriver extends BaseDriver {
   getAutocomplete: () => string | null;
   getRequired: () => boolean;
   hasPrefix: () => boolean;
-  hasPrefixClass: () => boolean;
   hasSuffix: () => boolean;
-  hasSuffixClass: () => boolean;
-  hasSuffixesClass: () => boolean;
   prefixComponentExists: (style: string) => boolean;
   suffixComponentExists: (style: string) => boolean;
-  isMenuArrowLast: () => boolean;
   getDataHook: () => string | null;
   getUnit: () => string;
   getCustomAffix: () => string;

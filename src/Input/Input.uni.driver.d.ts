@@ -16,11 +16,7 @@ export interface InputUniDriver extends BaseUniDriver {
   getAriaControls: () => Promise<string | null>;
   clickIconAffix: () => Promise<void>;
   clickCustomAffix: () => Promise<void>;
-  isMenuArrowLast: () => Promise<boolean>;
-  hasSuffixesClass: () => Promise<boolean>;
-  hasSuffixClass: () => Promise<boolean>;
   hasSuffix: () => Promise<boolean>;
-  hasPrefixClass: () => Promise<boolean>;
   prefixComponentExists: (style: string) => Promise<boolean>;
   hasPrefix: () => Promise<boolean>;
   hasClearButton: () => Promise<boolean>;

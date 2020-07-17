@@ -189,7 +189,7 @@ class InputWithTags extends React.Component {
 
           {/* Arrow */}
           {isSelectMode && (
-            <div className={styles.menuArrow}>
+            <div className={styles.menuArrow} data-hook="input-menu-arrow">
               <DropDownArrow />
             </div>
           )}

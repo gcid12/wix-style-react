@@ -83,7 +83,7 @@ export type InputStatusError = 'error';
 export type InputStatusLoading = 'loading';
 export type InputStatusWarning = 'warning';
 
-export type InputSize = 'small' | 'normal' | 'medium' | 'large';
+export type InputSize = 'small' | 'medium' | 'large';
 
 declare const Ticker: React.SFC<TickerProps>;
 interface TickerProps {
