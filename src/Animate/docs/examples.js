@@ -103,14 +103,11 @@ export const childSizeExamples = `() => {
     <Layout>
       <Cell>
         <Layout>
-          <Cell span='8'>
+          <Cell span='5'>
             <Animate triggerAnimation={trigger1}>
-              <Thumbnail
-                  size="tiny"
-                  backgroundImage="https://static.wixstatic.com/media/c78d05b79ede429fb77c9d8ec4443b93.jpg/v1/fit/w_64,h_64/c78d05b79ede429fb77c9d8ec4443b93.jpg"
-                  width={200}
-                  height={200}
-              />
+               <FormField labelPlacement="left" label="Small">
+                <Input size="small" placeholder="Placeholder" />
+              </FormField>
             </Animate>
           </Cell>
           <Cell span="4"><Button onClick={() => setTrigger1(!trigger1)}>Play</Button></Cell>
@@ -119,13 +116,10 @@ export const childSizeExamples = `() => {
       <Cell>
         <Layout>
           <Cell span='8'>
-            <Animate delay triggerAnimation={trigger2}>
-              <Thumbnail
-                size="tiny"
-                backgroundImage="https://static.wixstatic.com/media/c78d05b79ede429fb77c9d8ec4443b93.jpg/v1/fit/w_64,h_64/c78d05b79ede429fb77c9d8ec4443b93.jpg"
-                width={300}
-                height={300}
-            />
+            <Animate triggerAnimation={trigger2}>
+              <FormField labelPlacement="left" label="Medium">
+                <Input size="small" placeholder="Placeholder" />
+              </FormField>
             </Animate>
           </Cell>
           <Cell span="4"><Button onClick={() => setTrigger2(!trigger2)}>Play</Button></Cell>

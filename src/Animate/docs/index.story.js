@@ -83,6 +83,13 @@ export default {
               'When `delay` prop is true, the child component bounces with a delay.',
             source: examples.delayExample,
           }),
+
+          example({
+            title: 'sizes example',
+            text:
+              'For child width `198-341`, scale is `1.07`. For child width `342-534`, scale is `1.03`.',
+            source: examples.childSizeExamples,
+          }),
         ],
       }),
 

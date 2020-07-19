@@ -23,19 +23,18 @@ class Animate extends React.PureComponent {
 
     return childrenArray[0]
       ? React.cloneElement(childrenArray[0], {
-          ref: this.childRef,
           'data-hook': dataHooks.animateContent,
         })
       : null;
   };
 
   _getChildComponentSize = () => {
-    const width = this.childRef.offsetWidth;
-    const smallWidthRange = childWidthRange.small;
+    const width = this.childRef.current.offsetWidth;
+    const mediumWidthRange = childWidthRange.medium;
 
-    return inRange(width, smallWidthRange.from, smallWidthRange.to)
-      ? childSize.small
-      : childSize.medium;
+    return inRange(width, mediumWidthRange.from, mediumWidthRange.to)
+      ? childSize.medium
+      : childSize.small;
   };
 
   componentDidMount() {
@@ -98,7 +97,10 @@ class Animate extends React.PureComponent {
         onAnimationStart={this._onAnimationStart}
         onAnimationEnd={this._onAnimationEnd}
       >
-        {this._renderFirstChild()}
+        <div className={styles.wrapper}>
+          <div className={styles.observer} ref={this.childRef} />
+          {this._renderFirstChild()}
+        </div>
       </div>
     );
   }

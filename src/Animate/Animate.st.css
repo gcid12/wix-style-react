@@ -74,6 +74,7 @@
 .animation {
   -st-states: loop, delay, size(enum(small,medium));
 }
+
 .animation:size(small){
   animation: easeOutElasticSmall;
   animation-duration: value(duration);
@@ -100,13 +101,14 @@
   animation-delay: value(delay);
 }
 
-.t {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+.wrapper {
+  position: relative;
 }
-.z {
-  width: 400px;
-  height: 400px;
-  background-color: red;
+
+.observer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
