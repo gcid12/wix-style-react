@@ -165,3 +165,7 @@
   -webkit-mask-image: value(listIconSmallUrl);
   mask-image: value(listIconSmallUrl);
 }
+
+.root > * {
+  vertical-align: top;
+}
