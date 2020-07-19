@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './EmptyState.st.css';
+import { classes, st } from './EmptyState.st.css';
 
 import Heading from '../Heading';
 import Text from '../Text';
@@ -20,27 +20,24 @@ const EmptyState = ({
   align,
 }) => (
   <div
-    {...styles('root', { theme, align })}
+    className={st(classes.root, { theme, align })}
     data-hook={dataHook}
     data-theme={theme}
     data-align={align}
   >
-    <div className={styles.container}>
+    <div className={classes.container}>
       {image && (
         <div
-          {...styles(
-            styles.imageContainer,
+          className={st(
+            classes.imageContainer,
             {},
-            {
-              className:
-                (classNamesProp && classNamesProp.imageContainer) || '',
-            },
+            (classNamesProp && classNamesProp.imageContainer) || '',
           )}
           data-hook="empty-state-image-container"
         >
           {typeof image === 'string' ? (
             <img
-              className={styles.imageElement}
+              className={classes.imageElement}
               src={image}
               data-hook="image-element"
             />
@@ -54,7 +51,7 @@ const EmptyState = ({
 
       {title && (
         <div
-          className={styles.titleContainer}
+          className={classes.titleContainer}
           data-hook="empty-state-title-container"
         >
           {theme === 'section' ? (
@@ -70,7 +67,7 @@ const EmptyState = ({
       )}
 
       <div
-        className={styles.subtitleContainer}
+        className={classes.subtitleContainer}
         data-hook="empty-state-subtitle-container"
       >
         <Text secondary>{subtitle}</Text>
@@ -78,7 +75,7 @@ const EmptyState = ({
 
       {children && (
         <div
-          className={styles.childrenContainer}
+          className={classes.childrenContainer}
           data-hook="empty-state-children-container"
         >
           {children}
