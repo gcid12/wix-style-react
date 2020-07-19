@@ -1,0 +1,112 @@
+:vars{
+  duration: 300ms;
+  delay: 200ms;
+  iterationDely: 700ms;
+}
+
+@keyframes easeOutElasticSmall {
+  0% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.03);
+  }
+  84% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes easeOutElasticMedium {
+  0% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.07);
+  }
+  84% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* values were calculated as explained here: https://css-tricks.com/css-keyframe-animation-delay-iterations */
+@keyframes easeOutElasticSmallLoop {
+  0% {
+    transform: scale(1);
+  }
+
+  12.6% {
+    transform: scale(1.03);
+  }
+
+  25.2%{
+    transform: scale(0.98);
+  }
+
+  30%, 100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes easeOutElasticMediumLoop {
+  0% {
+    transform: scale(1);
+  }
+
+  12.6% {
+    transform: scale(1.07);
+  }
+
+  25.2%{
+    transform: scale(0.98);
+  }
+
+  30%, 100% {
+    transform: scale(1);
+  }
+}
+
+.animation {
+  -st-states: loop, delay, size(enum(small,medium));
+}
+.animation:size(small){
+  animation: easeOutElasticSmall;
+  animation-duration: value(duration);
+}
+
+.animation:size(small):loop {
+  animation: easeOutElasticSmallLoop;
+  animation-duration:calc(value(duration) + value(iterationDely));
+  animation-iteration-count: infinite;
+}
+
+.animation:size(medium){
+  animation: easeOutElasticMedium;
+  animation-duration: value(duration);
+}
+
+.animation:size(medium):loop {
+  animation: easeOutElasticMediumLoop;
+  animation-duration:calc(value(duration) + value(iterationDely));
+  animation-iteration-count: infinite;
+}
+
+.animation:delay {
+  animation-delay: value(delay);
+}
+
+.t {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.z {
+  width: 400px;
+  height: 400px;
+  background-color: red;
+}

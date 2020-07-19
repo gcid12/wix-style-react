@@ -5,6 +5,9 @@
   "AddItem": {
     "path": "src/AddItem"
   },
+  "Animate": {
+    "path": "src/Animate"
+  },
   "AnnouncementModalLayout": {
     "path": "src/AnnouncementModalLayout"
   },

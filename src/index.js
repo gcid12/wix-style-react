@@ -169,3 +169,4 @@ export { default as dndStyles } from './dnd-styles';
 export { default as HorizontalTimeline } from './HorizontalTimeline';
 export { default as StarsRatingBar } from './StarsRatingBar';
 export { default as TagList } from './TagList';
+export { default as Animate } from './Animate';
