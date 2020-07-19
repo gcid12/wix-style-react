@@ -15,11 +15,21 @@ Types of changes:
 1. **Lab** components and features that are still in a work in progress
 
 ## Next
+
+### Changed
+- `<EmptyState/>` - migrate to stylable & fix a bug in the stroybook [#5707](https://github.com/wix/wix-style-react/pull/5707)
+
+## 8.31.0 - 2020-07-16
+### Added
+- `<TagList/>` - create new component [#5628](https://github.com/wix/wix-style-react/pull/5628)
+
 ### Docs
 - `<SortableList/>` - create up-to-date docs [#5662](https://github.com/wix/wix-style-react/pull/5662)
 
 ### Changed
-- `<SectionHelper />` - change scss to stylable [#5697](https://github.com/wix/wix-style-react/pull/5697)
+- `<SectionHelper/>` - migrate to stylable [#5697](https://github.com/wix/wix-style-react/pull/5697)
+- `<DropdownLayout/>` - migrate to stylable [#5658](https://github.com/wix/wix-style-react/pull/5658)
+- `<EmptyState/>` - change the visual test to the updated syntax [#5703](https://github.com/wix/wix-style-react/pull/5703)
 
 ## 8.30.0 - 2020-07-14
 ### Added

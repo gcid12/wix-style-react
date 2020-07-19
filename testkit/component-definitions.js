@@ -83,6 +83,12 @@ export default {
     },
   },
 
+  TagList: {
+    props: {
+      tags: [],
+    },
+  },
+
   Badge: {
     props: {
       children: 'hello',

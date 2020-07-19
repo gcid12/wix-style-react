@@ -65,9 +65,9 @@ export default {
       { label: 'Single action with long text', value: singleActionLongText },
     ],
     align: [
-      { label: 'left', value: 'left' },
+      { label: 'start', value: 'start' },
       { label: 'center', value: 'center' },
-      { label: 'right', value: 'right' },
+      { label: 'end', value: 'end' },
     ],
   },
 

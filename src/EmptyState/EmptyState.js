@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import styles from './EmptyState.scss';
+import styles from './EmptyState.st.css';
 
 import Heading from '../Heading';
 import Text from '../Text';
@@ -21,20 +20,21 @@ const EmptyState = ({
   align,
 }) => (
   <div
-    className={classNames(
-      styles.wrapper,
-      styles[theme],
-      styles[`align-${align}`],
-    )}
+    {...styles('root', { theme, align })}
     data-hook={dataHook}
+    data-theme={theme}
+    data-align={align}
   >
     <div className={styles.container}>
       {image && (
         <div
-          className={classNames(
+          {...styles(
             styles.imageContainer,
-            styles[`align-${align}`],
-            (classNamesProp && classNamesProp.imageContainer) || '',
+            {},
+            {
+              className:
+                (classNamesProp && classNamesProp.imageContainer) || '',
+            },
           )}
           data-hook="empty-state-image-container"
         >
@@ -78,10 +78,7 @@ const EmptyState = ({
 
       {children && (
         <div
-          className={classNames(
-            styles.childrenContainer,
-            styles[`align-${align}`],
-          )}
+          className={styles.childrenContainer}
           data-hook="empty-state-children-container"
         >
           {children}

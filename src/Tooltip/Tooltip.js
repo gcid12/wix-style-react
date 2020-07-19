@@ -52,7 +52,7 @@ class Tooltip extends React.PureComponent {
     onHide: PropTypes.func,
     /** tooltip content placement in relation to target element */
     placement: PropTypes.string,
-    /** disables tooltip element trigger behaviour */
+    /** disables tooltip element trigger behaviour. If not specified, `disabled` prop of the `children` element will be used. */
     disabled: PropTypes.bool,
     /** sets size of the tooltip */
     size: PropTypes.oneOf(['small', 'medium']),

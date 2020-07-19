@@ -22,7 +22,7 @@
   -st-states: size(enum(small, medium, large)),
               focus, hasValue, noLabel, disabled,
               status(enum(error, warning));
-  -st-mixin: boxSizingMixin;
+  -st-mixin: boxSizingMixin('border-box');
   position: relative;
   align-items: center;
 }

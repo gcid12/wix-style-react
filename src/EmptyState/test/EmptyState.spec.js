@@ -1,14 +1,14 @@
 import React from 'react';
 
-import EmptyState from './EmptyState';
-import emptyStateDriverFactory from './EmptyState.driver';
+import EmptyState from '../EmptyState';
+import emptyStateDriverFactory from '../EmptyState.driver';
 
 import {
   createRendererWithDriver,
   createRendererWithUniDriver,
   cleanup,
-} from '../../test/utils/unit';
-import { emptyStateUniDriverFactory } from './EmptyState.uni.driver';
+} from '../../../test/utils/unit';
+import { emptyStateUniDriverFactory } from '../EmptyState.uni.driver';
 
 describe('EmptyState', () => {
   describe('[sync]', () => {

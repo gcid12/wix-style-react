@@ -222,7 +222,13 @@ export default class TimeInput extends Component {
   };
 
   _renderTimeTextbox() {
-    const { customSuffix, disabled, dashesWhenDisabled, width } = this.props;
+    const {
+      customSuffix,
+      disabled,
+      dashesWhenDisabled,
+      width,
+      rtl,
+    } = this.props;
     const text = disabled && dashesWhenDisabled ? '-- : --' : this.state.text;
 
     const suffix = (
@@ -247,7 +253,7 @@ export default class TimeInput extends Component {
             className={styles.suffixEndWrapper}
           >
             {customSuffix && (
-              <Box marginRight="6px">
+              <Box marginRight="6px" width="max-content">
                 {typeof customSuffix === 'string' ? (
                   <Text
                     weight="normal"
@@ -277,6 +283,7 @@ export default class TimeInput extends Component {
     return (
       <Input
         ref="input"
+        rtl={rtl}
         value={text}
         className={classNames({
           [styles.input]: width === 'auto',

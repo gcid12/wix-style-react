@@ -8,7 +8,7 @@ content with ease.
 All components except for `<Container/>` can be nested.
 
 ```js
-import {Container, Row, Col} from 'wix-style-react/Grid';
+import {Container, Row, Col} from 'wix-style-react';
 
 export default () =>
   <Container>
@@ -24,7 +24,7 @@ export default () =>
   <summary>Nested grid example</summary>
 
   ```js
-  import {Container, Row, Col} from 'wix-style-react/Grid';
+  import {Container, Row, Col} from 'wix-style-react';
 
   export default () =>
     <Container>

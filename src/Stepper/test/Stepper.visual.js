@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
-
+import { visualize, snap } from 'storybook-snapper';
 import Stepper from '../Stepper';
 import { Type, FitMode, StepType } from '../constants';
 import { stepperTestkitFactory } from '../../../testkit';
@@ -15,7 +15,10 @@ const createDriver = () =>
     dataHook,
   });
 
-const hoverFirstStep = async () => createDriver().hoverStep(0);
+const hoverFirstStep = async done => {
+  await createDriver().hoverStep(0);
+  done();
+};
 const getTestNameByType = (type, name) => `type=${type}/${name}`;
 
 const generateStepTypeTests = type => ({
@@ -288,25 +291,25 @@ tests.forEach(({ describe, its }) => {
   });
 });
 
-const InteractiveStepperWrapper = ({ componentDidMount, ...props }) => {
+const InteractiveStepperWrapper = ({ componentDidMount, done, ...props }) => {
   useEffect(() => {
-    componentDidMount && componentDidMount();
-  }, [componentDidMount]);
+    componentDidMount && componentDidMount(done);
+  }, [componentDidMount, done]);
 
   return <Stepper {...props} />;
 };
 
 interactiveTests.forEach(({ describe, its }) => {
   its.forEach(({ it, props, componentDidMount }) => {
-    storiesOf(`${storyName}${describe ? '/' + describe : ''}`, module).add(
-      it,
-      () => (
+    visualize(`${storyName}/${describe}`, () => {
+      snap(it, done => (
         <InteractiveStepperWrapper
           dataHook={dataHook}
           {...props}
           componentDidMount={componentDidMount}
+          done={done}
         />
-      ),
-    );
+      ));
+    });
   });
 });

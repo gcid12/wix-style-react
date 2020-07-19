@@ -446,7 +446,6 @@ module.exports = {
   EditableSelector: {
     vanillaLegacyTestkit: true,
     enzymeLegacyTestkit: true,
-    protractorLegacyTestkit: true,
   },
 
   Tag: {

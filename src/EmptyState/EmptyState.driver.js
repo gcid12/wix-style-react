@@ -32,7 +32,7 @@ const emptyStateDriverFactory = ({ element }) => {
     getSubtitleText: () => getSubtitle().textContent,
 
     /** Returns true if the component was configured with given theme */
-    hasTheme: themeName => isClassExists(element, themeName),
+    hasTheme: themeName => element.getAttribute('data-theme') === themeName,
 
     /** Returns the URL of the image element (if persist) */
     getImageUrl: () => getImageElement().src || '',
@@ -46,7 +46,7 @@ const emptyStateDriverFactory = ({ element }) => {
     childrenContentExists: () => !!getChildrenContainer(),
 
     /** Returns true if the component was configured with given align */
-    hasAlign: align => isClassExists(element, `align-${align}`),
+    hasAlign: align => element.getAttribute('data-align') === align,
   };
 };
 

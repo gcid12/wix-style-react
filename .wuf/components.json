@@ -372,10 +372,7 @@
     ]
   },
   "SortableList": {
-    "path": "src/SortableList",
-    "missingFiles": [
-      "docs"
-    ]
+    "path": "src/SortableList"
   },
   "StarsRatingBar": {
     "path": "src/StarsRatingBar"
@@ -409,6 +406,9 @@
   },
   "Tag": {
     "path": "src/Tag"
+  },
+  "TagList": {
+    "path": "src/TagList"
   },
   "Text": {
     "path": "src/Text"

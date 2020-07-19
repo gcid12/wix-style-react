@@ -1,13 +1,19 @@
 import { baseUniDriverFactory, ReactBase } from '../../test/utils/unidriver';
-import * as DataAttr from './DataAttr';
+import {
+  DATA_OPTION,
+  DATA_HOOKS,
+  DATA_DIVIDER,
+  DATA_DIRECTION,
+  DATA_SHOWN,
+  DROPDOWN_LAYOUT_DIRECTIONS,
+} from './DataAttr';
 
 export const dropdownLayoutDriverFactory = base => {
   const byDataHook = dataHook => base.$(`[data-hook="${dataHook}"]`);
   const reactBase = ReactBase(base);
   const contentContainer = async () => byDataHook('content-container');
-  const optionsDataHook = DataAttr.DATA_HOOKS.DROPDOWN_LAYOUT_OPTIONS;
-  const infiniteScrollContainerDataHook =
-    DataAttr.DATA_HOOKS.INFINITE_SCROLL_CONTAINER;
+  const optionsDataHook = DATA_HOOKS.DROPDOWN_LAYOUT_OPTIONS;
+  const infiniteScrollContainerDataHook = DATA_HOOKS.INFINITE_SCROLL_CONTAINER;
   const infiniteScrollContainer = byDataHook(infiniteScrollContainerDataHook);
   const optionsElement = byDataHook(optionsDataHook);
   const optionElementAt = async position =>
@@ -55,15 +61,23 @@ export const dropdownLayoutDriverFactory = base => {
         }
       }
     },
-    hasTopArrow: () => base.$('.arrow').exists(),
-    isDown: async () => (await contentContainer()).hasClass('down'),
+    hasTopArrow: async () =>
+      await (await byDataHook(DATA_HOOKS.TOP_ARROW)).exists(),
+    isDown: async () =>
+      (await (await contentContainer()).attr(DATA_DIRECTION)) ===
+      DROPDOWN_LAYOUT_DIRECTIONS.DOWN,
+    isUp: async () =>
+      (await (await contentContainer()).attr(DATA_DIRECTION)) ===
+      DROPDOWN_LAYOUT_DIRECTIONS.UP,
     isLinkOption: async position => {
       const option = await optionElementAt(position);
       return (await option._prop('tagName')).toLowerCase() === 'a';
     },
     isOptionADivider: position =>
-      doIfOptionExists(position, async () =>
-        (await optionElementAt(position)).hasClass('divider'),
+      doIfOptionExists(
+        position,
+        async () =>
+          !!(await (await optionElementAt(position)).attr(DATA_DIVIDER)),
       ),
     isOptionExists: async optionText => {
       for (const _option of await options()) {
@@ -75,31 +89,43 @@ export const dropdownLayoutDriverFactory = base => {
     },
     isOptionHovered: async index => {
       const option = await optionElementAt(index);
-      return await option.hasClass('hovered');
+      return !!(await option.attr(DATA_OPTION.HOVERED));
     },
     isOptionSelected: async index => {
       const option = await optionElementAt(index);
-      return await option.hasClass('selected');
+      return !!(await option.attr(DATA_OPTION.SELECTED));
     },
     isOptionSelectedWithGlobalClassName: position =>
-      doIfOptionExists(position, async () =>
-        (await optionElementAt(position)).hasClass('wixstylereactSelected'),
+      doIfOptionExists(
+        position,
+        async () =>
+          !!(await (await optionElementAt(position)).attr(
+            DATA_OPTION.SELECTED_GLOBAL,
+          )),
       ),
     isOptionHoveredWithGlobalClassName: position =>
-      doIfOptionExists(position, async () =>
-        (await optionElementAt(position)).hasClass('wixstylereactHovered'),
+      doIfOptionExists(
+        position,
+        async () =>
+          !!(await (await optionElementAt(position)).attr(
+            DATA_OPTION.HOVERED_GLOBAL,
+          )),
       ),
     isOptionHeightSmall: position =>
-      doIfOptionExists(position, async () =>
-        (await optionElementAt(position)).hasClass('smallHeight'),
+      doIfOptionExists(
+        position,
+        async () =>
+          (await (await optionElementAt(position)).attr(DATA_OPTION.SIZE)) ===
+          'small',
       ),
     isOptionHeightBig: position =>
-      doIfOptionExists(position, async () =>
-        (await optionElementAt(position)).hasClass('bigHeight'),
+      doIfOptionExists(
+        position,
+        async () =>
+          (await (await optionElementAt(position)).attr(DATA_OPTION.SIZE)) ===
+          'big',
       ),
-    isShown: async () =>
-      (await (await contentContainer()).attr(DataAttr.DATA_SHOWN)) === 'true',
-    isUp: async () => (await contentContainer()).hasClass('up'),
+    isShown: async () => !!(await (await contentContainer()).attr(DATA_SHOWN)),
     mouseEnter: () => base.hover(),
     mouseEnterAtOption: position =>
       doIfOptionExists(position, async () =>
@@ -153,7 +179,7 @@ export const dropdownLayoutDriverFactory = base => {
       const optionsWithHovered = await Promise.all(
         allOptions.map(async option => ({
           option,
-          hovered: await option.hasClass('hovered'),
+          hovered: !!(await option.attr(DATA_OPTION.HOVERED)),
         })),
       );
       const hoveredOptions = optionsWithHovered
@@ -182,12 +208,14 @@ const createOptionDriver = option => ({
   element: () => option,
   mouseEnter: () => option.hover(),
   mouseLeave: () => ReactBase(option).mouseLeave(),
-  isHovered: () => option.hasClass('hovered'),
-  isSelected: () => option.hasClass('selected'),
-  isHoveredWithGlobalClassName: () => option.hasClass('wixstylereactHovered'),
-  isSelectedWithGlobalClassName: () => option.hasClass('wixstylereactSelected'),
+  isHovered: async () => !!(await option.attr(DATA_OPTION.HOVERED)),
+  isSelected: async () => !!(await option.attr(DATA_OPTION.SELECTED)),
+  isHoveredWithGlobalClassName: async () =>
+    !!(await option.attr(DATA_OPTION.HOVERED_GLOBAL)),
+  isSelectedWithGlobalClassName: async () =>
+    !!(await option.attr(DATA_OPTION.SELECTED_GLOBAL)),
   content: () => option.text(),
   click: () => option.click(),
-  isDivider: () => option.hasClass('divider'),
-  isDisabled: () => option.hasClass('disabled'),
+  isDivider: async () => !!(await option.attr(DATA_DIVIDER)),
+  isDisabled: async () => !!(await option.attr(DATA_OPTION.DISABLED)),
 });

@@ -21,10 +21,6 @@ describe('DropdownLayout', () => {
     runTests(createRendererWithUniDriver(dropdownLayoutUniDriverFactory), true);
   });
 
-  afterEach(() => {
-    cleanup();
-  });
-
   const options = [
     { id: 0, value: 'Option 1' },
     { id: 1, value: 'Option 2' },
@@ -36,9 +32,7 @@ describe('DropdownLayout', () => {
   ];
 
   function runTests(render, isAsync) {
-    afterEach(() => {
-      cleanup();
-    });
+    afterEach(cleanup);
 
     const createDriver = jsx => render(jsx).driver;
 
@@ -631,7 +625,6 @@ describe('DropdownLayout', () => {
           ),
         ).not.toContain(true);
       });
-
       it('should hover starting from the top', async () => {
         const driver = createDriver(
           <DropdownLayout visible options={options} />,
@@ -648,7 +641,6 @@ describe('DropdownLayout', () => {
         await driver.pressDownKey();
         expect(await driver.isOptionHovered(1)).toBe(true);
       });
-
       it('should hover when mouse enter and unhover when mouse leave', async () => {
         const driver = createDriver(
           <DropdownLayout visible options={options} />,
@@ -658,7 +650,6 @@ describe('DropdownLayout', () => {
         await driver.mouseLeaveAtOption(0);
         expect(await driver.isOptionHovered(0)).toBe(false);
       });
-
       it('should hover when mouse enter and unhover when mouse leave by data hook', async () => {
         const driver = createDriver(
           <DropdownLayout visible options={options} />,
@@ -669,7 +660,6 @@ describe('DropdownLayout', () => {
         await option.mouseLeave();
         expect(await option.isHovered()).toBe(false);
       });
-
       it('should hover when mouse enter and unhover when mouse leave when overrideStyle is true', async () => {
         const _options = [{ id: 0, value: 'Option 1', overrideStyle: true }];
 
@@ -692,7 +682,6 @@ describe('DropdownLayout', () => {
           ).isHoveredWithGlobalClassName(),
         ).toBe(false);
       });
-
       it('should not hover divider or a disabled item when mouse enter', async () => {
         const driver = createDriver(
           <DropdownLayout visible options={options} />,
@@ -702,7 +691,6 @@ describe('DropdownLayout', () => {
         await driver.mouseLeaveAtOption(4);
         expect(await driver.isOptionHovered(4)).toBe(false);
       });
-
       it('should have only one hovered option', async () => {
         const driver = createDriver(
           <DropdownLayout visible options={options} />,
@@ -783,7 +771,6 @@ describe('DropdownLayout', () => {
 
         expect(await driver.isOptionHovered(2)).toBe(true);
       });
-
       it('should reset the hovered option when options change and hovered option does not exist anymore', async () => {
         const initialOptions = [
           { id: 0, value: 'a 1' },

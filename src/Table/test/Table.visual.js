@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 import { testkitFactoryCreator } from 'wix-ui-test-utils/vanilla';
-
 import Table from '..';
 import { tablePrivateDriverFactory } from '../Table.private.driver';
 import Card from '../../Card';
@@ -14,6 +12,7 @@ import {
   ToolbarWithBulSelectionCheckboxExample,
   EmptyStateExample,
 } from './testExamples';
+import { visualize, snap } from 'storybook-snapper';
 
 const { dataHook } = storySettings;
 
@@ -348,8 +347,9 @@ const tests = [
           data: horizontalScrollData,
           columns: horizontalScrollColumns,
         },
-        componentDidMount: () => {
+        componentDidMount: done => {
           createDriver().scrollHorizontallyTo(250);
+          done();
         },
       },
       {
@@ -359,8 +359,9 @@ const tests = [
           data: horizontalScrollData,
           columns: horizontalScrollColumns,
         },
-        componentDidMount: () => {
+        componentDidMount: done => {
           createDriver().scrollHorizontallyTo(99999);
+          done();
         },
       },
       {
@@ -372,8 +373,9 @@ const tests = [
           data: horizontalScrollData,
           columns: horizontalScrollColumns,
         },
-        componentDidMount: () => {
+        componentDidMount: done => {
           createDriver().scrollHorizontallyTo(200);
+          done();
         },
       },
       {
@@ -385,8 +387,9 @@ const tests = [
           data: horizontalScrollData,
           columns: horizontalScrollColumns,
         },
-        componentDidMount: () => {
+        componentDidMount: done => {
           createDriver().scrollHorizontallyTo(200);
+          done();
         },
       },
       {
@@ -399,10 +402,11 @@ const tests = [
           columns: horizontalScrollColumns,
           isRowHighlight: (_, rowNum) => rowNum % 2 === 0,
         },
-        componentDidMount: () => {
+        componentDidMount: done => {
           const driver = createDriver();
           driver.scrollHorizontallyTo(200);
           driver.clickRowCheckbox(1);
+          done();
         },
       },
       {
@@ -418,27 +422,43 @@ const tests = [
             <Table.Content key="content" titleBarVisible={false} />,
           ],
         },
-        componentDidMount: () => {
+        componentDidMount: done => {
           createDriver().scrollHorizontallyTo(200);
+          done();
         },
       },
     ],
   },
 ];
 
+const TableWrapper = ({ props, componentDidMount, done }) => {
+  useEffect(() => {
+    componentDidMount && componentDidMount(done);
+  }, [componentDidMount, done]);
+
+  return (
+    <div style={{ backgroundColor: '#DFE5EB', padding: '20px' }}>
+      <Card>
+        <Table
+          dataHook={dataHook}
+          {...props}
+          componentDidMount={componentDidMount}
+        />
+      </Card>
+    </div>
+  );
+};
+
 tests.forEach(({ describe, its }) => {
   its.forEach(({ it, props, componentDidMount }) => {
-    storiesOf(`Table${describe ? '/' + describe : ''}`, module).add(it, () => {
-      useEffect(() => {
-        componentDidMount && componentDidMount();
-      }, []);
-      return (
-        <div style={{ backgroundColor: '#DFE5EB', padding: '20px' }}>
-          <Card>
-            <Table dataHook={dataHook} {...props} />
-          </Card>
-        </div>
-      );
+    visualize(`Table/${describe}`, () => {
+      snap(it, done => (
+        <TableWrapper
+          props={props}
+          componentDidMount={componentDidMount}
+          done={done}
+        />
+      ));
     });
   });
 });

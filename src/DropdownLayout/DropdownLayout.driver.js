@@ -1,5 +1,5 @@
 import ReactTestUtils from 'react-dom/test-utils';
-import styles from './DropdownLayout.scss';
+import styles from './DropdownLayout.st.css';
 import values from '../utils/operators/values';
 import { isClassExists } from '../../test/utils';
 

@@ -29,7 +29,7 @@ export const emptyStateUniDriverFactory = base => {
     getSubtitleText: async () => getSubtitle().text(),
 
     /** Returns true if the component was configured with given theme */
-    hasTheme: themeName => base.hasClass(themeName),
+    hasTheme: async themeName => (await base.attr('data-theme')) === themeName,
 
     /** Returns the URL of the image element (if persist) */
     getImageUrl: () => getImageElement()._prop('src') || '',
@@ -48,6 +48,6 @@ export const emptyStateUniDriverFactory = base => {
     childrenContentExists: () => getChildrenContainer().exists(),
 
     /** Returns true if the component was configured with given align */
-    hasAlign: align => base.hasClass(`align-${align}`),
+    hasAlign: async align => (await base.attr('data-align')) === align,
   };
 };

@@ -12,6 +12,7 @@ export interface TagProps {
   maxWidth?: number;
   className?: string;
   dataHook?: string;
+  children?: React.ReactNode;
 }
 
 export default class Tag extends React.PureComponent<TagProps> {}

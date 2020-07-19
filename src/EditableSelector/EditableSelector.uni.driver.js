@@ -38,10 +38,15 @@ export const editableSelectorUniDriverFactory = (base, body) => {
     },
     editRow: async (index, label) => {
       const editButton = await editButtonAt(index);
+      await editButton.hover();
       await editButton.click();
       return editableRowDriver().setText(label);
     },
-    deleteRow: async index => (await deleteButtonAt(index)).click(),
+    deleteRow: async index => {
+      const deleteButton = await deleteButtonAt(index);
+      await deleteButton.hover();
+      return deleteButton.click();
+    },
     startAdding: () => newRowButton().click(),
     startEditing: async index => (await editButtonAt(index)).click(),
     clickApprove: () => editableRowDriver().clickApprove(),
