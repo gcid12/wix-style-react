@@ -20,12 +20,7 @@ class Animate extends React.PureComponent {
   _renderFirstChild = () => {
     const { children } = this.props;
     const childrenArray = React.Children.toArray(children);
-
-    return childrenArray[0]
-      ? React.cloneElement(childrenArray[0], {
-          'data-hook': dataHooks.animateContent,
-        })
-      : null;
+    return childrenArray[0] ? childrenArray[0] : null;
   };
 
   _getChildComponentSize = () => {
@@ -97,7 +92,10 @@ class Animate extends React.PureComponent {
         onAnimationStart={this._onAnimationStart}
         onAnimationEnd={this._onAnimationEnd}
       >
-        <div className={styles.wrapper}>
+        <div
+          data-hook={dataHooks.animateContent}
+          className={styles.animateContent}
+        >
           <div className={styles.observer} ref={this.childRef} />
           {this._renderFirstChild()}
         </div>

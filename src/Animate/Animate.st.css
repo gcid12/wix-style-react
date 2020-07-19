@@ -101,7 +101,7 @@
   animation-delay: value(delay);
 }
 
-.wrapper {
+.animateContent {
   position: relative;
 }
 
