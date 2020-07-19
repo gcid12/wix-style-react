@@ -17,21 +17,6 @@ class Animate extends React.PureComponent {
     this.childRef = React.createRef();
   }
 
-  _renderFirstChild = () => {
-    const { children } = this.props;
-    const childrenArray = React.Children.toArray(children);
-    return childrenArray[0] ? childrenArray[0] : null;
-  };
-
-  _getChildComponentSize = () => {
-    const width = this.childRef.current.offsetWidth;
-    const mediumWidthRange = childWidthRange.medium;
-
-    return inRange(width, mediumWidthRange.from, mediumWidthRange.to)
-      ? childSize.medium
-      : childSize.small;
-  };
-
   componentDidMount() {
     const { triggerAnimation } = this.props;
     return triggerAnimation ? this._startStopAnimation() : null;
@@ -79,6 +64,21 @@ class Animate extends React.PureComponent {
         ? ''
         : { ...styles('animation', { loop, delay, size }) },
     });
+  };
+
+  _renderFirstChild = () => {
+    const { children } = this.props;
+    const childrenArray = React.Children.toArray(children);
+    return childrenArray[0] ? childrenArray[0] : null;
+  };
+
+  _getChildComponentSize = () => {
+    const width = this.childRef.current.offsetWidth;
+    const mediumWidthRange = childWidthRange.medium;
+
+    return inRange(width, mediumWidthRange.from, mediumWidthRange.to)
+      ? childSize.medium
+      : childSize.small;
   };
 
   render() {
