@@ -125,6 +125,7 @@ Animate.propTypes = {
   /** when set to true, bounces repetitively until stopped by other event*/
   loop: PropTypes.bool,
 
+  /** when set to true, bounces with a delay*/
   delay: PropTypes.bool,
 };
 
