@@ -51,6 +51,11 @@
   padding-right: 0;
 }
 
+/* Status indicator */
+.root input + div > div {
+  margin: auto;
+}
+
 /* Bottom Border */
 .border {
   position: absolute;
