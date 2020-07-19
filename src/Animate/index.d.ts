@@ -4,8 +4,8 @@ export interface AnimateProps {
   dataHook?: string;
   children?: React.ReactNode;
   triggerAnimation?: boolean;
-  onEnter?: Function;
-  onExited?: Function;
+  onEnter?(): void;
+  onExited?(): void;
   loop?: boolean;
   delay?: boolean;
 }
