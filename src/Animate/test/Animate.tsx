@@ -20,7 +20,6 @@ function animateWithAllProps() {
       onExited={() => {}}
       loop
       delay
-      buttonText="buttonText"
     />
   );
 }

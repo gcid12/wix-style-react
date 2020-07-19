@@ -2,10 +2,10 @@ import * as React from 'react';
 
 export interface AnimateProps {
   dataHook?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   triggerAnimation?: boolean;
-  onEnter?: () => {};
-  onExited?: () => {};
+  onEnter?: Function;
+  onExited?: Function;
   loop?: boolean;
   delay?: boolean;
 }
