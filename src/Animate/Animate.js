@@ -57,7 +57,7 @@ class Animate extends React.PureComponent {
   _startStopAnimation = () => {
     const size = this._getChildComponentSize();
     const { classNames } = this.state;
-    const { loop, delay } = this.props;
+    const { loop } = this.props;
 
     this.setState({
       classNames: classNames ? '' : { ...styles('animation', { loop, size }) },
@@ -87,9 +87,9 @@ class Animate extends React.PureComponent {
       <div
         data-hook={dataHook}
         {...classNames}
+        style={delay ? { animationDelay: delay } : null}
         onAnimationStart={this._onAnimationStart}
         onAnimationEnd={this._onAnimationEnd}
-        style={delay ? { animationDelay: delay } : null}
       >
         <div
           data-hook={dataHooks.animateContent}
