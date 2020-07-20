@@ -60,9 +60,7 @@ class Animate extends React.PureComponent {
     const { loop, delay } = this.props;
 
     this.setState({
-      classNames: classNames
-        ? ''
-        : { ...styles('animation', { loop, delay, size }) },
+      classNames: classNames ? '' : { ...styles('animation', { loop, size }) },
     });
   };
 
@@ -83,7 +81,7 @@ class Animate extends React.PureComponent {
 
   render() {
     const { classNames } = this.state;
-    const { dataHook } = this.props;
+    const { dataHook, delay } = this.props;
 
     return (
       <div
@@ -91,6 +89,7 @@ class Animate extends React.PureComponent {
         {...classNames}
         onAnimationStart={this._onAnimationStart}
         onAnimationEnd={this._onAnimationEnd}
+        style={delay ? { animationDelay: delay } : null}
       >
         <div
           data-hook={dataHooks.animateContent}
@@ -125,8 +124,8 @@ Animate.propTypes = {
   /** when set to true, bounces repetitively until stopped by other event*/
   loop: PropTypes.bool,
 
-  /** when set to true, bounces with a delay*/
-  delay: PropTypes.bool,
+  /** set a delay before the animation execution */
+  delay: PropTypes.string,
 };
 
 Animate.defaultProps = {};

@@ -63,35 +63,19 @@ export const loopExample = `() => {
 `;
 
 export const delayExample = `() => {
-    const [ trigger1, setTrigger1 ] = React.useState(false);
-    const [ trigger2, setTrigger2 ] = React.useState(false);
+    const [ trigger, setTrigger ] = React.useState(false);
+
     return (
-    <Layout>
-      <Cell>
         <Layout>
           <Cell span='8'>
-            <Animate triggerAnimation={trigger1}>
-              <FormField label="Without delay" labelPlacement="left">
-                <Input size="small" placeholder="Placeholder" />
-              </FormField>
-            </Animate>
-          </Cell>
-          <Cell span="4"><Button onClick={() => setTrigger1(!trigger1)}>Play</Button></Cell>
-        </Layout>
-      </Cell>
-      <Cell>
-        <Layout>
-          <Cell span='8'>
-            <Animate delay triggerAnimation={trigger2}>
+            <Animate delay="500ms" triggerAnimation={trigger}>
               <FormField label="With delay" labelPlacement="left">
                 <Input size="small" placeholder="Placeholder" />
               </FormField>
             </Animate>
           </Cell>
-          <Cell span="4"><Button onClick={() => setTrigger2(!trigger2)}>Play</Button></Cell>
+          <Cell span="4"><Button onClick={() => setTrigger(!trigger)}>Play</Button></Cell>
         </Layout>
-      </Cell>
-    </Layout>
    )
 }
 `;

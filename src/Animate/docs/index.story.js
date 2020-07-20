@@ -80,7 +80,7 @@ export default {
           example({
             title: 'delay example',
             text:
-              'When `delay` prop is true, the child component bounces with a delay.',
+              'The `delay` prop is  used to set a delay before the animation execution.',
             source: examples.delayExample,
           }),
 
