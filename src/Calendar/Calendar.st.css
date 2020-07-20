@@ -185,12 +185,12 @@
   border-radius: 0;
 }
 
-.calendar :global(.DayPicker).TwoMonths:global(.DayPicker-Months) {
+.calendar :global(.DayPicker).TwoMonths :global(.DayPicker-Months) {
   display: flex;
 }
 
-.calendar :global(.DayPicker).TwoMonths:global(.DayPicker-Months .DayPicker-Month:first-child .DayPicker-Nav--Right),
-.calendar :global(.DayPicker).TwoMonths:global(.DayPicker-Months .DayPicker-Month:last-child .DayPicker-Nav--Left),
+.calendar :global(.DayPicker).TwoMonths :global(.DayPicker-Month:first-child .DayPicker-Nav--Right),
+.calendar :global(.DayPicker).TwoMonths :global(.DayPicker-Month:last-child .DayPicker-Nav--Left),
 .calendar :global(.DayPicker).TwoMonths :global(.DayPicker-Day--outside) {
   visibility: hidden;
 }
