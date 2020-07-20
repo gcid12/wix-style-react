@@ -121,7 +121,7 @@ Animate.propTypes = {
   /** A callback fired immediately after the transition finishes.*/
   onExited: PropTypes.func,
 
-  /** when set to true, bounces repetitively until stopped by other event*/
+  /** when set to true, the child component animate repetitively until stopped by other event*/
   loop: PropTypes.bool,
 
   /** set a delay before the animation execution */
