@@ -1,5 +1,5 @@
 import React from 'react';
-import DropdownLayout from 'wix-style-react/DropdownLayout';
+import { DropdownLayout } from 'wix-style-react';
 
 const generateOption = id => {
   return { id, value: 'options ' + id };

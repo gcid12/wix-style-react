@@ -1,6 +1,5 @@
 import React from 'react';
-import DropdownLayout from 'wix-style-react/DropdownLayout';
-import { badgeSelectItemBuilder } from 'wix-style-react/BadgeSelectItemBuilder';
+import { DropdownLayout, badgeSelectItemBuilder } from 'wix-style-react';
 
 const style = {
   display: 'inline-block',

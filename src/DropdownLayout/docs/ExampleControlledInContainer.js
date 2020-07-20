@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DropdownLayout from 'wix-style-react/DropdownLayout';
+import { DropdownLayout } from 'wix-style-react';
 
 const options = [
   { id: 1, value: 'Option 1' },

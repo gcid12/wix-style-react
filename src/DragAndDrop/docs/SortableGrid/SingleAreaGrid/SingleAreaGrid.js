@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { dndStyles as defaultDndStyles } from 'wix-style-react';
-import SortableGrid from 'wix-style-react/SortableGrid';
+import { dndStyles as defaultDndStyles, SortableGrid } from 'wix-style-react';
 
 import styles from './SingleAreaGrid.scss';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'wix-style-react/Grid';
+import { Container, Row, Col } from 'wix-style-react';
 
 export default () => (
   <div style={{ background: '#F0F4F7' }}>

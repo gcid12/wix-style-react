@@ -1,13 +1,10 @@
 import React from 'react';
 
-import Page from 'wix-style-react/Page';
-import Button from 'wix-style-react/Button';
-import TextButton from 'wix-style-react/TextButton';
-import EmptyState from 'wix-style-react/EmptyState';
-import Card from 'wix-style-react/Card';
 import Add from 'wix-ui-icons-common/Add';
 
 import ImagePlaceholder from '../../../stories/utils/ImagePlaceholder';
+
+import { Page, Button, TextButton, EmptyState, Card } from 'wix-style-react';
 
 const ExampleEmptyState = props => (
   <Page

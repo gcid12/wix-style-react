@@ -7,8 +7,7 @@ import { getTestStoryKind } from '../../../stories/storiesHierarchy';
 import { RTLWrapper } from '../../../stories/utils/RTLWrapper';
 
 import PageHeader from '..';
-import Button from 'wix-style-react/Button';
-import Dropdown from 'wix-style-react/Dropdown';
+import { Button, Dropdown } from 'wix-style-react';
 
 const PageHeaderContainer = ({ children }) => (
   <div style={{ width: '700px', border: '1px solid' }}>

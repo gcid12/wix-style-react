@@ -1,13 +1,15 @@
 import React from 'react';
 
-import Box from 'wix-style-react/Box';
-import Button from 'wix-style-react/Button';
-import Heading from 'wix-style-react/Heading';
-import ModalMobileLayout from 'wix-style-react/ModalMobileLayout';
-import Text from 'wix-style-react/Text';
-import TextButton from 'wix-style-react/TextButton';
-
 import { ReactComponent as Logo } from '../../../assets/Illustration.svg';
+
+import {
+  Box,
+  Button,
+  Heading,
+  ModalMobileLayout,
+  Text,
+  TextButton,
+} from 'wix-style-react';
 
 const style = {
   width: '375px',

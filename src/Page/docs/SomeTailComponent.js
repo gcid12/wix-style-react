@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from 'wix-style-react/Tabs';
+import { Tabs } from 'wix-style-react';
 
 const SomeTailComponent = () => (
   <Tabs

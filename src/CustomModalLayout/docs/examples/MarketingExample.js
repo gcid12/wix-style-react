@@ -1,9 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Modal from 'wix-style-react/Modal';
-import Button from 'wix-style-react/Button';
-import Box from 'wix-style-react/Box';
-import CustomModalLayout from "wix-style-react/CustomModalLayout";
+import { Modal, Button, Box, CustomModalLayout } from 'wix-style-react';
 
 class MarketingExample extends React.Component {
   state = {

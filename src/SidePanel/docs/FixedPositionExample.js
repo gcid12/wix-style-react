@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Button from 'wix-style-react/Button';
-import Box from 'wix-style-react/Box';
+import { Button, Box } from 'wix-style-react';
 
 class SimpleExample extends React.Component {
   state = {

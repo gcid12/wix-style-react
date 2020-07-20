@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Text from 'wix-style-react/Text';
+import { Text } from 'wix-style-react';
 
 /** Capitalize first character */
 export function capitalize(str) {

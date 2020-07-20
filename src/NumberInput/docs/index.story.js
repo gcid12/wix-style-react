@@ -12,7 +12,7 @@ import {
 import allComponents from '../../../stories/utils/allComponents';
 import * as examples from './examples';
 
-import NumberInput from 'wix-style-react/NumberInput';
+import { NumberInput } from 'wix-style-react';
 
 const code = config => baseCode({ components: allComponents, ...config });
 

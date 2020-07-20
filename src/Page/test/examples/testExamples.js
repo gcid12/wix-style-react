@@ -1,15 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import Page from 'wix-style-react/Page';
-import Button from 'wix-style-react/Button';
-import Box from 'wix-style-react/Box';
-import PopoverMenu from 'wix-style-react/PopoverMenu';
-import IconButton from 'wix-style-react/IconButton';
-import Breadcrumbs from 'wix-style-react/Breadcrumbs';
-import Tabs from 'wix-style-react/Tabs';
-import Card from 'wix-style-react/Card';
-import EmptyState from 'wix-style-react/EmptyState';
-import TextButton from 'wix-style-react/TextButton';
 import Add from 'wix-ui-icons-common/Add';
 import More from 'wix-ui-icons-common/More';
 
@@ -17,6 +7,19 @@ import SomeContentComponent from './SomeContentComponent';
 import ImagePlaceholder from '../../../../stories/utils/ImagePlaceholder';
 
 import * as s from './testExamples.scss';
+
+import {
+  Page,
+  Button,
+  Box,
+  PopoverMenu,
+  IconButton,
+  Breadcrumbs,
+  Tabs,
+  Card,
+  EmptyState,
+  TextButton,
+} from 'wix-style-react';
 
 const ActionsBar = () => {
   return (

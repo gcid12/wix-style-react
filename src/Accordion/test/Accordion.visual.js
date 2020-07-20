@@ -1,12 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Accordion from 'wix-style-react/Accordion';
-import Text from 'wix-style-react/Text';
-import Card from 'wix-style-react/Card';
-import { Layout, Cell } from 'wix-style-react/Layout';
 import InfoCircle from 'wix-ui-icons-common/InfoCircle';
 import { skins } from '../constants';
+
+import { Accordion, Text, Card, Layout, Cell } from 'wix-style-react';
 
 export const text =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';

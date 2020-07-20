@@ -13,10 +13,10 @@ import {
 import LinkTo from '@storybook/addon-links/react';
 import * as examples from './examples';
 
-import TextButton from 'wix-style-react/TextButton';
-import Tooltip from 'wix-style-react/Tooltip';
 import { Category } from '../storiesHierarchy';
 import Box from '../../src/Box';
+
+import { TextButton, Tooltip } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

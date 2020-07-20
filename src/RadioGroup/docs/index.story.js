@@ -1,6 +1,5 @@
 import React from 'react';
 import RadioGroup from '..';
-import Box from 'wix-style-react/Box';
 import { createAutoExampleWrapper } from '../../../stories/utils/AutoExampleWrapper';
 import {
   api,
@@ -25,6 +24,8 @@ const code = config =>
   });
 
 import { storySettings } from './storySettings';
+
+import { Box } from 'wix-style-react';
 
 const exampleChildren = [
   {

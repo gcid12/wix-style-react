@@ -1,9 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Modal from 'wix-style-react/Modal';
-import Button from 'wix-style-react/Button';
-import Box from 'wix-style-react/Box';
-import Checkbox from 'wix-style-react/Checkbox';
+import { Modal, Button, Box, Checkbox } from 'wix-style-react';
 
 class ModalExample extends React.Component {
   state = {

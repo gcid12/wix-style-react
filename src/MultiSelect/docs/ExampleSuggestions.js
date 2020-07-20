@@ -1,12 +1,14 @@
 /* eslint-disable no-undef */
 
 import React from 'react';
-import MultiSelect from 'wix-style-react/MultiSelect';
-import Card from 'wix-style-react/Card';
-import FormField from 'wix-style-react/FormField';
-
-import { contactItemBuilder } from 'wix-style-react/ContactItemBuilder';
 import TextButton from '../../TextButton/TextButton';
+
+import {
+  MultiSelect,
+  Card,
+  FormField,
+  contactItemBuilder,
+} from 'wix-style-react';
 
 const contacts = [
   { name: 'David Fincher', email: 'davidf@wix.com' },

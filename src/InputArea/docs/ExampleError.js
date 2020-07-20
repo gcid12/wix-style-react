@@ -1,5 +1,5 @@
 import React from 'react';
-import InputArea from 'wix-style-react/InputArea';
+import { InputArea } from 'wix-style-react';
 
 const style = {
   display: 'inline-block',

@@ -1,9 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import NestableList from 'wix-style-react/NestableList';
-import { dndStyles as defaultDndStyles } from 'wix-style-react';
-import DragDropContextProvider from 'wix-style-react/DragDropContextProvider';
+import {
+  dndStyles as defaultDndStyles,
+  NestableList,
+  DragDropContextProvider,
+} from 'wix-style-react';
 import styles from './NestableList.scss';
 
 export default class NestableListExample extends React.Component {

@@ -1,15 +1,18 @@
 /* eslint-disable */
 import React from 'react';
 
-import Page from 'wix-style-react/Page';
-import Button from 'wix-style-react/Button';
-import Card from 'wix-style-react/Card';
-
-import Box from 'wix-style-react/Box';
-import PopoverMenu from 'wix-style-react/PopoverMenu';
-import IconButton from 'wix-style-react/IconButton';
-import Breadcrumbs from 'wix-style-react/Breadcrumbs';
-import { Row, Col, Container } from 'wix-style-react/Grid';
+import {
+  Page,
+  Button,
+  Card,
+  Box,
+  PopoverMenu,
+  IconButton,
+  Breadcrumbs,
+  Row,
+  Col,
+  Container,
+} from 'wix-style-react';
 
 class ExampleSplitLayout extends React.Component {
   renderHeader() {

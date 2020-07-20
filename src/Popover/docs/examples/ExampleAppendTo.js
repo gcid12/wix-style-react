@@ -2,11 +2,11 @@ import React from 'react';
 
 import Markdown from 'wix-storybook-utils/Markdown';
 
-import { Layout, Cell } from 'wix-style-react/Layout';
-
 import LiveCodeExample, {
   createPropsArray,
 } from '../../../../stories/utils/LiveCodeExample';
+
+import { Layout, Cell } from 'wix-style-react';
 
 const createPopperWithStateExample = ({ shown = true, ...props }) => `
 class PopoverWithState extends React.Component {

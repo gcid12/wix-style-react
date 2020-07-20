@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar, { SidebarItemContextConsumer } from 'wix-style-react/Sidebar';
+import { Sidebar, SidebarItemContextConsumer } from 'wix-style-react';
 
 export default class SidebarItemContextExample extends React.Component {
   render() {

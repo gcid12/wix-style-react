@@ -2,8 +2,6 @@ import React from 'react';
 import { header, description } from 'wix-storybook-utils/Sections';
 
 import Playground from 'wix-storybook-utils/Playground';
-import SegmentedToggle from 'wix-style-react/SegmentedToggle';
-import Box from 'wix-style-react/Box';
 import LayoutList from 'wix-ui-icons-common/LayoutList';
 import LayoutListWithPanel from 'wix-ui-icons-common/LayoutListWithPanel';
 
@@ -11,6 +9,8 @@ import allComponents from '../utils/allComponents';
 import exampleCode from '!raw-loader!./example';
 
 import { Category } from '../storiesHierarchy';
+
+import { SegmentedToggle, Box } from 'wix-style-react';
 
 const PlaygroundWrapper = () => {
   const [layout, setLayout] = React.useState('vertical');

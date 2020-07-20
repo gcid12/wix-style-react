@@ -7,8 +7,8 @@ import Introduction from './Introduction.md';
 import FAQ from './FAQ.md';
 import Roadmap from './Roadmap.md';
 import IntroductionExample from './IntroductionExample';
-import TextButton from 'wix-style-react/TextButton';
 import { Category } from '../../../../stories/storiesHierarchy';
+import { TextButton } from 'wix-style-react';
 
 export default () => (
   <div>

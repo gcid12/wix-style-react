@@ -1,5 +1,5 @@
 import React from 'react';
-import BadgeSelect from 'wix-style-react/BadgeSelect';
+import { BadgeSelect } from 'wix-style-react';
 
 const options = [
   {

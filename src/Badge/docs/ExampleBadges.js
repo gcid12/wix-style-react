@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import Badge, { SIZE, SKIN, TYPE } from 'wix-style-react/Badge';
+import { Badge, SIZE, SKIN, TYPE } from 'wix-style-react';
 
 const skins = Object.keys(SKIN);
 const sizes = Object.keys(SIZE);

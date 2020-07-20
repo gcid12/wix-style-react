@@ -17,9 +17,9 @@ import Add from 'wix-ui-icons-common/Add';
 import Edit from 'wix-ui-icons-common/Edit';
 import Delete from 'wix-ui-icons-common/Delete';
 import More from 'wix-ui-icons-common/More';
-import IconButton from 'wix-style-react/IconButton';
-import PopoverMenu from 'wix-style-react/PopoverMenu';
 import { Category } from '../storiesHierarchy';
+
+import { IconButton, PopoverMenu } from 'wix-style-react';
 
 const menuItems = [
   <PopoverMenu.MenuItem key="add" text="Add" prefixIcon={<Add />} />,

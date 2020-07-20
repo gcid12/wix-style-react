@@ -1,9 +1,6 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import RichTextInputArea from 'wix-style-react/RichTextInputArea';
-import Button from 'wix-style-react/Button';
-import { Layout, Cell } from 'wix-style-react/Layout';
-import Box from 'wix-style-react/Box';
+import { RichTextInputArea, Button, Layout, Cell, Box } from 'wix-style-react';
 
 class RichTextInputAreaSetValueExample extends React.Component {
   render() {

@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Tooltip from 'wix-style-react/Tooltip';
-import EditableSelector from 'wix-style-react/EditableSelector';
-import Button from 'wix-style-react/Button';
+import { Tooltip, EditableSelector, Button } from 'wix-style-react';
 
 class PopoverWithEditableSelector extends React.Component {
   constructor(props) {

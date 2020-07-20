@@ -1,10 +1,13 @@
 import React from 'react';
 
-import { Container, AutoAdjustedRow } from 'wix-style-react/Grid';
-import Button from 'wix-style-react/Button';
-import Card from 'wix-style-react/Card';
-import Tooltip from 'wix-style-react/Tooltip';
-import Text from 'wix-style-react/Text';
+import {
+  Container,
+  AutoAdjustedRow,
+  Button,
+  Card,
+  Tooltip,
+  Text,
+} from 'wix-style-react';
 
 export default () => (
   <div style={{ background: '#F0F4F7', padding: 30 }}>

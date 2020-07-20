@@ -1,8 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 
-import FormField from 'wix-style-react/FormField';
-import ToggleSwitch from 'wix-style-react/ToggleSwitch';
+import { FormField, ToggleSwitch } from 'wix-style-react';
 
 class ControlledToggleSwitch extends React.Component {
   state = {

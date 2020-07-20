@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Button from 'wix-style-react/Button';
-import Modal from 'wix-style-react/Modal';
+import { Button, Modal } from 'wix-style-react';
 
 export class ModalWrapperExample extends Component {
   constructor() {

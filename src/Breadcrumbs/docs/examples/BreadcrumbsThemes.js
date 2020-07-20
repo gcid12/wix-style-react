@@ -1,8 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Breadcrumbs from 'wix-style-react/Breadcrumbs';
-import Box from 'wix-style-react/Box';
-import { Layout, Cell } from 'wix-style-react/Layout';
+import { Breadcrumbs, Box, Layout, Cell } from 'wix-style-react';
 
 class BreadcrumbsThemes extends React.Component {
 

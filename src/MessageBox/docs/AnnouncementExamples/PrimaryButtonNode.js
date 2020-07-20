@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { MessageBoxMarketerialLayout } from 'wix-style-react/MessageBox';
-import DropdownBase from 'wix-style-react/DropdownBase';
-import Button from 'wix-style-react/Button';
 import ChevronDown from 'wix-ui-icons-common/ChevronDown';
+
+import {
+  MessageBoxMarketerialLayout,
+  DropdownBase,
+  Button,
+} from 'wix-style-react';
 
 export default () => (
   <MessageBoxMarketerialLayout

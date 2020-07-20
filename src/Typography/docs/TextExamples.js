@@ -1,9 +1,9 @@
 import React from 'react';
-import Text from 'wix-style-react/Text';
-import Tooltip from 'wix-style-react/Tooltip';
 import { ExampleWrapper, capitalize, propsToJsxString } from './utils';
 
 import styles from './styles.scss';
+
+import { Text, Tooltip } from 'wix-style-react';
 
 export const TextExample = props => {
   const { children, ...rest } = props;

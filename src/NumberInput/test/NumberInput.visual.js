@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import NumberInput from 'wix-style-react/NumberInput';
-import Input from 'wix-style-react/Input';
+import { NumberInput, Input } from 'wix-style-react';
 
 const defaultProps = {
   value: '12345',

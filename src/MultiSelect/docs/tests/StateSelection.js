@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 
 import React from 'react';
-import MultiSelect from 'wix-style-react/MultiSelect';
 import TextButton from '../../../TextButton/TextButton';
+import { MultiSelect } from 'wix-style-react';
 
 const options = [
   { value: 'Alabama', id: 'AL' },

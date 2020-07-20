@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Text from '../Text';
 import { SIZES, SKINS, WEIGHTS } from '../constants';
-import { Layout, Cell } from 'wix-style-react/Layout';
+import { Layout, Cell } from 'wix-style-react';
 
 const tests = [
   {

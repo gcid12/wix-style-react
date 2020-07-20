@@ -3,23 +3,23 @@ import React from 'react';
 import Markdown from 'wix-storybook-utils/Markdown';
 import CodeExample from 'wix-storybook-utils/CodeExample';
 
-import Card from 'wix-style-react/Card';
-
 import { storiesOf } from '@storybook/react';
 
 import MainExample from './MainExample';
+
 import MainExampleRaw from '!raw-loader!./MainExample';
-
 import MainExampleRTL from './MainExampleRTL';
-import MainExampleRTLRaw from '!raw-loader!./MainExampleRTL';
 
+import MainExampleRTLRaw from '!raw-loader!./MainExampleRTL';
 import { BulkActionsExample } from './BulkActionsExample';
+
 import BulkActionsExampleRaw from '!raw-loader!./BulkActionsExample';
 import { storySettings } from './storySettings';
-
 import Readme from './README.md';
 
 import s from './Toolbar.story.scss';
+
+import { Card } from 'wix-style-react';
 
 storiesOf(storySettings.category, module).add(storySettings.storyName, () => (
   <div>

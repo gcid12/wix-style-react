@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Breadcrumbs from '../Breadcrumbs';
-import Box from 'wix-style-react/Box';
 import { SIZES, THEMES } from '../constnats';
 import { breadcrumbsTestkitFactory } from '../../../testkit';
+import { Box } from 'wix-style-react';
 
 const sizes = Object.values(SIZES);
 

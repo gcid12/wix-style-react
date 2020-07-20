@@ -14,14 +14,14 @@ import {
   testkit,
 } from 'wix-storybook-utils/Sections';
 
-import Text from 'wix-style-react/Text';
 import { storySettings } from '../test/storySettings';
 import allComponents from '../../../stories/utils/allComponents';
 
 import PreviewWidget from '..';
-import Box from 'wix-style-react/Box';
 
 import { skins, contentOutlines } from '../constants';
+
+import { Text, Box } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

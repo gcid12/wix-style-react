@@ -1,19 +1,19 @@
 import React from 'react';
-import { SelectionContextPropTypes } from 'wix-style-react/Table';
+import Edit from 'wix-ui-icons-common/Edit';
+import Duplicate from 'wix-ui-icons-common/Duplicate';
+import Upload from 'wix-ui-icons-common/Upload';
+
 import {
+  SelectionContextPropTypes,
   TableToolbar,
   ItemGroup,
   Item,
   SelectedCount,
   Divider,
-} from 'wix-style-react/TableToolbar';
-
-import Card from 'wix-style-react/Card';
-import Search from 'wix-style-react/Search';
-import Button from 'wix-style-react/Button';
-import Edit from 'wix-ui-icons-common/Edit';
-import Duplicate from 'wix-ui-icons-common/Duplicate';
-import Upload from 'wix-ui-icons-common/Upload';
+  Card,
+  Search,
+  Button,
+} from 'wix-style-react';
 
 export class BulkActionsExample extends React.Component {
   render() {

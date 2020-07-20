@@ -16,13 +16,11 @@ import {
 
 import { storySettings } from '../test/storySettings';
 
-import Modal from 'wix-style-react/Modal';
-import Box from 'wix-style-react/Box';
-import Button from 'wix-style-react/Button';
-
 import SimpleExample from '!raw-loader!./examples/SimpleExample';
 import ModalWithCloseButton from '!raw-loader!./examples/ModalWithCloseButton';
 import allComponents from '../../../stories/utils/allComponents';
+
+import { Modal, Box, Button } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

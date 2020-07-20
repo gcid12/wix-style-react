@@ -1,9 +1,6 @@
 import React from 'react';
 
-import Box from 'wix-style-react/Box';
-import Button from 'wix-style-react/Button';
-import ModalMobileLayout from 'wix-style-react/ModalMobileLayout';
-import Text from 'wix-style-react/Text';
+import { Box, Button, ModalMobileLayout, Text } from 'wix-style-react';
 
 const style = {
   width: '375px',

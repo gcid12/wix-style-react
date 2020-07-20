@@ -5,11 +5,10 @@ import {
   Item,
   Label,
   Title,
-} from 'wix-style-react/TableToolbar';
-
-import Card from 'wix-style-react/Card';
-import Search from 'wix-style-react/Search';
-import Dropdown from 'wix-style-react/Dropdown';
+  Card,
+  Search,
+  Dropdown,
+} from 'wix-style-react';
 
 export default class MainExample extends React.Component {
   render() {

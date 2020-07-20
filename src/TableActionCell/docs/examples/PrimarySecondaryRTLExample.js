@@ -1,11 +1,11 @@
 import React from 'react';
-import TableActionCell from 'wix-style-react/TableActionCell';
 import Star from 'wix-ui-icons-common/Star';
 import Download from 'wix-ui-icons-common/Download';
 import Duplicate from 'wix-ui-icons-common/Duplicate';
 import Print from 'wix-ui-icons-common/Print';
-
 import style from '../TableActionCell.story.st.css';
+
+import { TableActionCell } from 'wix-style-react';
 
 const Example = () => (
   <div className="rtl" dir="rtl">

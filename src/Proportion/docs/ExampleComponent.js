@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import AddItem from 'wix-style-react/AddItem';
-import Card from 'wix-style-react/Card';
-import { Container, Row, Col } from 'wix-style-react/Grid';
-import Proportion from 'wix-style-react/Proportion';
+import {
+  AddItem,
+  Card,
+  Container,
+  Row,
+  Col,
+  Proportion,
+} from 'wix-style-react';
 
 export default class ExampleComponent extends Component {
   static displayName = 'ExampleComponent';

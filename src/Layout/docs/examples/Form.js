@@ -1,16 +1,19 @@
 import React from 'react';
 
-import { Layout, Cell } from 'wix-style-react/Layout';
-import Card from 'wix-style-react/Card';
-import FormField from 'wix-style-react/FormField';
-import Input from 'wix-style-react/Input';
-import InputArea from 'wix-style-react/InputArea';
-import Checkbox from 'wix-style-react/Checkbox';
-import Text from 'wix-style-react/Text';
-import Button from 'wix-style-react/Button';
-import RadioGroup from 'wix-style-react/RadioGroup';
-
 import styles from '../styles.scss';
+
+import {
+  Layout,
+  Cell,
+  Card,
+  FormField,
+  Input,
+  InputArea,
+  Checkbox,
+  Text,
+  Button,
+  RadioGroup,
+} from 'wix-style-react';
 
 export default () => (
   <div className={styles.exampleContainer}>

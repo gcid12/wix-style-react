@@ -5,7 +5,7 @@ import { getTestStoryKind } from '../../../stories/storiesHierarchy';
 
 import { testStories, storySettings } from '../docs/storySettings';
 import exampleProps from '../docs/exampleProps';
-import CardGalleryItem from 'wix-style-react/CardGalleryItem';
+import { CardGalleryItem } from 'wix-style-react';
 
 const kind = getTestStoryKind(storySettings);
 

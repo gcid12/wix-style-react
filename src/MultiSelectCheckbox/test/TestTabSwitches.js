@@ -1,7 +1,7 @@
 import React from 'react';
-import MultiSelectCheckbox from 'wix-style-react/MultiSelectCheckbox';
-
 import { storySettings } from '../docs/storySettings';
+
+import { MultiSelectCheckbox } from 'wix-style-react';
 
 const style = {
   display: 'inline-block',

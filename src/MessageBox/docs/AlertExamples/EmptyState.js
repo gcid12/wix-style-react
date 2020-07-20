@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { MessageBoxFunctionalLayout } from 'wix-style-react/MessageBox';
-import EmptyState from 'wix-style-react/EmptyState';
 
 import ImagePlaceholder from '../../../../stories/utils/ImagePlaceholder';
+
+import { MessageBoxFunctionalLayout, EmptyState } from 'wix-style-react';
 
 export default () => (
   <MessageBoxFunctionalLayout

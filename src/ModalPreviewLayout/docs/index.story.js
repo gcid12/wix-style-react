@@ -15,9 +15,8 @@ import {
 } from 'wix-storybook-utils/Sections';
 
 import LinkTo from '@storybook/addon-links/react';
-import Box from 'wix-style-react/Box';
-
 import ModalPreviewLayout from '..';
+
 import { storySettings } from '../test/storySettings';
 import { ModalWrapperExample } from './examples/ModalWrapper';
 import SimpleExample from '!raw-loader!./examples/Simple';
@@ -26,6 +25,7 @@ import ScrollableContentExample from '!raw-loader!./examples/ScrollableContent';
 import MultipleContentExample from '!raw-loader!./examples/MultipleContent';
 import allComponents from '../../../stories/utils/allComponents';
 import { Category } from '../../../stories/storiesHierarchy';
+import { Box } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

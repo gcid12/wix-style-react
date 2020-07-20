@@ -13,9 +13,9 @@ import {
 import LinkTo from '@storybook/addon-links/react';
 import * as examples from './examples';
 
-import Input from 'wix-style-react/Input';
-import FormField from 'wix-style-react/FormField';
 import { Category } from '../storiesHierarchy';
+
+import { Input, FormField } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Button from 'wix-style-react/Button';
-import GenericModalLayout from 'wix-style-react/GenericModalLayout';
-import Modal from 'wix-style-react/Modal';
 
 import styles from './ExampleGeneric.scss';
+
+import { Button, GenericModalLayout, Modal } from 'wix-style-react';
 
 export default class ExampleGeneric extends React.Component {
   constructor() {

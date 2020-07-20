@@ -1,6 +1,6 @@
 import React from 'react';
-import Heading from 'wix-style-react/Heading';
 import s from './styles.scss';
+import { Heading } from 'wix-style-react';
 
 export default () => (
   <div className={s.styleList}>

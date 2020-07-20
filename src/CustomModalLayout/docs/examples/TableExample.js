@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import CustomModalLayout from 'wix-style-react/CustomModalLayout';
+import { CustomModalLayout } from 'wix-style-react';
 
 class TableExample extends React.Component {
   render() {

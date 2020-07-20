@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import SortableList from 'wix-style-react/SortableList';
-import { dndStyles as defaultDndStyles } from 'wix-style-react';
+import { dndStyles as defaultDndStyles, SortableList } from 'wix-style-react';
 
 import styles from './ListWithDelay.scss';
 

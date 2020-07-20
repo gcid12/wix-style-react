@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Box from 'wix-style-react/Box';
+import { Box } from 'wix-style-react';
 
 class NoFooterExample extends React.Component {
   render() {

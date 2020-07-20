@@ -1,8 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
-import SortableList from 'wix-style-react/SortableList';
-import { dndStyles as defaultDndStyles } from 'wix-style-react';
-import DragDropContextProvider from 'wix-style-react/DragDropContextProvider';
+import {
+  dndStyles as defaultDndStyles,
+  SortableList,
+  DragDropContextProvider,
+} from 'wix-style-react';
 import styles from './MultiAreaListWithSortableColumns.scss';
 
 const generateStateForContainer = (length, startIndex) => {

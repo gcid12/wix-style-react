@@ -1,7 +1,7 @@
 import React from 'react';
-import Heading from 'wix-style-react/Heading';
-
 import { ExampleWrapper } from './utils';
+
+import { Heading } from 'wix-style-react';
 
 const darkHeadingsColumn = () => (
   <div style={{ padding: '24px' }}>

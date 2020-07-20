@@ -1,20 +1,24 @@
 /* eslint-disable */
 import React from 'react';
-import Box from 'wix-style-react/Box';
-import Breadcrumbs from 'wix-style-react/Breadcrumbs';
-import Button from 'wix-style-react/Button';
-import Card from 'wix-style-react/Card';
-import Checkbox from 'wix-style-react/Checkbox';
-import IconButton from 'wix-style-react/IconButton';
-import Dropdown from 'wix-style-react/Dropdown';
-import { Container, Row } from 'wix-style-react/Grid';
-import Highlighter from 'wix-style-react/Highlighter';
-import Page from 'wix-style-react/Page';
-import PopoverMenu from 'wix-style-react/PopoverMenu';
-import Search from 'wix-style-react/Search';
-import Table from 'wix-style-react/Table';
-import TableActionCell from 'wix-style-react/TableActionCell';
-import TableToolbar from 'wix-style-react/TableToolbar';
+
+import {
+  Box,
+  Breadcrumbs,
+  Button,
+  Card,
+  Checkbox,
+  IconButton,
+  Dropdown,
+  Container,
+  Row,
+  Highlighter,
+  Page,
+  PopoverMenu,
+  Search,
+  Table,
+  TableActionCell,
+  TableToolbar,
+} from 'wix-style-react';
 
 class Example extends React.Component {
   render() {

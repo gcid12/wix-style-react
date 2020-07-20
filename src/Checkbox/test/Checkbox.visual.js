@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import Checkbox from '../Checkbox';
-import FormField from 'wix-style-react/FormField';
-
 import { uniTestkitFactoryCreator } from 'wix-ui-test-utils/vanilla';
+
 import { checkboxUniDriverFactory } from './Checkbox.private.uni.driver';
 import Box from '../../Box';
+import { FormField } from 'wix-style-react';
 
 const dataHook = 'storybook-checkbox';
 const checkboxId = 'checkboxId';

@@ -12,10 +12,10 @@ import LinkTo from '@storybook/addon-links/react';
 import allComponents from '../utils/allComponents';
 import * as examples from './examples';
 
-import Slider from 'wix-style-react/Slider';
-
 import { storySettings } from './storySettings';
+
 import { Category } from '../storiesHierarchy';
+import { Slider } from 'wix-style-react';
 
 const liveCode = config =>
   baseLiveCode({

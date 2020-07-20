@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Box from 'wix-style-react/Box';
-import Checkbox from 'wix-style-react/Checkbox';
+import { Box, Checkbox } from 'wix-style-react';
 
 class NoHeaderExample extends React.Component {
   render() {

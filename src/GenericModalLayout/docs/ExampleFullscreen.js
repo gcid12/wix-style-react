@@ -1,9 +1,8 @@
 import React from 'react';
-import Button from 'wix-style-react/Button';
-import GenericModalLayout from 'wix-style-react/GenericModalLayout';
-import Modal from 'wix-style-react/Modal';
 
 import styles from './ExampleFullscreen.scss';
+
+import { Button, GenericModalLayout, Modal } from 'wix-style-react';
 
 export default class ExampleFullscreen extends React.Component {
   constructor() {

@@ -1,15 +1,12 @@
 import React from 'react';
 
-import Page from 'wix-style-react/Page';
-import Button from 'wix-style-react/Button';
-import Box from 'wix-style-react/Box';
-import IconButton from 'wix-style-react/IconButton';
-import PopoverMenu from 'wix-style-react/PopoverMenu';
 import More from 'wix-ui-icons-common/More';
 
 import SomeContentComponent from './SomeContentComponent';
 import SomeTailComponent from './SomeTailComponent';
 import Breadcrumbs from './Breadcrumbs';
+
+import { Page, Button, Box, IconButton, PopoverMenu } from 'wix-style-react';
 
 const ActionsBar = () => {
   return (

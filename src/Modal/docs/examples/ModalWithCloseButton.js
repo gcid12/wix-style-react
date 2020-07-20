@@ -1,8 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Modal from 'wix-style-react/Modal';
-import Button from 'wix-style-react/Button';
-import Box from 'wix-style-react/Box';
+import { Modal, Button, Box } from 'wix-style-react';
 
 class ModalWithCloseButton extends React.Component {
 

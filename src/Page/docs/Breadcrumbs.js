@@ -1,5 +1,5 @@
 import React from 'react';
-import Breadcrumbs from 'wix-style-react/Breadcrumbs';
+import { Breadcrumbs } from 'wix-style-react';
 
 export default (
   <Breadcrumbs

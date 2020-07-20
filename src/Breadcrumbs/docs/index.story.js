@@ -14,14 +14,14 @@ import {
 } from 'wix-storybook-utils/Sections';
 
 import { storySettings } from '../test/storySettings';
-import Breadcrumbs from 'wix-style-react/Breadcrumbs';
 import allComponents from '../../../stories/utils/allComponents';
-
 import BreadcrumbsThemes from '!raw-loader!./examples/BreadcrumbsThemes';
+
 import StandardBreadcrumbs from '!raw-loader!./examples/StandardBreadcrumbs';
 import BreadcrumbsSizes from '!raw-loader!./examples/BreadcrumbsSizes';
 import BreadcrumbsOnClickCallback from '!raw-loader!./examples/BreadcrumbsOnClickCallback';
 import ControlledBreadcrumbs from '!raw-loader!./examples/ControlledBreadcrumbs';
+import { Breadcrumbs } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

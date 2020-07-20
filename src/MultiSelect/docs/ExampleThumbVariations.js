@@ -1,7 +1,5 @@
 import React from 'react';
-import MultiSelect from 'wix-style-react/MultiSelect';
-import Heading from 'wix-style-react/Heading';
-import { Layout, Cell } from 'wix-style-react/Layout';
+import { MultiSelect, Heading, Layout, Cell } from 'wix-style-react';
 
 export default () => (
   <Layout>

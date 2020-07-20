@@ -1,6 +1,6 @@
 import React from 'react';
-import InputWithOptions from 'wix-style-react/InputWithOptions';
 import { insideFormStorySettings as storySettings } from '../storySettings';
+import { InputWithOptions } from 'wix-style-react';
 
 const options = [{ id: '0', value: 'First Option' }];
 

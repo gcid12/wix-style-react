@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Layout, Cell } from 'wix-style-react/Layout';
-import Text from 'wix-style-react/Text';
+import { Layout, Cell, Text } from 'wix-style-react';
 
 export default () => (
   <div>

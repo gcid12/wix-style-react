@@ -3,13 +3,13 @@ import { linkTo } from '@storybook/addon-links';
 import { storySettings } from './storySettings';
 
 import EmptyState from '..';
-import TextButton from 'wix-style-react/TextButton';
 import Heading from '../../Heading';
-
 import { Add, Download, StatusComplete } from 'wix-ui-icons-common';
 
 import ImagePlaceholder from '../../../stories/utils/ImagePlaceholder';
+
 import { Category } from '../../../stories/storiesHierarchy';
+import { TextButton } from 'wix-style-react';
 
 const singleAction = <TextButton prefixIcon={<Add />}>New Item</TextButton>;
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import InputArea from 'wix-style-react/InputArea';
 import TextButton from 'wix-storybook-utils/TextButton';
+import { InputArea } from 'wix-style-react';
 
 class CommandsExample extends React.Component {
   render() {

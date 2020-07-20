@@ -1,10 +1,6 @@
 import React from 'react';
 
-import { Container, Row, Col } from 'wix-style-react/Grid';
-import Card from 'wix-style-react/Card';
-
-import FormField from 'wix-style-react/FormField';
-import Input from 'wix-style-react/Input';
+import { Container, Row, Col, Card, FormField, Input } from 'wix-style-react';
 
 export default () => (
   <div style={{ background: '#F0F4F7', padding: 30 }}>

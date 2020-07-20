@@ -1,10 +1,6 @@
 import React from 'react';
 
-import ModalMobileLayout from 'wix-style-react/ModalMobileLayout';
-import Button from 'wix-style-react/Button';
-import Box from 'wix-style-react/Box';
-import Modal from 'wix-style-react/Modal';
-import Text from 'wix-style-react/Text';
+import { ModalMobileLayout, Button, Box, Modal, Text } from 'wix-style-react';
 
 class Plain extends React.Component {
   state = {

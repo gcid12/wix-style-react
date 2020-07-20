@@ -1,5 +1,5 @@
 import React from 'react';
-import InputWithOptions from 'wix-style-react/InputWithOptions';
+import { InputWithOptions } from 'wix-style-react';
 
 const style = {
   display: 'inline-block',

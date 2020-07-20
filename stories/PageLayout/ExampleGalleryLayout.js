@@ -1,11 +1,16 @@
 import React from 'react';
-import Page from 'wix-style-react/Page';
-import Breadcrumbs from 'wix-style-react/Breadcrumbs';
-import Button from 'wix-style-react/Button';
-import { Row, Col, Container } from 'wix-style-react/Grid';
-import CardGalleryItem from 'wix-style-react/CardGalleryItem';
-import Proportion from 'wix-style-react/Proportion';
-import AddItem from 'wix-style-react/AddItem';
+
+import {
+  Page,
+  Breadcrumbs,
+  Button,
+  Row,
+  Col,
+  Container,
+  CardGalleryItem,
+  Proportion,
+  AddItem,
+} from 'wix-style-react';
 
 class ExampleGalleryLayout extends React.Component {
   renderHeader() {

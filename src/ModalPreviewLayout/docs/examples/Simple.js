@@ -1,12 +1,9 @@
 /* eslint-disable */
 import React from 'react';
-import Modal from 'wix-style-react/Modal';
-import Box from 'wix-style-react/Box';
-import Button from 'wix-style-react/Button';
-import TextButton from 'wix-style-react/TextButton';
-import IconButton from 'wix-style-react/IconButton';
 
 import ModalPreviewLayout from '../..';
+
+import { Modal, Box, Button, TextButton, IconButton } from 'wix-style-react';
 
 class SimpleExample extends React.Component {
   state = {

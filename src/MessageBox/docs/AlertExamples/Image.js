@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { MessageBoxFunctionalLayout } from 'wix-style-react/MessageBox';
 import surfMusa from '../../../../test/assets/surf-musa.png';
+import { MessageBoxFunctionalLayout } from 'wix-style-react';
 
 export default () => (
   <MessageBoxFunctionalLayout

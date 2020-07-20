@@ -1,31 +1,32 @@
 /* eslint-disable no-console */
 import React from 'react';
-import { Table } from 'wix-style-react/Table';
+import { header, tail } from './PageChildren';
+import { ExamplePageContainer } from './ExamplePageContainer';
+
+import Edit from 'wix-ui-icons-common/Edit';
+import Duplicate from 'wix-ui-icons-common/Duplicate';
+import Upload from 'wix-ui-icons-common/Upload';
+
+import ImagePlaceholder from '../../../stories/utils/ImagePlaceholder';
+
 import {
+  Table,
   TableToolbar,
   ItemGroup,
   Item,
   Label,
   SelectedCount,
   Divider,
-} from 'wix-style-react/TableToolbar';
-import { header, tail } from './PageChildren';
-import { ExamplePageContainer } from './ExamplePageContainer';
-
-import Dropdown from 'wix-style-react/Dropdown';
-import Search from 'wix-style-react/Search';
-import Checkbox from 'wix-style-react/Checkbox';
-import Card from 'wix-style-react/Card';
-import Page from 'wix-style-react/Page';
-import Button from 'wix-style-react/Button';
-import TextButton from 'wix-style-react/TextButton';
-import Text from 'wix-style-react/Text';
-import Edit from 'wix-ui-icons-common/Edit';
-import Duplicate from 'wix-ui-icons-common/Duplicate';
-import Upload from 'wix-ui-icons-common/Upload';
-import Highlighter from 'wix-style-react/Highlighter';
-
-import ImagePlaceholder from '../../../stories/utils/ImagePlaceholder';
+  Dropdown,
+  Search,
+  Checkbox,
+  Card,
+  Page,
+  Button,
+  TextButton,
+  Text,
+  Highlighter,
+} from 'wix-style-react';
 
 const createDataSet = setIndex => [
   {

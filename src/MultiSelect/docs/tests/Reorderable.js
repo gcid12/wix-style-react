@@ -1,5 +1,5 @@
 import React from 'react';
-import MultiSelect from 'wix-style-react/MultiSelect';
+import { MultiSelect } from 'wix-style-react';
 
 const options = [
   { id: '1', name: 'One', value: 'One' },

@@ -12,8 +12,7 @@ import {
 } from 'wix-storybook-utils/Sections';
 import LinkTo from '@storybook/addon-links/react';
 import * as examples from './examples';
-import FormField from 'wix-style-react/FormField';
-import RichTextInputArea from 'wix-style-react/RichTextInputArea';
+import { FormField, RichTextInputArea } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

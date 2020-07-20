@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Layout, Cell } from 'wix-style-react/Layout';
-import Popover from 'wix-style-react/Popover';
-import Button from 'wix-style-react/Button';
+import { Layout, Cell, Popover, Button } from 'wix-style-react';
 
 class PositionedPopover extends React.Component {
   state = {

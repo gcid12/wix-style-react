@@ -1,6 +1,5 @@
 import React from 'react';
-import DropdownLayout from 'wix-style-react/DropdownLayout';
-import { contactItemBuilder } from 'wix-style-react/ContactItemBuilder';
+import { DropdownLayout, contactItemBuilder } from 'wix-style-react';
 
 const style = {
   display: 'inline-block',

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Breadcrumbs from 'wix-style-react/Breadcrumbs';
+import { Breadcrumbs } from 'wix-style-react';
 
 class BreadcrumbsOnClickCallback extends React.Component {
 

@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { MessageBoxFunctionalLayout } from 'wix-style-react/MessageBox';
-import Checkbox from 'wix-style-react/Checkbox';
-import Text from 'wix-style-react/Text';
+import { MessageBoxFunctionalLayout, Checkbox, Text } from 'wix-style-react';
 
 export default () => (
   <MessageBoxFunctionalLayout

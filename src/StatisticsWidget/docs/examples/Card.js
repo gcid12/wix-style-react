@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */ /* eslint-disable no-console */
 import React from 'react';
-import StatisticsWidget from 'wix-style-react/StatisticsWidget';
-import Card from 'wix-style-react/Card';
+import { StatisticsWidget, Card } from 'wix-style-react';
 
 render(
   <Card>

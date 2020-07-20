@@ -1,7 +1,6 @@
 import React from 'react';
 import LockLocked from 'wix-ui-icons-common/LockLocked';
 import LockUnlocked from 'wix-ui-icons-common/LockUnlocked';
-import { Layout, Cell } from 'wix-style-react/Layout';
 import {
   tab,
   code,
@@ -12,12 +11,13 @@ import {
   tabs,
   playground,
 } from 'wix-storybook-utils/Sections';
-
 import { storySettings } from '../test/storySettings';
-import SegmentedToggle from '..';
 
+import SegmentedToggle from '..';
 import * as examples from './examples';
+
 import testkit from './testkit.md';
+import { Layout, Cell } from 'wix-style-react';
 
 const BasicExample = () => (
   <Layout>

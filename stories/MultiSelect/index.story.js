@@ -14,11 +14,11 @@ import {
 import LinkTo from '@storybook/addon-links/react';
 import * as examples from './examples';
 
-import { Container, Row, Col } from 'wix-style-react/Grid';
-import FormField from 'wix-style-react/FormField';
 import { storySettings } from './storySettings';
 import { Category } from '../storiesHierarchy';
 import allComponents from '../utils/allComponents';
+
+import { Container, Row, Col, FormField } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

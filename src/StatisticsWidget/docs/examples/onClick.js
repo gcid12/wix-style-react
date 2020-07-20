@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */ /* eslint-disable no-console */
 import React from 'react';
-import StatisticsWidget from 'wix-style-react/StatisticsWidget';
+import { StatisticsWidget } from 'wix-style-react';
 
 render(
   <div style={{ background: '#fff' }}>

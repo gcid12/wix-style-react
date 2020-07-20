@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Button from 'wix-style-react/Button';
 import PageHeader from '..';
 import { RTLWrapper } from '../../../stories/utils/RTLWrapper';
+import { Button } from 'wix-style-react';
 
 const PageHeaderContainer = ({ rtl = false, children }) => (
   <div style={{ width: '700px', border: '1px solid' }}>

@@ -18,10 +18,10 @@ import { storySettings } from '../test/storySettings';
 import allComponents from '../../../stories/utils/allComponents';
 
 import BrowserPreviewWidget from '..';
-import Box from 'wix-style-react/Box';
-import Text from 'wix-style-react/Text';
 
 import { skins, browserBarSizes } from '../constants';
+
+import { Box, Text } from 'wix-style-react';
 
 const example = config => baseExample({ components: allComponents, ...config });
 

@@ -5,8 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { getTestStoryKind } from '../../../stories/storiesHierarchy';
 import { storySettings, testStories } from '../docs/storySettings';
 
-import { Layout, Cell } from 'wix-style-react/Layout';
-import Slider from 'wix-style-react/Slider';
+import { Layout, Cell, Slider } from 'wix-style-react';
 
 class ControlledSlider extends React.Component {
   constructor({ value }) {

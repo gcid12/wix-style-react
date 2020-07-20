@@ -4,8 +4,7 @@ import { skins, contentOutlines } from '../constants';
 
 import PreviewWidget from '../PreviewWidget';
 
-import Box from 'wix-style-react/Box';
-import Text from 'wix-style-react/Text';
+import { Box, Text } from 'wix-style-react';
 
 const defaultProps = {
   skin: 'neutral',

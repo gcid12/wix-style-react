@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-import SortableList from 'wix-style-react/SortableList';
 import styles from './IntroductionExample.scss';
+import { SortableList } from 'wix-style-react';
 
 /**
  * An example for a simple drag and drop list component.

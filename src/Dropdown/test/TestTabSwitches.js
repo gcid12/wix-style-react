@@ -1,7 +1,7 @@
 import React from 'react';
-import Dropdown from 'wix-style-react/Dropdown';
-
 import { storySettings } from '../docs/storySettings';
+
+import { Dropdown } from 'wix-style-react';
 
 const style = {
   display: 'inline-block',

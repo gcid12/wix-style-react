@@ -10,15 +10,15 @@ import {
   example as baseExample,
 } from 'wix-storybook-utils/Sections';
 
-import SegmentedToggle from 'wix-style-react/SegmentedToggle';
 import LockLocked from 'wix-ui-icons-common/LockLocked';
 import LockUnlocked from 'wix-ui-icons-common/LockUnlocked';
-import { Layout, Cell } from 'wix-style-react/Layout';
 import LinkTo from '@storybook/addon-links/react';
 import allComponents from '../utils/allComponents';
 
 import * as examples from './examples';
 import { Category } from '../storiesHierarchy';
+
+import { SegmentedToggle, Layout, Cell } from 'wix-style-react';
 
 const BasicExample = () => (
   <Layout>
