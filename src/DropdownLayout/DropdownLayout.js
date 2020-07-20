@@ -242,6 +242,7 @@ class DropdownLayout extends WixComponent {
     </InfiniteScroll>
   );
 
+  /** for testing purposes only */
   _getDataAttributes = () => {
     const { visible, dropDirectionUp } = this.props;
 
@@ -269,47 +270,54 @@ class DropdownLayout extends WixComponent {
       fixedFooter,
       inContainer,
       overflow,
+      maxHeightPixels,
+      minWidthPixels,
+      infiniteScroll,
     } = this.props;
 
     const renderedOptions = options.map((option, idx) =>
       this._renderOption({ option, idx }),
     );
-    const contentContainerClassName = classNames({
-      [styles.contentContainer]: true,
-      [styles.shown]: visible,
-      [styles.up]: dropDirectionUp,
-      [styles.down]: !dropDirectionUp,
-      [styles.withArrow]: withArrow,
-      [styles.containerStyles]: !inContainer,
-    });
+
     return (
       <div
+        {...styles(
+          'root',
+          {
+            visible,
+            withArrow,
+            direction: dropDirectionUp
+              ? DROPDOWN_LAYOUT_DIRECTIONS.UP
+              : DROPDOWN_LAYOUT_DIRECTIONS.DOWN,
+            containerStyles: !inContainer,
+          },
+          this.props,
+        )}
         tabIndex={tabIndex}
-        className={classNames(styles.wrapper)}
         onKeyDown={this._onKeyDown}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
         <div
           {...this._getDataAttributes()}
-          className={contentContainerClassName}
+          className={styles.contentContainer}
           style={{
             overflow,
-            maxHeight: getUnit(this.props.maxHeightPixels),
-            minWidth: getUnit(this.props.minWidthPixels),
+            maxHeight: getUnit(maxHeightPixels),
+            minWidth: getUnit(minWidthPixels),
           }}
         >
           {this._renderNode(fixedHeader)}
           <div
             className={styles.options}
             style={{
-              maxHeight: getUnit(parseInt(this.props.maxHeightPixels, 10) - 35),
+              maxHeight: getUnit(parseInt(maxHeightPixels, 10) - 35),
               overflow,
             }}
             ref={_options => (this.options = _options)}
             data-hook={DATA_HOOKS.DROPDOWN_LAYOUT_OPTIONS}
           >
-            {this.props.infiniteScroll
+            {infiniteScroll
               ? this._wrapWithInfiniteScroll(renderedOptions)
               : renderedOptions}
           </div>
