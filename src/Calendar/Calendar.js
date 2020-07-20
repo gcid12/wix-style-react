@@ -1,4 +1,4 @@
-import styles from './Calendar.scss';
+import styles from './Calendar.st.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import DayPicker from 'react-day-picker';

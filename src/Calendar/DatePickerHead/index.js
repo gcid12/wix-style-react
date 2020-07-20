@@ -7,7 +7,7 @@ import ChevronRightLarge from 'wix-ui-icons-common/ChevronRightLarge';
 
 import YearDropdown from './YearDropdown';
 import MonthDropdown from './MonthDropdown';
-import styles from './styles.scss';
+import styles from './styles.st.css';
 import Text from '../../Text';
 
 const getMonthName = (months, month) => months[month] || months[0];

@@ -1,0 +1,29 @@
+:import {
+  -st-from: "../../Foundation/stylable/colors.st.css";
+  -st-named: B10;
+}
+
+.root {
+  position: relative;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: value(B10);
+}
+
+.icon {
+  margin-top: 6px;
+  margin-left: 3px;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  min-width: 120px;
+  margin-left: -25%;
+}

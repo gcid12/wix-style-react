@@ -1,0 +1,64 @@
+:import {
+  -st-from: "../../Foundation/stylable/colors.st.css";
+  -st-named: B10, D80, B50, B40;
+}
+
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px 0;
+  background: value(D80);
+  border-radius: 8px 8px 0 0;
+  color: value(B10);
+}
+
+.caption {
+  padding: 0 6px;
+}
+
+.arrow {
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 100ms;
+  border-radius: 50%;
+}
+
+.arrow :hover:not(:active) {
+  background-color: value(B50);
+}
+.arrow :active {
+  background-color: value(B40);
+}
+
+.arrowIcon {
+  display: block;
+  cursor: pointer;
+}
+
+.arrowLeft {
+  margin-right: auto;
+}
+
+.arrowRight {
+  margin-left: auto;
+}
+
+:global([dir="rtl"]) .arrowIcon {
+  transform: scaleX(-1);
+}
+
+:global([dir="rtl"]) .arrowLeft {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+:global([dir="rtl"]) .arrowRight {
+  margin-left: 0;
+  margin-right: auto;
+}

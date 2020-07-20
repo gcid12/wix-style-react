@@ -4,7 +4,7 @@ import ChevronDown from 'wix-ui-icons-common/ChevronDown';
 
 import DropdownLayout from '../../DropdownLayout';
 import Text from '../../Text';
-import styles from './styles.scss';
+import styles from './styles.st.css';
 
 export default class DropdownPicker extends React.Component {
   static propTypes = {
