@@ -3,14 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DayPicker from 'react-day-picker';
 import classNames from 'classnames';
-import addMonths from 'date-fns/add_months';
-import subMonths from 'date-fns/sub_months';
-import startOfMonth from 'date-fns/start_of_month';
-import parse from 'date-fns/parse';
-import isSameDay from 'date-fns/is_same_day';
+import addMonths from 'date-fns/addMonths';
+import subMonths from 'date-fns/subMonths';
+import startOfMonth from 'date-fns/startOfMonth';
+import isSameDay from 'date-fns/isSameDay';
 import { CalendarView } from './utils';
 import localeUtilsFactory from '../LocaleUtils';
 import DatePickerHead from './DatePickerHead';
+import { legacyParse } from '@date-fns/upgrade/v2';
 
 export default class Calendar extends React.PureComponent {
   static displayName = 'Calendar';
@@ -124,7 +124,7 @@ export default class Calendar extends React.PureComponent {
   };
 
   static optionalParse = dateOrString =>
-    typeof dateOrString === 'string' ? parse(dateOrString) : dateOrString;
+    typeof dateOrString === 'string' ? legacyParse(dateOrString) : dateOrString;
 
   /** Return a value in which all string-dates are parsed into Date objects */
   static parseValue = value => {
@@ -132,7 +132,7 @@ export default class Calendar extends React.PureComponent {
       return new Date();
     }
     if (typeof value === 'string') {
-      return parse(value);
+      return legacyParse(value);
     } else if (value instanceof Date) {
       return value;
     } else {

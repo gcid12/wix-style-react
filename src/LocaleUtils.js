@@ -1,6 +1,6 @@
-import setDay from 'date-fns/set_day';
+import setDay from 'date-fns/setDay';
 import format from 'date-fns/format';
-import en from 'date-fns/locale/en';
+import en from 'date-fns/locale/en-US';
 import es from 'date-fns/locale/es';
 import pt from 'date-fns/locale/pt';
 import fr from 'date-fns/locale/fr';
@@ -16,8 +16,10 @@ import nl from 'date-fns/locale/nl';
 import da from 'date-fns/locale/da';
 import th from 'date-fns/locale/th';
 import cs from 'date-fns/locale/cs';
-import zh from 'date-fns/locale/zh_cn';
+import zh from 'date-fns/locale/zh-CN';
+import uk from 'date-fns/locale/uk';
 import * as no from 'date-fns/locale/nb';
+import { convertTokens } from '@date-fns/upgrade/v2';
 
 const MONTHS_INDEXES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
@@ -40,37 +42,42 @@ const locales = {
   th,
   cs,
   zh,
+  uk,
 };
 
 const getLocale = locale =>
   typeof locale === 'string' ? locales[locale] : locale;
 
 export const formatDate = (date, dateFormat, locale) =>
-  format(date, dateFormat, { locale: getLocale(locale) });
+  format(date, convertTokens(dateFormat), {
+    locale: getLocale(locale),
+  });
 
 export default locale => ({
   formatMonthTitle: date =>
-    format(date, 'MMMM YYYY', {
+    format(date, 'LLLL yyyy', {
       locale: getLocale(locale),
     }),
 
   formatWeekdayShort: index =>
-    format(setDay(new Date(), index), 'dd', {
+    format(setDay(new Date(), index), 'iiiiii', {
       locale: getLocale(locale),
     }),
 
   formatWeekdayLong: index =>
-    format(setDay(new Date(), index), 'dddd', {
+    format(setDay(new Date(), index), 'iiii', {
       locale: getLocale(locale),
     }),
 
   formatDay: date =>
-    format(date, 'ddd ll', {
+    format(date, 'iii	PP', {
       locale: getLocale(locale),
     }),
 
   getMonths: () =>
     MONTHS_INDEXES.map(i =>
-      format(new Date(2018, i), 'MMMM', { locale: getLocale(locale) }),
+      format(new Date(2018, i), 'LLLL', {
+        locale: getLocale(locale),
+      }),
     ),
 });

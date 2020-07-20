@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import setMonth from 'date-fns/set_month';
+import setMonth from 'date-fns/setMonth';
 
 import DatePickerDropdown from '../DatePickerDropdown';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import range from '../../utils/operators/range';
-import setYear from 'date-fns/set_year';
+import setYear from 'date-fns/setYear';
 
 import DatePickerDropdown from '../DatePickerDropdown';
 

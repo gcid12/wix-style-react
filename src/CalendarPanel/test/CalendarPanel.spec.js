@@ -8,7 +8,7 @@ import {
 import CalendarPanel from '../CalendarPanel';
 import calendarPanelDriverFactory from '../CalendarPanel.driver';
 import { calendarPanelUniDriverFactory } from '../CalendarPanel.uni.driver';
-import isSameDay from 'date-fns/is_same_day';
+import isSameDay from 'date-fns/isSameDay';
 
 const A_DAY = new Date(2019, 4, 29);
 const A_DAY_NOT_IN_PRESETS = new Date(2019, 4, 10);

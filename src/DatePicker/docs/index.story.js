@@ -19,6 +19,7 @@ import * as examples from './examples';
 import allComponents from '../../../stories/utils/allComponents';
 import { columns } from 'wix-storybook-utils/Sections';
 import { commonPopoverPropsExample } from '../../../stories/utils/playgroundUtils';
+import { convertTokens } from '@date-fns/upgrade/v2';
 
 const defaultValue = new Date('2017/05/01');
 const today = new Date();
@@ -50,7 +51,7 @@ export default {
   }),
 
   exampleProps: {
-    onChange: date => format(date, 'YYYY/MM/DD'),
+    onChange: date => format(date, convertTokens('YYYY/MM/DD')),
     value: [
       { label: '2017/05/01', value: defaultValue },
       { label: 'Today', value: today },

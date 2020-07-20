@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import isSameDay from 'date-fns/is_same_day';
-import setYear from 'date-fns/set_year';
-import setMonth from 'date-fns/set_month';
-import setDate from 'date-fns/set_date';
+import isSameDay from 'date-fns/isSameDay';
+import setYear from 'date-fns/setYear';
+import setMonth from 'date-fns/setMonth';
+import setDate from 'date-fns/setDate';
 
 import Popover from '../Popover';
 import Calendar from '../Calendar';
@@ -108,7 +108,7 @@ export default class DatePicker extends React.PureComponent {
         [value.getDate(), setDate],
       ].reduce(
         (_value, [datePart, setter]) => setter(_value, datePart),
-        this.props.value,
+        this.props.value || new Date(),
       );
 
       this.setState({ value: newValue }, () => this.props.onChange(newValue));

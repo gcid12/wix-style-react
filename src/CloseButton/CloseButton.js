@@ -63,13 +63,7 @@ class CloseButton extends PureComponent {
   }
 
   render() {
-    const {
-      skin,
-      size,
-      dataHook,
-      children,
-      ...rest
-    } = this.props;
+    const { skin, size, dataHook, children, ...rest } = this.props;
 
     return (
       <ButtonNext
